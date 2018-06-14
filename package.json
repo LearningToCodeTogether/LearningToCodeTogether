@@ -1,0 +1,18 @@
+{
+  "name": "LearningToCodeTogether",
+  "version": "1.0.0",
+  "description": "A website for the LTCA meetup",
+  "main": "index.js",
+  "repository": "git@github.com:LearningToCodeTogether/LearningToCodeTogether.git",
+  "author": "Reinoptland <reinoptland@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "develop": "node develop.js",
+    "build": "node build.js"
+  }
+}
