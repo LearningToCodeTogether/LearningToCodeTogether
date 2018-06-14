@@ -1,0 +1,13 @@
+@import '_colors'
+
+html {
+  display: grid;
+  grid-template-columns: auto 300 300 300 auto;
+  background: $white;
+}
+
+// Skyline
+.skyline{
+  grid-column: 5;
+  background-image: url('../assets/images/skyline.png')
+}
