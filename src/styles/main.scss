@@ -4,6 +4,12 @@ html{
   display: grid;
   grid-template-columns: auto 300 300 300 auto;
   background: $white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  margin: 0px;
+  padding: 0px;
 }
 
 // Skyline
@@ -14,7 +20,21 @@ html{
 
 // Meetup icon
 .meetup-button{
-  height: 50px;
-  width: 100px;
+  height: 20px;
   background: $red;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  & > .icon {
+    height: 25px;
+  }
+
+  & > .text {
+    color: $white;
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: bold;
+  }
 }

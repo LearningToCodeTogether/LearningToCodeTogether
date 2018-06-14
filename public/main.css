@@ -1,13 +1,28 @@
 html {
   display: grid;
   grid-template-columns: auto 300 300 300 auto;
-  background: "#FFFFFF"; }
+  background: #FFFFFF;
+  font-family: 'Montserrat', sans-serif; }
+
+body {
+  margin: 0px;
+  padding: 0px; }
 
 .skyline {
   grid-column: 5;
   background-image: url("../assets/images/skyline.png"); }
 
 .meetup-button {
-  height: 50px;
-  width: 100px;
-  background: "#FA405D"; }
+  height: 20px;
+  background: #FA405D;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 20px; }
+  .meetup-button > .icon {
+    height: 25px; }
+  .meetup-button > .text {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: bold; }
