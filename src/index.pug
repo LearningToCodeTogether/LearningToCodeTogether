@@ -3,13 +3,59 @@ html(lang='en')
  head
    title Pug
    link(rel="stylesheet" type="text/css" href="main.css")
-   link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet")
+   link(href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Playfair+Display:700" rel="stylesheet")
  body
-
-  // Skyline
-  .skyline
 
   // Meetup
   .meetup-button
-    img.icon(src="./images/meetup-icon.png")
-    .text Join us!
+    a(href='https://www.meetup.com/Learning-to-Code-Amsterdam/' target="_blank")
+      img.icon(src="./images/meetup-icon.png")
+      .text Join us!
+    img.after(src="./images/itsfree.png")
+
+  // Skyline
+  .skyline
+    img(src='./images/skyline-up-side-down.png')
+
+  // Logo
+  .header-logo
+    img.logo(src='./images/logo.png')
+    img.people(src='./images/people-group.png')
+
+  .spacer
+
+  // Meetup information
+  .meetup-info
+    .row
+      img.icon(src='./images/point-time.png')
+      .info
+        .title  When
+        .content  Every 2nd Tuesday of the month
+    .row
+      img.icon(src='./images/point-place.png')
+      .info
+        .title  Where
+        .content  Codaisseur - Tripolis, building 200
+    .row
+      img.icon(src='./images/point-address.png')
+      .info
+        .title  Address
+        .content  Burgerweeshuispad 201 - Amsterdam
+
+
+
+  // Come to the meetup
+  section
+    h1 We would love to meet you!
+    .text-spacer
+    .global-text Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+    .text-spacer
+    .meetup-button.round.big
+      a(href='https://www.meetup.com/Learning-to-Code-Amsterdam/' target="_blank")
+        img.icon(src="./images/meetup-icon.png")
+        .text Join our meetup now!
+      img.after(src="./images/itsfree.png")
+
+
+  .skyline
+    img(src='./images/skyline.png')
