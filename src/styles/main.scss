@@ -1,4 +1,5 @@
 @import '_colors';
+@import '_bubbles';
 
 html{
   display: grid;
@@ -15,7 +16,7 @@ body{
 // Skyline
 .skyline{
   grid-column: 5;
-  background-image: url('../assets/images/skyline.png')
+  background-image: url('../images/skyline.png')
 }
 
 // Meetup icon

@@ -1,3 +1,43 @@
+.bubbles {
+  position: relative;
+  width: 100vw; }
+  .bubbles .bubble {
+    z-index: 5;
+    position: absolute;
+    border-radius: 50%; }
+    .bubbles .bubble__big {
+      z-index: 10;
+      width: 60rem;
+      height: 60rem;
+      background-color: #FFD240;
+      top: 0rem; }
+      .bubbles .bubble__big--left {
+        left: -25rem; }
+      .bubbles .bubble__big--right {
+        right: -25rem; }
+    .bubbles .bubble__medium {
+      width: 32rem;
+      height: 32rem;
+      z-index: 15;
+      top: 20rem; }
+      .bubbles .bubble__medium--left {
+        left: 12rem; }
+      .bubbles .bubble__medium--right {
+        right: 12rem; }
+    .bubbles .bubble__small {
+      width: 20rem;
+      height: 20rem;
+      z-index: 20;
+      top: 35rem; }
+      .bubbles .bubble__small--left {
+        left: 28rem; }
+      .bubbles .bubble__small--right {
+        right: 28rem; }
+    .bubbles .bubble--white-border-medium {
+      border: 1rem solid white; }
+    .bubbles .bubble--white-border-small {
+      border: 0.8rem solid white; }
+
 html {
   display: grid;
   grid-template-columns: auto 300 300 300 auto;
@@ -10,7 +50,7 @@ body {
 
 .skyline {
   grid-column: 5;
-  background-image: url("../assets/images/skyline.png"); }
+  background-image: url("../images/skyline.png"); }
 
 .meetup-button {
   height: 20px;

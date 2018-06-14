@@ -1,0 +1,102 @@
+.bubbles {
+  position: relative;
+  width: 100vw;
+
+  .bubble {
+    z-index: 5;
+    position: absolute;
+    border-radius: 50%;
+
+    &__big {
+      z-index: 10;
+      width: 60rem;
+      height: 60rem;
+      background-color: $sunglow;
+      top: 0rem;
+
+      &--left{
+        left: -25rem;
+      }
+
+      &--right{
+        right: -25rem;
+      }
+    }
+
+    &__medium {
+      width: 32rem;
+      height: 32rem;
+      z-index: 15;
+      top: 20rem;
+
+      &--left {
+        left: 12rem;
+      }
+
+      &--right {
+        right: 12rem;
+      }
+    }
+
+    &__small{
+      width: 20rem;
+      height: 20rem;
+      z-index: 20;
+      top: 35rem;
+
+      &--left{
+        left: 28rem;
+      }
+
+      &--right{
+        right: 28rem;
+      }
+    }
+
+    &--white-border-medium{
+      border: 1rem solid white;
+    }
+
+    &--white-border-small{
+      border: 0.8rem solid white;
+    }
+  }
+}
+//
+// .composition {
+//     position: relative;
+//
+//     &__photo {
+//         box-shadow: 0 1.5rem 4rem rgba($black, .4);
+//         border-radius: 2px;
+//         position: absolute;
+//         z-index: 10;
+//         transition: all .2s;
+//         outline-offset: 2rem;
+//
+//         &--p1 {
+//             left: 0;
+//             top: -5rem;
+//         }
+//
+//         &--p2 {
+//             right: 0;
+//             top: 2rem;
+//         }
+//
+//         &--p3 {
+//
+//         }
+//
+//         &:hover {
+//             outline: 1.5rem solid $primary;
+//             transform: scale(1.05) translateY(-.5rem);
+//             box-shadow: 0 1.5rem 4rem rgba($black, .5);
+//             z-index: 20;
+//         }
+//     }
+//
+//     &:hover &__photo:not(:hover) {
+//         transform: scale(.9);
+//     }
+// }
