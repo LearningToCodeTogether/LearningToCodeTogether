@@ -1,0 +1,13 @@
+html {
+  display: grid;
+  grid-template-columns: auto 300 300 300 auto;
+  background: "#FFFFFF"; }
+
+.skyline {
+  grid-column: 5;
+  background-image: url("../assets/images/skyline.png"); }
+
+.meetup-button {
+  height: 50px;
+  width: 100px;
+  background: "#FA405D"; }

@@ -1,6 +1,6 @@
-@import '_colors'
+@import '_colors';
 
-html {
+html{
   display: grid;
   grid-template-columns: auto 300 300 300 auto;
   background: $white;
@@ -10,4 +10,11 @@ html {
 .skyline{
   grid-column: 5;
   background-image: url('../assets/images/skyline.png')
+}
+
+// Meetup icon
+.meetup-button{
+  height: 50px;
+  width: 100px;
+  background: $red;
 }
