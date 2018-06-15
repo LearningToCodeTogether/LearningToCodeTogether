@@ -10,7 +10,7 @@ const paths = {
     html: `./src/**/*.pug`,
   },
   public: {
-    default: './public',
+    default: './docs',
   },
   assets: './assets/**/*.*',
 }
