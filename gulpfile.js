@@ -2,6 +2,7 @@ const gulp = require('gulp')
 const sass = require('gulp-sass')
 const pug = require('gulp-pug')
 const plumber = require('gulp-plumber')
+const liveReload = require('gulp-server-livereload')
 
 const paths = {
   src: {
@@ -36,10 +37,19 @@ gulp.task('assets', () =>
     .pipe(gulp.dest(paths.public.default))
 )
 
+gulp.task('livereload', function() {
+  gulp.src(paths.public.default)
+    .pipe(liveReload({
+      livereload: true,
+      // directoryListing: true,
+      open: true
+    }))
+})
+
 
 gulp.task('styles:watch', () => gulp.watch(paths.src.styles, ['styles']))
 gulp.task('html:watch', () => gulp.watch(paths.src.html, ['html']))
 gulp.task('assets:watch', () => gulp.watch(paths.assets, ['assets']))
 
-gulp.task('default', ['html', 'styles', 'assets', 'watch'])
+gulp.task('default', ['html', 'styles', 'assets', 'watch', 'livereload'])
 gulp.task('watch', ['html:watch', 'styles:watch', 'assets:watch'])

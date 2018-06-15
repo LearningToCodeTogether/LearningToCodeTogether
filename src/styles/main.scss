@@ -120,16 +120,19 @@ section {
 
 // Meetup info
 .meetup-info{
-  // width: 80%;
   margin: 0px 20px 0px 20px;
   border: 1px solid $anti-flash-white;
   background: $snow;
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
 
   & > .row {
     display: flex;
-    flex-direction: row;
+    flex-shrink: 0;
+    margin-left: 20px;
     margin-bottom: 20px;
+    min-width: 300px;
 
     &:last-child{
       margin-bottom: 0;

@@ -117,11 +117,15 @@ section {
   margin: 0px 20px 0px 20px;
   border: 1px solid #F3F3F3;
   background: #FAFAFA;
-  padding: 20px; }
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; }
   .meetup-info > .row {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 20px; }
+    flex-shrink: 0;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    min-width: 300px; }
     .meetup-info > .row:last-child {
       margin-bottom: 0; }
     .meetup-info > .row > .icon {
