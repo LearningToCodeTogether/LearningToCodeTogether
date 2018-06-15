@@ -2,6 +2,7 @@ doctype html
 html(lang='en')
  head
    title Pug
+   meta(name="viewport" content="width=device-width, initial-scale=1")
    link(rel="stylesheet" type="text/css" href="main.css")
    link(href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Playfair+Display:700" rel="stylesheet")
  body
@@ -15,7 +16,7 @@ html(lang='en')
 
   // Skyline
   .skyline
-    img(src='./images/skyline-up-side-down.png')
+     img(src='./images/skyline-up-side-down.png')
 
   // Logo
   .header-logo
@@ -50,7 +51,7 @@ html(lang='en')
     .text-spacer
     .global-text Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
     .text-spacer
-    .meetup-button.round.big
+    .meetup-button.round
       a(href='https://www.meetup.com/Learning-to-Code-Amsterdam/' target="_blank")
         img.icon(src="./images/meetup-icon.png")
         .text Join our meetup now!

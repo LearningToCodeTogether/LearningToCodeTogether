@@ -40,6 +40,8 @@ section {
 // Skyline
 .skyline{
   height: 100px;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
 
