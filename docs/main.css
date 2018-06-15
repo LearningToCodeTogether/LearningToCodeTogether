@@ -113,6 +113,66 @@ section {
     width: 130px;
     margin-top: 40px; }
 
+.meetup-flavors {
+  margin: 50px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .meetup-flavors > .hexagon-image {
+    width: 240px;
+    position: relative;
+    margin-bottom: -10px; }
+  .meetup-flavors > .circle-left-big {
+    position: absolute;
+    width: 368px;
+    height: 368px;
+    border-radius: 200px;
+    background: #4A90E2;
+    margin-left: -204px; }
+  .meetup-flavors > .circle-right-big {
+    position: absolute;
+    width: 265px;
+    height: 265px;
+    border-radius: 200px;
+    background: #B8E986;
+    right: -158px;
+    margin-top: 640px; }
+  .meetup-flavors > .circle-yellow-top {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 200px;
+    background: #FFD240;
+    margin-top: 320px; }
+  .meetup-flavors > .circle-yellow-bottom {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 200px;
+    background: #FFD240;
+    margin-top: 550px;
+    margin-left: -40px; }
+  .meetup-flavors > .circle-green-bottom {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 200px;
+    background: #B8E986;
+    margin-top: 610px;
+    margin-left: -30px; }
+  .meetup-flavors .spacer-top {
+    height: 80px; }
+  .meetup-flavors .hexagon-yellow-small {
+    position: absolute;
+    width: 20px;
+    margin-left: -100px;
+    margin-top: 350px; }
+  .meetup-flavors .hexagon-yellow-medium {
+    position: absolute;
+    width: 32px;
+    margin-left: 130px;
+    margin-top: 320px; }
+
 .meetup-info {
   margin: 0px 20px 0px 20px;
   border: 1px solid #F3F3F3;
@@ -123,7 +183,6 @@ section {
   .meetup-info > .row {
     display: flex;
     flex-shrink: 0;
-    margin-left: 20px;
     margin-bottom: 20px;
     min-width: 300px; }
     .meetup-info > .row:last-child {
