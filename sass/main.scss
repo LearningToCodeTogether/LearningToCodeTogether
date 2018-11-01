@@ -5,10 +5,9 @@
 @import "base/base";
 @import "base/typography";
 
+@import "components/button";
 @import "components/composition";
-@import "components/infosection-center";
-@import "components/infosection-left";
-@import "components/infosection-right";
+@import "components/infosections";
 
 @import "layout/footer";
 @import "layout/grid";
