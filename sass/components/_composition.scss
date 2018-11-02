@@ -85,8 +85,9 @@
         width: 15rem;
     }
 
-    &__background {
+    &__background {         //alle elementen hierin hebben een hoogte > clearfix??
         width: 100%;
+        height: 25rem;
         z-index: -1;
 
         &--blue {
@@ -108,37 +109,29 @@
 }
 
 .big-blue {
-    @include circle(25,$blue);
+    @include circle(42,$blue);
     display: inline-block;
 }
 
-// .big-blue {
-//     width: 25rem;
-//     height: 25rem;
-//     background-color: $blue;
-//     border-radius: 50%;
-//     display: inline-block;
-// }
-
 .small-blue {
-    @include circle(5,$blue);
+    @include circle(8,$blue);
     display: inline-block;
 }
 
 .big-yellow {
-    @include circle(13,$yellow);
+    @include circle(20,$yellow);
 }
 
 .small-yellow {
-    @include circle(5,$yellow);
+    @include circle(8,$yellow);
 }
 
 .big-green {
-    @include circle(19,$green);
+    @include circle(30,$green);
 }
 
 .small-green {
-    @include circle(5,$green);
+    @include circle(8,$green);
 }
 
 

@@ -118,6 +118,7 @@ body {
     width: 15rem; }
   .composition__background {
     width: 100%;
+    height: 25rem;
     z-index: -1; }
     .composition__background--blue {
       width: 35%; }
@@ -130,40 +131,40 @@ body {
   display: inline-block; }
 
 .big-blue {
-  width: 25rem;
-  height: 25rem;
+  width: 42rem;
+  height: 42rem;
   background-color: blue;
   border-radius: 50%;
   display: inline-block; }
 
 .small-blue {
-  width: 5rem;
-  height: 5rem;
+  width: 8rem;
+  height: 8rem;
   background-color: blue;
   border-radius: 50%;
   display: inline-block; }
 
 .big-yellow {
-  width: 13rem;
-  height: 13rem;
+  width: 20rem;
+  height: 20rem;
   background-color: yellow;
   border-radius: 50%; }
 
 .small-yellow {
-  width: 5rem;
-  height: 5rem;
+  width: 8rem;
+  height: 8rem;
   background-color: yellow;
   border-radius: 50%; }
 
 .big-green {
-  width: 19rem;
-  height: 19rem;
+  width: 30rem;
+  height: 30rem;
   background-color: lightgreen;
   border-radius: 50%; }
 
 .small-green {
-  width: 5rem;
-  height: 5rem;
+  width: 8rem;
+  height: 8rem;
   background-color: lightgreen;
   border-radius: 50%; }
 
