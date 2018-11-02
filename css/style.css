@@ -112,8 +112,61 @@ body {
   background-color: yellow;
   border-radius: 50%; }
 
-.composition__hexagon {
-  width: 15rem; }
+.composition {
+  width: 100vw; }
+  .composition__hexagon {
+    width: 15rem; }
+  .composition__background {
+    width: 100%;
+    z-index: -1; }
+    .composition__background--blue {
+      width: 35%; }
+    .composition__background--yellow {
+      width: 30%; }
+    .composition__background--green {
+      width: 35%; }
+
+[class^="composition__background"] {
+  display: inline-block;
+  float: left; }
+
+.big-blue {
+  width: 25rem;
+  height: 25rem;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block; }
+
+.small-blue {
+  width: 5rem;
+  height: 5rem;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block; }
+
+.big-yellow {
+  width: 13rem;
+  height: 13rem;
+  background-color: yellow;
+  border-radius: 50%; }
+
+.small-yellow {
+  width: 5rem;
+  height: 5rem;
+  background-color: yellow;
+  border-radius: 50%; }
+
+.big-green {
+  width: 19rem;
+  height: 19rem;
+  background-color: lightgreen;
+  border-radius: 50%; }
+
+.small-green {
+  width: 5rem;
+  height: 5rem;
+  background-color: lightgreen;
+  border-radius: 50%; }
 
 .details {
   display: inline; }

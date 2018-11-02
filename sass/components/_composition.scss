@@ -1,22 +1,3 @@
-// <section class="composition">
-// <div class="background-blue">
-//     <div class="big-blue">&nbsp;</div>
-//     <div class="small-blue">&nbsp;</div>
-// </div>
-// <img src="images/hexagon-first-time.png" alt="first time, explore and get started" class="firsttime">
-// <div class="background-yellow">
-//     <img src="images/hexagon-yellow-small.png" alt="small yellow hexagon, like an empty simple logo" class="small-hexagon">
-//     <div class="big-yellow">&nbsp;</div>
-//     <img src="images/hexagon-yellow-medium.png" alt="slightly bigger yellow hexagon. woohoo" class="medium-hexagon">
-// </div>
-// <img src="images/hexagon-mentorship.png" alt="mentorship, go above and beyond" class="mentorship">
-// <div class="background-green">
-//     <div class="small-green">&nbsp;</div>
-//     <div class="big-green">&nbsp;</div>
-// </div>
-// <img src="images/hexagon-masterclass.png" alt="masterclass, the mindset of a developer" class="masterclass">
-// </section>
-
 // <div class="imgcomp-right">
 // <div class="yellow-circle">&nbsp;</div>
 // <img src="" alt="photo of people. I think." class="people-pic2">
@@ -71,10 +52,99 @@
     border-radius: 50%;
 }
 
+//GROTE COMPOSITIE
+// <section class="composition">
+// <div class="row">
+// <div class="background-blue col1of3">
+//     <div class="big-blue">&nbsp;</div>
+//     <div class="small-blue">&nbsp;</div>
+// </div>
+// <div class="background-yellow col1of3">
+//     <img src="images/hexagon-yellow-small.png" alt="small yellow hexagon, like an empty simple logo" class="small-hexagon">
+//     <div class="big-yellow">&nbsp;</div>
+//     <img src="images/hexagon-yellow-medium.png" alt="slightly bigger yellow hexagon. woohoo" class="medium-hexagon">
+// </div>
+// <div class="background-green col1of3">
+//     <div class="small-green">&nbsp;</div>
+//     <div class="big-green">&nbsp;</div>
+// </div>
+// </div>
+// <div class="row">
+//     <img src="images/hexagon-first-time.png" alt="first time, explore and get started" class="composition__hexagon col1of3">
+//     <img src="images/hexagon-mentorship.png" alt="mentorship, go above and beyond" class="composition__hexagon col1of3">
+//     <img src="images/hexagon-masterclass.png" alt="masterclass, the mindset of a developer" class="composition__hexagon col1of3">
+// </div>
+// </section>
+
+
 
 .composition {
+    width: 100vw;
 
     &__hexagon {
         width: 15rem;
     }
+
+    &__background {
+        width: 100%;
+        z-index: -1;
+
+        &--blue {
+            width: 35%;
+        }
+
+        &--yellow {
+            width: 30%;
+        }
+
+        &--green {
+            width: 35%;
+        }
+    }
 }
+
+[class^="composition__background--"] {
+    display: inline-block;
+}
+
+.big-blue {
+    @include circle(25,$blue);
+    display: inline-block;
+}
+
+// .big-blue {
+//     width: 25rem;
+//     height: 25rem;
+//     background-color: $blue;
+//     border-radius: 50%;
+//     display: inline-block;
+// }
+
+.small-blue {
+    @include circle(5,$blue);
+    display: inline-block;
+}
+
+.big-yellow {
+    @include circle(13,$yellow);
+}
+
+.small-yellow {
+    @include circle(5,$yellow);
+}
+
+.big-green {
+    @include circle(19,$green);
+}
+
+.small-green {
+    @include circle(5,$green);
+}
+
+
+
+//cirkels hernoemen als background-blue--big, background--green--small etc etc, en dan eronder gooien
+
+//is hier een mogelijkheid voor een small circle placeholder, of...?
+
+//hmmmm...
