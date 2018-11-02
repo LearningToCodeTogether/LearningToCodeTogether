@@ -1,0 +1,31 @@
+// <div class="navbar">
+// <div class="navbar__items">
+//     <a href="#themeetup" class="navbar__items--button">
+//         <span class="fat">The</span> Meet-up</a>
+//     <a href="#threeflavors" class="navbar__items--button">
+//         <span class="fat">What</span> we do</a>
+//     <a href="#flavorflavorflavor" class="navbar__items--button">
+//         <span class="fat">Who</span> it's for</a>
+//     <a href="#" class="navbar__items--button">
+//         <span class="fat">The</span> location</a>
+// </div>
+// </div>
+
+
+.navbar {
+    width: 100vw;
+    height: 3rem;
+    display: block;
+    margin-top: 2rem;
+    border-top: .1rem solid grey;
+    border-bottom: .1rem solid grey;
+
+
+    &__items {                  //de container binnen de balk
+        text-align: center;
+
+        &--button {             // de individuele dingen. Links. Klikbare gevallen.
+            display: inline-block;
+        }
+    }
+}

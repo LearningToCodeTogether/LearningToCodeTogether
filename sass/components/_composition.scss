@@ -1,0 +1,80 @@
+// <section class="composition">
+// <div class="background-blue">
+//     <div class="big-blue">&nbsp;</div>
+//     <div class="small-blue">&nbsp;</div>
+// </div>
+// <img src="images/hexagon-first-time.png" alt="first time, explore and get started" class="firsttime">
+// <div class="background-yellow">
+//     <img src="images/hexagon-yellow-small.png" alt="small yellow hexagon, like an empty simple logo" class="small-hexagon">
+//     <div class="big-yellow">&nbsp;</div>
+//     <img src="images/hexagon-yellow-medium.png" alt="slightly bigger yellow hexagon. woohoo" class="medium-hexagon">
+// </div>
+// <img src="images/hexagon-mentorship.png" alt="mentorship, go above and beyond" class="mentorship">
+// <div class="background-green">
+//     <div class="small-green">&nbsp;</div>
+//     <div class="big-green">&nbsp;</div>
+// </div>
+// <img src="images/hexagon-masterclass.png" alt="masterclass, the mindset of a developer" class="masterclass">
+// </section>
+
+// <div class="imgcomp-right">
+// <div class="yellow-circle">&nbsp;</div>
+// <img src="" alt="photo of people. I think." class="people-pic2">
+// <img src="" alt="smaller photo. They do look human." class="people-pic1">
+// </div>
+
+.imgcomp-left {
+    position: relative;
+}
+
+.imgcomp-right {
+    position: relative;
+}
+
+// <div class="imgcomp-left">
+// <div class="circle3">&nbsp;</div>
+// <div class="shape-circle2">
+// <img src="images/MENS.jpg" alt="photo of people at the meet-up" class="people-pic2">
+// </div>
+// <div class="shape-circle1">
+// <img src="images/MENS.jpg" alt="smaller photo. Turns out people actually go there" class="people-pic1">
+// </div>
+// </div>
+
+.shape-circle1 {
+    width: 8rem;
+    height: 8rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.people-pic1 {
+    height: 100%
+
+}
+
+.shape-circle2 {
+    width: 15rem;
+    height: 15rem;
+    overflow: hidden;
+    border-radius: 50%
+}
+
+.people-pic2 {
+    height: 100%;
+}
+
+.circle3 {
+    width: 30rem;
+    height: 30rem;
+    background-color: $yellow;
+    border-radius: 50%;
+}
+
+
+.composition {
+
+    &__hexagon {
+        width: 15rem;
+    }
+}

@@ -1,0 +1,24 @@
+.header {
+    width: 60vw;
+    margin: 0 auto;
+
+    &__images {
+        width: 100%;
+        display: block;
+
+        &--logo {
+            width: 50%;
+            transform: translateX(50%);
+        }
+
+        &--skyline {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__meetup {
+        width: 100vw;
+        margin-top: 1rem;
+    }
+}

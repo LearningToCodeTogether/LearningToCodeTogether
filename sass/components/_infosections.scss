@@ -77,8 +77,24 @@
 // </div>         
 // </section> 
 
+.infosection__text {
+
+}
 
 
+//     <div class="details">
+//         <img src="images/point-place.png" alt="Another simple logo. Yawn." class="details__logo">
+//         <h2 class="heading-secondary">Question</h2> 
+//         <h3 class="heading-tertiary">Answer</h3>
+//     </div> 
 
-// Kan ik die infosecties niet beter allemaal combineren in één bestand? 
-//Ze bestaan toch allemaal uit min of meer dezelfde delen: infosection-text, die fotootjes, paar gele stippen en dat is het
+.details {
+    display: inline;
+
+    &__logo {
+        width: 3.5rem;
+        float: left;
+        margin-top: 1.3rem;
+        margin-right: 1.3rem;
+    }
+}

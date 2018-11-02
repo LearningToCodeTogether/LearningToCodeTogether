@@ -1,0 +1,192 @@
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-bottom-big {
+      margin-bottom: 5rem !important; } }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-bottom-medium {
+      margin-bottom: 3rem !important; } }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+
+.u-margin-left {
+  margin-left: 5rem !important; }
+
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+/* Die *-categorie wordt niet automatisch ook toegepast op de pseudo-elementen before en after */
+/* box-sizing hier en in body: hierboven dwing je * om elders te kijken wat het moet zijn. Doet verder niet zoveel nu */
+html {
+  font-size: 62.5%;
+  /* <-- dit ding hier in de html is de root font-size. Alle elementen uitgedrukt in rem zijn hierop gebaseerd. Om dat makkelijk te maken, zijn we uitgegaan van een root van 10px, want dan hoef je niet steeds te rekenen met die 16 (note to self: IT'ers zijn niet per se goed in rekenen)(note to self: serieus, wie wel? Als wiskundeleraren zichzelf al niet vertrouwen). Om vervolgens te zorgen dat de root dus die 10px is, maar nog wel afhangt van wat de user instelt (slechtzienden zoals ik willen grotere lettertjes) moet het dus 10/16 = 5/8 = 62.5% worden van de browser default */ }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+::selection {
+  background-color: blue;
+  color: yellow; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.7; }
+
+.heading-primary {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1rem; }
+
+.heading-secondary {
+  font-size: 1.6rem; }
+
+.heading-tertiary {
+  font-weight: 300;
+  color: black; }
+
+.fat {
+  font-weight: 700; }
+
+:link,
+:visited {
+  color: black;
+  text-decoration: none; }
+
+.imgcomp-left {
+  position: relative; }
+
+.imgcomp-right {
+  position: relative; }
+
+.shape-circle1 {
+  width: 8rem;
+  height: 8rem;
+  overflow: hidden;
+  border-radius: 50%; }
+
+.people-pic1 {
+  height: 100%; }
+
+.shape-circle2 {
+  width: 15rem;
+  height: 15rem;
+  overflow: hidden;
+  border-radius: 50%; }
+
+.people-pic2 {
+  height: 100%; }
+
+.circle3 {
+  width: 30rem;
+  height: 30rem;
+  background-color: yellow;
+  border-radius: 50%; }
+
+.composition__hexagon {
+  width: 15rem; }
+
+.details {
+  display: inline; }
+  .details__logo {
+    width: 3.5rem;
+    float: left;
+    margin-top: 1.3rem;
+    margin-right: 1.3rem; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 1rem; }
+    @media only screen and (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col"] {
+    float: left; }
+    .row [class^="col"]:not(:last-child) {
+      margin-right: 0; }
+      @media only screen and (max-width: 56.25em) {
+        .row [class^="col"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .row [class^="col"] {
+        width: 100% !important; } }
+  .row .col1of2 {
+    width: calc((100% - 4rem) / 2); }
+  .row .col1of3 {
+    width: calc((100% - 2 * 4rem) / 3); }
+  .row .col2of3 {
+    width: calc(2 * ((100% - 2 * 4rem) / 3) + 4rem); }
+  .row .col1of4 {
+    width: calc((100% - 3 * 4rem) / 4); }
+  .row .col2of4 {
+    width: calc(2 * ((100% - 3 * 4rem) / 4) + 4rem); }
+  .row .col3of4 {
+    width: calc(3 * ((100% - 3 * 4rem) / 4) + 2 * 4rem); }
+
+.header {
+  width: 60vw;
+  margin: 0 auto; }
+  .header__images {
+    width: 100%;
+    display: block; }
+    .header__images--logo {
+      width: 50%;
+      transform: translateX(50%); }
+    .header__images--skyline {
+      width: 100%;
+      margin-bottom: 1rem; }
+  .header__meetup {
+    width: 100vw;
+    margin-top: 1rem; }
+
+.navbar {
+  width: 100vw;
+  height: 3rem;
+  display: block;
+  margin-top: 2rem;
+  border-top: .1rem solid grey;
+  border-bottom: .1rem solid grey; }
+  .navbar__items {
+    text-align: center; }
+    .navbar__items--button {
+      display: inline-block; }

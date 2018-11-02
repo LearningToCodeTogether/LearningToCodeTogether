@@ -13,49 +13,69 @@
     </head>
 
     <body>
-        <div class="fixed-join-us-button">
+        <!-- <div class="fixed-join-us-button">
         <a href="#" class="button">
             <img src="images/meetup-icon.png" alt="just a logo, looks like an M" class="meetup-icon">
             Join us!
         </a>
         <img src="images/itsfree.png" alt="it's free!" class="itsfree">
-        </div>
+        </div> -->
         <header class="header">            
             <div class="header__images">
-                <img src="images/skyline-up-side-down.png" alt="upside down skyline" class="skylineud">
-                <img src="images/header-logo.png" alt="header logo with smiling folks and the text learning to code, aw man you're really missing out on this one" class="header__logo">
-            </div>
-            <div class="header__meetup">
-                <div class="details">
-                    <img src="images/point-time.png" alt="Just a simple logo, you're not missing anything really" class="details__logo">
-                    <h2 class="heading-secondary">Question</h2> 
-                    <h3 class="heading-tertiary">Answer</h3>
-                </div>
-                <div class="details">
-                    <img src="images/point-place.png" alt="Again a simple logo, still not missing anything" class="details__logo">
-                    <h2 class="heading-secondary">Question</h2> 
-                    <h3 class="heading-tertiary">Answer</h3>
-                </div>
-                <div class="details">
-                    <img src="images/point-address.png" alt="Super interesting logo, nope just kidding" class="details__logo">
-                    <h2 class="heading-secondary">Question</h2> 
-                    <h3 class="heading-tertiary">Answer</h3>
-                </div>            
-            </div>
-            <div class="navbar">
-                <a href="#themeetup" class="navbar__button">The Meet-up</a>
-                <a href="#threeflavors" class="navbar__button">What we do</a>
-                <a href="#flavorflavorflavor" class="navbar__button">Who it's for</a>
-                <a href="#" class="navbar__button">The location</a>
+                <img src="images/skyline-up-side-down.png" alt="upside down skyline" class="header__images--skyline">
+                <img src="images/header-logo.png" alt="header logo with smiling folks and the text learning to code, aw man you're really missing out on this one" class="header__images--logo">
             </div>
         </header>
 
         <main>
-            <section class="welcome infosection-left">
+            <div class="header__meetup">
+                <div class="row">
+                <div class="col1of3">    
+                    <div class="details">
+                        <img src="images/point-time.png" alt="Just a simple logo, you're not missing anything really" class="details__logo">
+                        <h2 class="heading-secondary">When</h2> 
+                        <h3 class="heading-tertiary">Every 2nd Tuesday of the month</h3>
+                    </div>
+                </div> 
+                <div class="col1of3">
+                    <div class="details">
+                        <img src="images/point-place.png" alt="Again a simple logo, still not missing anything" class="details__logo">
+                        <h2 class="heading-secondary">Where</h2> 
+                        <h3 class="heading-tertiary">Codaisseur - Tripolis, building 200</h3>
+                    </div>
+                </div>
+                <div class="col1of3">
+                    <div class="details">
+                        <img src="images/point-address.png" alt="Super interesting logo, nope just kidding" class="details__logo">
+                        <h2 class="heading-secondary">Address</h2> 
+                        <h3 class="heading-tertiary">Burgerweeshuispad 201 - Amsterdam</h3>
+                    </div>
+                </div>   
+                </div> 
+            </div> 
+
+            <div class="navbar">
+                <div class="navbar__items row">
+                    <a href="#themeetup" class="navbar__items--button col1of4">
+                        <span class="fat">The</span> Meet-up</a>
+                    <a href="#threeflavors" class="navbar__items--button col1of4">
+                        <span class="fat">What</span> we do</a>
+                    <a href="#flavorflavorflavor" class="navbar__items--button col1of4">
+                        <span class="fat">Who</span> it's for</a>
+                    <a href="#" class="navbar__items--button col1of4">
+                        <span class="fat">The</span> location</a>
+                </div>
+            </div>
+        
+            <section class="welcome infosection--left">
                 <div class="imgcomp-left">
-                    <div class="yellow-circle">&nbsp;</div>
-                    <img src="" alt="photo of people at the meet-up" class="people-pic1">
-                    <img src="" alt="smaller photo. Turns out people actually go there" class="people-pic2">
+                    <div class="circle3">&nbsp;</div>
+                    <div class="shape-circle2">
+                    <img src="images/MENS.jpg" alt="photo of people at the meet-up" class="people-pic2">
+                    </div>
+                    <div class="shape-circle1">
+                    <img src="images/MENS.jpg" alt="smaller photo. Turns out people actually go there" class="people-pic1">
+                    </div>
                 </div>
                 <div class="infosection__text">
                     <h1 class="heading-primary">Welcome!</h1>
@@ -75,7 +95,7 @@
                 </div>
             </section>
 
-            <section class="themeetup infosection-right">
+            <section class="themeetup infosection--right">
                 <div class="infosection__text">
                     <h1 class="heading-primary">Welcome!</h1>
                     <p>
@@ -93,12 +113,16 @@
                     </div>
                 </div>
                 <div class="imgcomp-right">
-                    <div class="yellow-circle">&nbsp;</div>
-                    <img src="" alt="photo of people. I think." class="people-pic1">
-                    <img src="" alt="smaller photo. They do look human." class="people-pic2">
+                    <div class="circle3">&nbsp;</div>
+                    <div class="shape-circle2">
+                    <img src="images/MENS.jpg" alt="photo of people. I think." class="people-pic2">
+                    </div>
+                    <div class="shape-circle1">
+                    <img src="images/MENS.jpg" alt="smaller photo. They do look human." class="people-pic1">
+                    </div>
                 </div>
             </section>
-            <section class="threeflavors infosection-center">
+            <section class="threeflavors infosection--center">
                 <div class="infosection__text">
                     <h1 class="heading-primary">Welcome!</h1>
                     <p>
@@ -108,22 +132,26 @@
             </section>
 
             <section class="composition">
-                <div class="background-blue">
+                <div class="row">
+                <div class="background-blue col1of3">
                     <div class="big-blue">&nbsp;</div>
                     <div class="small-blue">&nbsp;</div>
                 </div>
-                <img src="images/hexagon-first-time.png" alt="first time, explore and get started" class="firsttime">
-                <div class="background-yellow">
+                <div class="background-yellow col1of3">
                     <img src="images/hexagon-yellow-small.png" alt="small yellow hexagon, like an empty simple logo" class="small-hexagon">
                     <div class="big-yellow">&nbsp;</div>
                     <img src="images/hexagon-yellow-medium.png" alt="slightly bigger yellow hexagon. woohoo" class="medium-hexagon">
                 </div>
-                <img src="images/hexagon-mentorship.png" alt="mentorship, go above and beyond" class="mentorship">
-                <div class="background-green">
+                <div class="background-green col1of3">
                     <div class="small-green">&nbsp;</div>
                     <div class="big-green">&nbsp;</div>
                 </div>
-                <img src="images/hexagon-masterclass.png" alt="masterclass, the mindset of a developer" class="masterclass">
+                </div>
+                <div class="row">
+                    <img src="images/hexagon-first-time.png" alt="first time, explore and get started" class="composition__hexagon col1of3">
+                    <img src="images/hexagon-mentorship.png" alt="mentorship, go above and beyond" class="composition__hexagon col1of3">
+                    <img src="images/hexagon-masterclass.png" alt="masterclass, the mindset of a developer" class="composition__hexagon col1of3">
+                </div>
             </section>
 
             <section class="flavorflavorflavor">
@@ -149,11 +177,15 @@
                     </div>         
             </section>
 
-            <section class="whoweare infosection-left">
+            <section class="whoweare infosection--left">
                 <div class="imgcomp-left">
-                    <div class="yellow-circle">&nbsp;</div>
-                    <img src="images/" alt="photo of even more humanoid creatures" class="people-pic1">
-                    <img src="images/" alt="smaller photo. These folks might be dead though" class="people-pic2">
+                    <div class="circle3">&nbsp;</div>
+                    <div class="shape-circle2">
+                    <img src="images/MENS.jpg" alt="photo of even more humanoid creatures" class="people-pic2">
+                    </div>
+                    <div class="shape-circle1">
+                    <img src="images/MENS.jpg" alt="smaller photo. These folks might be dead though" class="people-pic1">
+                    </div>
                 </div>
                 <div class="infosection__text">
                     <h1 class="heading-primary">Who we are</h1>
@@ -163,7 +195,7 @@
                 </div>
             </section>
 
-            <section class="lovetomeet infosection-right">
+            <section class="lovetomeet infosection--right">
                 <div class="infosection__text">
                     <h1 class="heading-primary">Welcome!</h1>
                     <p>
@@ -177,9 +209,13 @@
                     </div>
                 </div>
                 <div class="imgcomp-right">
-                    <div class="yellow-circle">&nbsp;</div>
-                    <img src="" alt="another people photo. Undead maybe? Could be zombies" class="people-pic1">
-                    <img src="" alt="smaller photo. Or vampires, hard to tell with this size" class="people-pic2">
+                    <div class="circle3">&nbsp;</div>
+                    <div class="shape-circle2">
+                    <img src="images/MENS.jpg" alt="another people photo. Undead maybe? Could be zombies" class="people-pic2">
+                    </div>
+                    <div class="shape-circle1">
+                    <img src="images/MENS.jpg" alt="smaller photo. Or vampires, hard to tell with this size" class="people-pic1">
+                    </div>
                 </div>        
             </section>
         </main>

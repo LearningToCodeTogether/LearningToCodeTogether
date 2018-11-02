@@ -3,7 +3,7 @@
     margin: 0 auto;
 
     &:not(:last-child) {
-        margin-bottom: $gutter-vertical;  // Door margin-bottom hierin te zetten, pas je deze regel toe op alle elementen BEHALVE last-child, vandaar not(uitzondering).
+        margin-bottom: 1rem;  // Door margin-bottom hierin te zetten, pas je deze regel toe op alle elementen BEHALVE last-child, vandaar not(uitzondering).
 
         @include respond(tab-port) {
             margin-bottom: $gutter-vertical-small;
@@ -21,7 +21,7 @@
         float: left;
 
         &:not(:last-child) {
-            margin-right: $gutter-horizontal;
+            margin-right: 0;
 
             @include respond(tab-port) {
                 margin-right: 0;  // bij kleine schermen wordt de gutter nu genegeerd

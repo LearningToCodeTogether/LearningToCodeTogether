@@ -62,3 +62,9 @@ typings/
 
 # Mac onhebbelijkheidjes
 .DS_Store
+
+# gewiste bestanden die vervelend doen
+sass/index.html
+sass/components/_infosection-center.scss
+sass/components/_infosection-left.scss
+sass/components/_infosection-right.scss
