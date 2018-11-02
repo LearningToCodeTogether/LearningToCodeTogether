@@ -126,9 +126,8 @@ body {
     .composition__background--green {
       width: 35%; }
 
-[class^="composition__background"] {
-  display: inline-block;
-  float: left; }
+[class^="composition__background--"] {
+  display: inline-block; }
 
 .big-blue {
   width: 25rem;

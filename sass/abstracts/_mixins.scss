@@ -13,12 +13,12 @@
 }
 
 
-// @mixin circle($size, $color) {
-//     width: $size*1rem;
-//     height: $size*1rem;
-//     background-color: $color;
-//     border-radius: 50%;
-// }
+@mixin circle($size, $color) {
+    width: $size*1rem;
+    height: $size*1rem;
+    background-color: $color;
+    border-radius: 50%;
+}
 
 
 
