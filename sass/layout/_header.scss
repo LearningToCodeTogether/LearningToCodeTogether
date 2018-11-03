@@ -1,10 +1,60 @@
+// <header class="header">            
+// <div class="header__images">
+//     <img src="images/skyline-up-side-down.png" alt="upside down skyline" class="header__images--skyline">
+//     <img src="images/header-logo.png" alt="header logo with smiling folks and the text learning to code, aw man you're really missing out on this one" class="header__images--logo">
+// </div>
+// <div class="header__meetup">
+//     <div class="row">
+//         <div class="col1of3">    
+//             <div class="details">
+//                 <img src="images/point-time.png" alt="Just a simple logo, you're not missing anything really" class="details__logo">
+//                 <h2 class="heading-secondary">When</h2> 
+//                 <h3 class="heading-tertiary">Every 2nd Tuesday of the month</h3>
+//             </div>
+//         </div> 
+//         <div class="col1of3">
+//             <div class="details">
+//                 <img src="images/point-place.png" alt="Again a simple logo, still not missing anything" class="details__logo">
+//                 <h2 class="heading-secondary">Where</h2> 
+//                 <h3 class="heading-tertiary">Codaisseur - Tripolis, building 200</h3>
+//             </div>
+//         </div>
+//         <div class="col1of3">
+//             <div class="details">
+//                 <img src="images/point-address.png" alt="Super interesting logo, nope just kidding" class="details__logo">
+//                 <h2 class="heading-secondary">Address</h2> 
+//                 <h3 class="heading-tertiary">Burgerweeshuispad 201 - Amsterdam</h3>
+//             </div>
+//         </div>   
+//     </div> 
+// </div> 
+
+// <div class="navbar">
+//     <div class="navbar__items row">
+//         <a href="#themeetup" class="navbar__items--button col1of4">
+//             <span class="fat">The</span> Meet-up</a>
+//         <a href="#threeflavors" class="navbar__items--button col1of4">
+//             <span class="fat">What</span> we do</a>
+//         <a href="#flavorflavorflavor" class="navbar__items--button col1of4">
+//             <span class="fat">Who</span> it's for</a>
+//         <a href="#" class="navbar__items--button col1of4">
+//             <span class="fat">The</span> location</a>
+//     </div>
+// </div>
+// </header>
+
+
+
+
+
 .header {
-    width: 60vw;
+    width: 100vw;
     margin: 0 auto;
 
     &__images {
-        width: 100%;
+        width: 60%;
         display: block;
+        transform: translateX(30%);
 
         &--logo {
             width: 50%;

@@ -1,4 +1,59 @@
-// <a href="#" class="button join-meetup">
-// <img src="images/meetup-icon.png" alt="just another boring logo. Be glad you can't see them" class="meetup-icon">
+// <!-- <div class="fixed-join-us-button">
+// <a href="#" class="button">
+//     <img src="images/meetup-icon.png" alt="just a logo, looks like an M" class="meetup-icon">
+//     Join us!
 // </a>
+// <img src="images/itsfree.png" alt="it's free!" class="itsfree">
+// </div> -->
 
+.fixed-join-us-button {
+    position: fixed;
+    z-index: 5;
+    top: 6rem;
+    right: 3rem;
+}
+
+// <div class="join-meetup-button">
+// <a href="#" class="button join-meetup">
+//     <img src="images/meetup-icon.png" alt="just another boring logo. Be glad you can't see them" class="meetup-icon">
+//     <h3 class="tertiary-heading button__text">Join our meet-up now!</h3>
+// </a>
+// <img src="images/itsfree.png" alt="it's free!" class="itsfree">
+// </div>
+
+.join-meetup-button {
+    width: 100%;
+    position: relative;
+}
+
+.button {
+    display: inline-block;
+    height: 4rem;
+    // width: 25rem;
+    background-color: $red;
+    border-radius: 2rem;
+    // position: absolute;
+
+    &__text {
+        margin-top: .3rem;
+        margin-right: 1.8rem;
+        color: white;
+        display: inline-block;
+    }
+}
+
+.meetup-icon {
+    width: 2.3rem;
+    float: left;
+    margin-top: .9rem;
+    margin-left: .9rem;
+    margin-right: 1.3rem;
+}
+
+.itsfree {
+    display: block;
+    position: absolute;
+    width: 9rem;
+    left: 50%;
+    transform: translateX(-50%);
+}

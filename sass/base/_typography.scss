@@ -1,4 +1,5 @@
-body {
+body,
+p {
     font-family: "Lato", sans-serif;
     font-size: $default-font-size;
     font-weight: 400;
@@ -6,7 +7,7 @@ body {
 }
 
 .heading-primary {
-    font-size: 2rem;
+    font-size: 3rem;
     display: block;
     margin-bottom: 1rem;
 }

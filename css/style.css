@@ -56,14 +56,15 @@ body {
   background-color: blue;
   color: yellow; }
 
-body {
+body,
+p {
   font-family: "Lato", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.7; }
 
 .heading-primary {
-  font-size: 2rem;
+  font-size: 3rem;
   display: block;
   margin-bottom: 1rem; }
 
@@ -82,35 +83,96 @@ body {
   color: black;
   text-decoration: none; }
 
-.imgcomp-left {
+.fixed-join-us-button {
+  position: fixed;
+  z-index: 5;
+  top: 6rem;
+  right: 3rem; }
+
+.join-meetup-button {
+  width: 100%;
   position: relative; }
 
-.imgcomp-right {
-  position: relative; }
+.button {
+  display: inline-block;
+  height: 4rem;
+  background-color: red;
+  border-radius: 2rem; }
+  .button__text {
+    margin-top: .3rem;
+    margin-right: 1.8rem;
+    color: white;
+    display: inline-block; }
 
-.shape-circle1 {
-  width: 8rem;
-  height: 8rem;
+.meetup-icon {
+  width: 2.3rem;
+  float: left;
+  margin-top: .9rem;
+  margin-left: .9rem;
+  margin-right: 1.3rem; }
+
+.itsfree {
+  display: block;
+  position: absolute;
+  width: 9rem;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.imgcomp {
+  position: relative;
+  width: 35%;
+  display: table-cell; }
+  .imgcomp--right {
+    right: 1rem; }
+
+.shape__circle1 {
+  width: 13rem;
+  height: 13rem;
+  background-color: purple;
+  border-radius: 50%;
   overflow: hidden;
-  border-radius: 50%; }
+  outline: .5rem solid white;
+  z-index: 3;
+  position: absolute; }
+  .shape__circle1--left {
+    bottom: -2rem;
+    left: 20rem; }
+  .shape__circle1--right {
+    bottom: -1rem;
+    right: 15rem; }
 
 .people-pic1 {
   height: 100%; }
 
-.shape-circle2 {
-  width: 15rem;
-  height: 15rem;
+.shape__circle2 {
+  width: 22rem;
+  height: 22rem;
+  background-color: purple;
+  border-radius: 50%;
   overflow: hidden;
-  border-radius: 50%; }
+  outline: .8rem solid white;
+  z-index: 2;
+  position: absolute; }
+  .shape__circle2--left {
+    bottom: 1rem;
+    left: 8rem; }
+  .shape__circle2--right {
+    bottom: 1rem;
+    right: 4rem; }
 
 .people-pic2 {
   height: 100%; }
 
 .circle3 {
-  width: 30rem;
-  height: 30rem;
+  width: 35rem;
+  height: 35rem;
   background-color: yellow;
-  border-radius: 50%; }
+  border-radius: 50%;
+  position: absolute; }
+  .circle3--left {
+    transform: translateX(-30%); }
+  .circle3--right {
+    transform: translateX(90%); }
 
 .composition {
   width: 100vw; }
@@ -168,6 +230,29 @@ body {
   background-color: lightgreen;
   border-radius: 50%; }
 
+.yellowdot {
+  width: 3rem;
+  height: 3rem;
+  background-color: yellow;
+  border-radius: 50%; }
+
+.infosection {
+  width: 100vw;
+  height: 35rem;
+  display: block;
+  position: relative; }
+  .infosection__content {
+    display: table; }
+
+.infosection__text {
+  width: 65%;
+  height: 100%;
+  display: table-cell;
+  position: relative; }
+  .infosection__text--container {
+    width: 65%;
+    margin-top: 8rem; }
+
 .details {
   display: inline; }
   .details__logo {
@@ -217,11 +302,12 @@ body {
     width: calc(3 * ((100% - 3 * 4rem) / 4) + 2 * 4rem); }
 
 .header {
-  width: 60vw;
+  width: 100vw;
   margin: 0 auto; }
   .header__images {
-    width: 100%;
-    display: block; }
+    width: 60%;
+    display: block;
+    transform: translateX(30%); }
     .header__images--logo {
       width: 50%;
       transform: translateX(50%); }

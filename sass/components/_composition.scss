@@ -4,41 +4,67 @@
 // <img src="" alt="smaller photo. They do look human." class="people-pic1">
 // </div>
 
-.imgcomp-left {
+.imgcomp {
     position: relative;
+    width: 35%;
+    display: table-cell;
+
+    &--right {
+        right: 1rem;
+    }
 }
 
-.imgcomp-right {
-    position: relative;
-}
 
-// <div class="imgcomp-left">
-// <div class="circle3">&nbsp;</div>
-// <div class="shape-circle2">
-// <img src="images/MENS.jpg" alt="photo of people at the meet-up" class="people-pic2">
-// </div>
-// <div class="shape-circle1">
-// <img src="images/MENS.jpg" alt="smaller photo. Turns out people actually go there" class="people-pic1">
-// </div>
+// <div class="imgcomp imgcomp--left">
+// <div class="circle3 circle3-left">&nbsp;</div>
+// <figure class="shape-circle2 circle2-left">
+//     <img src="images/MENS.jpg" alt="photo of people at the meet-up" class="people-pic2">
+// </figure>
+// <figure class="shape-circle1 circle1-left">
+//     <img src="images/MENS.jpg" alt="smaller photo. Turns out people actually go there" class="people-pic1">
+// </figure>
 // </div>
 
-.shape-circle1 {
-    width: 8rem;
-    height: 8rem;
+
+
+.shape__circle1 {
+    @include circle(13,purple);
     overflow: hidden;
-    border-radius: 50%;
+    outline: .5rem solid white;
+    z-index: 3;
+    position: absolute;
+
+    &--left {
+        bottom: -2rem;
+        left: 20rem;
+    }
+
+    &--right {
+        bottom: -1rem;
+        right: 15rem;
+    }
 }
 
 .people-pic1 {
-    height: 100%
-
+    height: 100%;
 }
 
-.shape-circle2 {
-    width: 15rem;
-    height: 15rem;
+.shape__circle2 {
+    @include circle(22,purple);
     overflow: hidden;
-    border-radius: 50%
+    outline: .8rem solid white;
+    z-index: 2;
+    position: absolute;
+
+    &--left {
+        bottom: 1rem;
+        left: 8rem;
+    }
+
+    &--right {
+        bottom: 1rem;
+        right: 4rem;
+    }
 }
 
 .people-pic2 {
@@ -46,10 +72,19 @@
 }
 
 .circle3 {
-    width: 30rem;
-    height: 30rem;
+    width: $big-circle;
+    height: $big-circle;
     background-color: $yellow;
     border-radius: 50%;
+    position: absolute;
+
+    &--left {
+        transform: translateX(-30%);
+    }
+
+    &--right {
+        transform: translateX(90%);
+    }
 }
 
 //GROTE COMPOSITIE
@@ -134,7 +169,11 @@
     @include circle(8,$green);
 }
 
+//die stippen tussen de blokjes in flavorflavorflavor
 
+.yellowdot {
+    @include circle(3,$yellow);
+}
 
 //cirkels hernoemen als background-blue--big, background--green--small etc etc, en dan eronder gooien
 
