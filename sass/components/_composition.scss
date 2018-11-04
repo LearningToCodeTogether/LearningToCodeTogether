@@ -28,15 +28,18 @@
 
 
 .shape__circle1 {
-    @include circle(13,purple);
+    @include circle($circle1,purple);
     overflow: hidden;
-    outline: .5rem solid white;
     z-index: 3;
     position: absolute;
 
+    &--pic {
+        height: 100%;
+    }
+
     &--left {
-        bottom: -2rem;
-        left: 20rem;
+        top: 40rem;
+        left: 35rem;
     }
 
     &--right {
@@ -45,30 +48,25 @@
     }
 }
 
-.people-pic1 {
-    height: 100%;
-}
-
 .shape__circle2 {
-    @include circle(22,purple);
+    @include circle($circle2,purple);
     overflow: hidden;
-    outline: .8rem solid white;
     z-index: 2;
     position: absolute;
 
+    &--pic {
+        height: 100%;
+    }
+
     &--left {
-        bottom: 1rem;
-        left: 8rem;
+        top: 20rem;
+        left: 17rem;
     }
 
     &--right {
         bottom: 1rem;
         right: 4rem;
     }
-}
-
-.people-pic2 {
-    height: 100%;
 }
 
 .circle3 {
@@ -83,7 +81,7 @@
     }
 
     &--right {
-        transform: translateX(90%);
+        //transform: translateX(90%);
     }
 }
 
@@ -149,7 +147,7 @@
 }
 
 .small-blue {
-    @include circle(8,$blue);
+    @include circle($small-circle,$blue);
     display: inline-block;
 }
 
@@ -158,7 +156,7 @@
 }
 
 .small-yellow {
-    @include circle(8,$yellow);
+    @include circle($small-circle,$yellow);
 }
 
 .big-green {
@@ -166,13 +164,13 @@
 }
 
 .small-green {
-    @include circle(8,$green);
+    @include circle($small-circle,$green);
 }
 
 //die stippen tussen de blokjes in flavorflavorflavor
 
 .yellowdot {
-    @include circle(3,$yellow);
+    @include circle($yellowdot,$yellow);
 }
 
 //cirkels hernoemen als background-blue--big, background--green--small etc etc, en dan eronder gooien

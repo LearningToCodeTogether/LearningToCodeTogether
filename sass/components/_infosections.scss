@@ -20,12 +20,17 @@
 
 .infosection {
     width: 100vw;
-    height: $big-circle;
+    // height: $big-circle;
     display: block;
     position: relative;
 
     &__content {
         display: table;
+    }
+
+    &--left, 
+    &--right {
+        height: $big-circle;
     }
 }
 
@@ -41,14 +46,32 @@
     }
 }
 
+// <div class="detailbar">
 // <div class="details">
-//      <img src="images/point-place.png" alt="Again a simple logo, still not missing anything" class="details__logo">
-//      <h2 class="heading-secondary">Question</h2> 
-//      <h3 class="heading-tertiary">Answer</h3>
+//     <div class="details__left"><img src="images/point-place.png" alt="Again a simple logo, still not missing anything" class="details__logo"></div>
+//     <div class="details__right">
+//         <div class="heading-secondary">Question</div> 
+//         <div class="heading-tertiary">Answer</div>
+//     </div>
+// </div>
+// <div class="details">
+//     <div class="details__left"><img src="images/point-place.png" alt="Another simple logo. Yawn." class="details__logo"></div>
+//     <div class="details__right">
+//         <div class="heading-secondary">Question</div> 
+//         <div class="heading-tertiary">Answer</div>
+//     </div>
+// </div>
 // </div>
 
 .details {
-    display: inline;
+
+    &__left {
+        width: 3.5rem;
+    }
+
+    &__right {
+        display: inline-block;
+    }
 
     &__logo {
         width: 3.5rem;
@@ -56,4 +79,8 @@
         margin-top: 1.3rem;
         margin-right: 1.3rem;
     }
-} // details binnen infosection in divs zetten?
+}
+
+.detailbar .details {
+    display: inline-block;
+}
