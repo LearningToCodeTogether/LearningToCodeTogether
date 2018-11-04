@@ -1,87 +1,64 @@
-// <div class="imgcomp-right">
-// <div class="yellow-circle">&nbsp;</div>
-// <img src="" alt="photo of people. I think." class="people-pic2">
-// <img src="" alt="smaller photo. They do look human." class="people-pic1">
-// </div>
-
 .imgcomp {
     position: relative;
     width: 35%;
     display: table-cell;
 
-    &--right {
-        right: 1rem;
-    }
-}
-
-
-// <div class="imgcomp imgcomp--left">
-// <div class="circle3 circle3-left">&nbsp;</div>
-// <figure class="shape-circle2 circle2-left">
-//     <img src="images/MENS.jpg" alt="photo of people at the meet-up" class="people-pic2">
-// </figure>
-// <figure class="shape-circle1 circle1-left">
-//     <img src="images/MENS.jpg" alt="smaller photo. Turns out people actually go there" class="people-pic1">
-// </figure>
-// </div>
-
-
-
-.shape__circle1 {
-    @include circle($circle1,purple);
-    overflow: hidden;
-    z-index: 3;
-    position: absolute;
-
-    &--pic {
-        height: 100%;
+    &__circle1 {
+        @include circle($circle1,purple);
+        overflow: hidden;
+        z-index: 3;
+        position: absolute;
+    
+        &--pic {
+            height: 100%;
+        }
+    
+        &--left {
+            top: 31rem;
+            left: 29rem;
+        }
+    
+        &--right {
+            bottom: -1rem;
+            right: 25rem;
+        }
     }
 
-    &--left {
-        top: 40rem;
-        left: 35rem;
+    &__circle2 {
+        @include circle($circle2,purple);
+        overflow: hidden;
+        z-index: 2;
+        position: absolute;
+    
+        &--pic {
+            height: 100%;
+        }
+    
+        &--left {
+            top: 17rem;
+            left: 15rem;
+        }
+    
+        &--right {
+            bottom: 3rem;
+            right: 10rem;
+        }
     }
 
-    &--right {
-        bottom: -1rem;
-        right: 15rem;
-    }
-}
-
-.shape__circle2 {
-    @include circle($circle2,purple);
-    overflow: hidden;
-    z-index: 2;
-    position: absolute;
-
-    &--pic {
-        height: 100%;
-    }
-
-    &--left {
-        top: 20rem;
-        left: 17rem;
-    }
-
-    &--right {
-        bottom: 1rem;
-        right: 4rem;
-    }
-}
-
-.circle3 {
-    width: $big-circle;
-    height: $big-circle;
-    background-color: $yellow;
-    border-radius: 50%;
-    position: absolute;
-
-    &--left {
-        transform: translateX(-30%);
-    }
-
-    &--right {
-        //transform: translateX(90%);
+    &__circle3 {
+        width: $big-circle;
+        height: $big-circle;
+        background-color: $yellow;
+        border-radius: 50%;
+        position: absolute;
+    
+        &--left {
+            transform: translateX(-30%);
+        }
+    
+        &--right {
+            right: -18rem;
+        }
     }
 }
 
@@ -113,6 +90,9 @@
 
 .composition {
     width: 100vw;
+    height: $big-circle;            //ff tijdelijk
+    margin-top: 20rem;              // ^
+    margin-bottom: 40rem;           // ^
 
     &__hexagon {
         width: 15rem;
@@ -124,7 +104,7 @@
         z-index: -1;
 
         &--blue {
-            width: 35%;
+            width: 34%;
         }
 
         &--yellow {
@@ -132,7 +112,7 @@
         }
 
         &--green {
-            width: 35%;
+            width: 34%;
         }
     }
 }
@@ -142,17 +122,19 @@
 }
 
 .big-blue {
-    @include circle(42,$blue);
-    display: inline-block;
+    @include circle(42rem,$blue);
+    display: block;
+    left: 90rem;
+    top: 20rem;
 }
 
 .small-blue {
     @include circle($small-circle,$blue);
-    display: inline-block;
+    display: block;
 }
 
 .big-yellow {
-    @include circle(20,$yellow);
+    @include circle(20rem,$yellow);
 }
 
 .small-yellow {
@@ -160,7 +142,7 @@
 }
 
 .big-green {
-    @include circle(30,$green);
+    @include circle(30rem,$green);
 }
 
 .small-green {

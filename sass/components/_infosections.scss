@@ -1,67 +1,24 @@
-// <section class="whoweare infosection--left">
-// <div class="imgcomp imgcomp-left">
-//     <div class="circle3 circle3-left">&nbsp;</div>
-//     <div class="shape-circle2 circle2-left">
-//     <img src="images/MENS.jpg" alt="photo of even more humanoid creatures" class="people-pic2">
-//     </div>
-//     <div class="shape-circle1 circle1-left">
-//     <img src="images/MENS.jpg" alt="smaller photo. These folks might be dead though" class="people-pic1">
-//     </div>
-// </div>
-// <div class="infosection__text infosection__text--left">
-// <div class="infosection__text--container">
-//     <h1 class="heading-primary">Who we are</h1>
-//     <p>
-//         Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
-//     </p>
-// </div>
-// </section>
+.hoofd {                          //   + links/rechts
+    height: $big-circle;
+    display: table;
 
-
-.infosection {
-    width: 100vw;
-    // height: $big-circle;
-    display: block;
-    position: relative;
-
-    &__content {
-        display: table;
-    }
-
-    &--left, 
-    &--right {
-        height: $big-circle;
-    }
-}
-
-.infosection__text {
-    width: 65%;
-    height: 100%;
-    display: table-cell;
-    position: relative;
-
-    &--container {
+    &__container {
         width: 65%;
-        margin-top: 8rem;
+        height: 100%;
+        display: table-cell;
+        position: relative;    
+    }
+
+    &__content {            // pas hier is links/rechts weer belangrijk; dit gaat over het positioneren van het tekstblok in de bredere kolom van hoofd
+        width: 65%;
+        margin-top: 18rem;
+        margin-left: 8rem;
+
+        // &--left {}
+
+        // &--right {}
     }
 }
-
-// <div class="detailbar">
-// <div class="details">
-//     <div class="details__left"><img src="images/point-place.png" alt="Again a simple logo, still not missing anything" class="details__logo"></div>
-//     <div class="details__right">
-//         <div class="heading-secondary">Question</div> 
-//         <div class="heading-tertiary">Answer</div>
-//     </div>
-// </div>
-// <div class="details">
-//     <div class="details__left"><img src="images/point-place.png" alt="Another simple logo. Yawn." class="details__logo"></div>
-//     <div class="details__right">
-//         <div class="heading-secondary">Question</div> 
-//         <div class="heading-tertiary">Answer</div>
-//     </div>
-// </div>
-// </div>
 
 .details {
 
@@ -84,3 +41,45 @@
 .detailbar .details {
     display: inline-block;
 }
+
+
+
+
+// <section class="threeflavors infosection--center">
+// <div class="infosection__text">
+//     <div class="infosection__text--container">
+//         <h1 class="heading-primary">Welcome!</h1>
+//         <p>
+//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+//         </p>
+//     </div>
+// </div>    
+// </section>
+
+
+
+// <section class="flavorflavorflavor">
+// <!-- <div class="infosection__text">     -->
+// <div class="infosection__text--container">
+//         <h1 class="heading-primary">First timers</h1>
+//         <p>
+//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+//         </p>
+//     </div>
+//     <div class="yellowdot">&nbsp;</div>
+//     <div class="infosection__text">
+//     <div class="infosection__text--container">
+//         <h1 class="heading-primary">Mentorship</h1>
+//         <p>
+//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+//         </p>
+//     </div>
+//     <div class="yellowdot">&nbsp;</div>
+//     <!-- <div class="infosection__text"> -->
+//     <div class="infosection__text--container">
+//         <h1 class="heading-primary">Masterclass</h1>
+//         <p>
+//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+//         </p>
+//     </div>         
+// </section>
