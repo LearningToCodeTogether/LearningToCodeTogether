@@ -2,6 +2,14 @@
     height: $big-circle;
     display: table;
 
+    &:not(:first-child) {
+        margin-top: 10rem;
+    }
+
+    &:first-child {
+        margin-top: 5rem;
+    }
+
     &__container {
         width: 65%;
         height: 100%;
@@ -83,3 +91,21 @@
 //         </p>
 //     </div>         
 // </section>
+
+
+.infosection__container {
+    width: 60%;
+    //left: 50%;
+    transform: translateX(45%);
+    display: block;
+}
+
+.threeflavors__container {
+    width: 50%;
+    transform: translateX(50%);
+    margin-top: 10rem;
+
+    & p, h1 {
+        text-align: center;
+    }
+}

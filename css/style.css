@@ -171,8 +171,8 @@ p {
 .composition {
   width: 100vw;
   height: 48rem;
-  margin-top: 20rem;
-  margin-bottom: 40rem; }
+  margin-top: 10rem;
+  margin-bottom: 30rem; }
   .composition__hexagon {
     width: 15rem; }
   .composition__background {
@@ -230,14 +230,20 @@ p {
   border-radius: 50%; }
 
 .yellowdot {
-  width: 5rem;
-  height: 5rem;
+  width: 2rem;
+  height: 2rem;
   background-color: yellow;
-  border-radius: 50%; }
+  border-radius: 50%;
+  margin: 3.5rem 0;
+  margin-left: 80rem; }
 
 .hoofd {
   height: 48rem;
   display: table; }
+  .hoofd:not(:first-child) {
+    margin-top: 10rem; }
+  .hoofd:first-child {
+    margin-top: 5rem; }
   .hoofd__container {
     width: 65%;
     height: 100%;
@@ -262,6 +268,18 @@ p {
 
 .detailbar .details {
   display: inline-block; }
+
+.infosection__container {
+  width: 60%;
+  transform: translateX(45%);
+  display: block; }
+
+.threeflavors__container {
+  width: 50%;
+  transform: translateX(50%);
+  margin-top: 10rem; }
+  .threeflavors__container p, .threeflavors__container h1 {
+    text-align: center; }
 
 .footer {
   width: 100vw;

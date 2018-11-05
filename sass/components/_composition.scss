@@ -91,8 +91,8 @@
 .composition {
     width: 100vw;
     height: $big-circle;            //ff tijdelijk
-    margin-top: 20rem;              // ^
-    margin-bottom: 40rem;           // ^
+    margin-top: 10rem;              // ^
+    margin-bottom: 30rem;           // ^
 
     &__hexagon {
         width: 15rem;
@@ -153,6 +153,8 @@
 
 .yellowdot {
     @include circle($yellowdot,$yellow);
+    margin: 3.5rem 0;
+    margin-left: 80rem;
 }
 
 //cirkels hernoemen als background-blue--big, background--green--small etc etc, en dan eronder gooien
