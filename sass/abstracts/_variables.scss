@@ -1,7 +1,7 @@
-$yellow: yellow;
-$blue: blue;
-$green: lightgreen;
-$red: red;
+$yellow: #FFDA60;
+$blue: #4B90E2;
+$green: #B8E986;
+$red: #F64061;
 
 $big-circle: 48rem;
 $circle2: 28rem;
@@ -16,18 +16,16 @@ $grid-width: 114rem;
 $gutter-vertical: 8rem;
 $gutter-vertical-small: 6rem;
 $gutter-horizontal: 4rem;
+$body-padding: 6rem;
 
 
 // okee, nog doen: 
 
-// -wtf is er met de breedte aan de hand??
-// -die witte randen langs de foto's in imcomp - kan dat met een :after of moet dat een aparte div worden?
-// -de juiste lettertypes en kleuren
 // -eea aan marges standaardiseren, variabelen gebruiken
 // -kijken wat er nog meer te variabelen valt
 
 // -smartphone- en tabletversies..........
 
 // Danny...?
-// -dat skylineplaatje in de footer is niet die in het voorbeeldplaatje (voorbeeld is zelfde als header maar op zijn kop, dit plaatje is smaller en hoger)
-// -ontbrekend teamplaatje voor footer
+// -de juiste lettertypes
+// -het ontbrekende plaatje voor het footerwerk
