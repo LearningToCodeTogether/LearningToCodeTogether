@@ -1,3 +1,4 @@
+// VIER KLEINE COMPOSITIES
 .imgcomp {
     position: relative;
     width: 35%;
@@ -62,12 +63,12 @@
     }
 }
 
-//GROTE COMPOSITIE
 
+//GROTE COMPOSITIE
 
 .composition {
     width: 100vw;
-    height: $big-circle;            //ff tijdelijk?
+    //height: $big-circle;            //ff tijdelijk?
     margin-top: 10rem;
     margin-bottom: 10rem;
     position: relative;
@@ -84,22 +85,12 @@
         }
     }
 
-    // &__blue,
-    // &__yellow,
-    // &__green {
-    //     //width: 100%;
-    //     // float: left;
-    //     // position: relative;
-    // }
-
     &__backgroundelement {
-        //display: inline-block;
         position: absolute;
         z-index: -1;
     }
 
     &__blue {
-        //width: 34%;
 
         &--big {
             @include circle(50rem,$blue);
@@ -115,7 +106,6 @@
     }
 
     &__yellow {
-        //width: 30%;
 
         &--big {
             @include circle(24rem,$yellow);
@@ -143,7 +133,6 @@
     }
 
     &__green {
-        //width: 34%;
 
         &--big {
             @include circle(30rem,$green);
