@@ -132,6 +132,7 @@ p {
     height: 15rem;
     background-color: purple;
     border-radius: 50%;
+    border: 5px solid white;
     overflow: hidden;
     z-index: 3;
     position: absolute; }
@@ -148,6 +149,7 @@ p {
     height: 28rem;
     background-color: purple;
     border-radius: 50%;
+    border: 8px solid white;
     overflow: hidden;
     z-index: 2;
     position: absolute; }
