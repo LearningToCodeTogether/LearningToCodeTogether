@@ -63,91 +63,103 @@
 }
 
 //GROTE COMPOSITIE
-// <section class="composition">
-// <div class="row">
-// <div class="background-blue col1of3">
-//     <div class="big-blue">&nbsp;</div>
-//     <div class="small-blue">&nbsp;</div>
-// </div>
-// <div class="background-yellow col1of3">
-//     <img src="images/hexagon-yellow-small.png" alt="small yellow hexagon, like an empty simple logo" class="small-hexagon">
-//     <div class="big-yellow">&nbsp;</div>
-//     <img src="images/hexagon-yellow-medium.png" alt="slightly bigger yellow hexagon. woohoo" class="medium-hexagon">
-// </div>
-// <div class="background-green col1of3">
-//     <div class="small-green">&nbsp;</div>
-//     <div class="big-green">&nbsp;</div>
-// </div>
-// </div>
-// <div class="row">
-//     <img src="images/hexagon-first-time.png" alt="first time, explore and get started" class="composition__hexagon col1of3">
-//     <img src="images/hexagon-mentorship.png" alt="mentorship, go above and beyond" class="composition__hexagon col1of3">
-//     <img src="images/hexagon-masterclass.png" alt="masterclass, the mindset of a developer" class="composition__hexagon col1of3">
-// </div>
-// </section>
-
 
 
 .composition {
     width: 100vw;
-    height: $big-circle;            //ff tijdelijk
-    margin-top: 10rem;              // ^
-    margin-bottom: 30rem;           // ^
+    height: $big-circle;            //ff tijdelijk?
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    position: relative;
 
     &__hexagon {
-        width: 15rem;
+        width: 34rem;
+
+        &--left {
+            margin-left: 20rem;
+        }
+
+        &--middle {
+            margin: 0 2rem 2rem 2rem;
+        }
     }
 
-    &__background {         //alle elementen hierin hebben een hoogte > clearfix??
-        width: 100%;
-        height: 25rem;
+    // &__blue,
+    // &__yellow,
+    // &__green {
+    //     //width: 100%;
+    //     // float: left;
+    //     // position: relative;
+    // }
+
+    &__backgroundelement {
+        //display: inline-block;
+        position: absolute;
         z-index: -1;
+    }
 
-        &--blue {
-            width: 34%;
+    &__blue {
+        //width: 34%;
+
+        &--big {
+            @include circle(50rem,$blue);
+            left: -14rem;
+            top: -4rem;        
         }
 
-        &--yellow {
-            width: 30%;
+        &--small {
+            @include circle($small-circle,$blue);
+            left: 40rem;
+            top: 30rem;
+        }
+    }
+
+    &__yellow {
+        //width: 30%;
+
+        &--big {
+            @include circle(24rem,$yellow);
+            left: 61rem;
+            top: -5rem;        
         }
 
-        &--green {
-            width: 34%;
+        &--small {
+            @include circle($small-circle,$yellow);
+            left: 62rem;
+            top: 30rem;        
+        }
+
+        &--hexagon1 {
+            width: 3rem;
+            left: 54rem;
+            top: 2rem;        
+        }
+
+        &--hexagon2 {
+            width: 5rem;
+            left: 89rem;
+            top: 2rem;        
+        }
+    }
+
+    &__green {
+        //width: 34%;
+
+        &--big {
+            @include circle(30rem,$green);
+            left: 121rem;
+            top: 8rem;        
+        }
+    
+        &--small {
+            @include circle($small-circle,$green);
+            left: 99rem;
+            top: 2rem;        
         }
     }
 }
 
-[class^="composition__background--"] {
-    display: inline-block;
-}
 
-.big-blue {
-    @include circle(42rem,$blue);
-    display: block;
-    left: 90rem;
-    top: 20rem;
-}
-
-.small-blue {
-    @include circle($small-circle,$blue);
-    display: block;
-}
-
-.big-yellow {
-    @include circle(20rem,$yellow);
-}
-
-.small-yellow {
-    @include circle($small-circle,$yellow);
-}
-
-.big-green {
-    @include circle(30rem,$green);
-}
-
-.small-green {
-    @include circle($small-circle,$green);
-}
 
 //die stippen tussen de blokjes in flavorflavorflavor
 
@@ -156,9 +168,3 @@
     margin: 3.5rem 0;
     margin-left: 80rem;
 }
-
-//cirkels hernoemen als background-blue--big, background--green--small etc etc, en dan eronder gooien
-
-//is hier een mogelijkheid voor een small circle placeholder, of...?
-
-//hmmmm...

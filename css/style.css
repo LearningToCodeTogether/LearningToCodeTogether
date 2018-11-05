@@ -172,62 +172,67 @@ p {
   width: 100vw;
   height: 48rem;
   margin-top: 10rem;
-  margin-bottom: 30rem; }
+  margin-bottom: 10rem;
+  position: relative; }
   .composition__hexagon {
-    width: 15rem; }
-  .composition__background {
-    width: 100%;
-    height: 25rem;
+    width: 34rem; }
+    .composition__hexagon--left {
+      margin-left: 20rem; }
+    .composition__hexagon--middle {
+      margin: 0 2rem 2rem 2rem; }
+  .composition__backgroundelement {
+    position: absolute;
     z-index: -1; }
-    .composition__background--blue {
-      width: 34%; }
-    .composition__background--yellow {
-      width: 30%; }
-    .composition__background--green {
-      width: 34%; }
-
-[class^="composition__background--"] {
-  display: inline-block; }
-
-.big-blue {
-  width: 42rem;
-  height: 42rem;
-  background-color: blue;
-  border-radius: 50%;
-  display: block;
-  left: 90rem;
-  top: 20rem; }
-
-.small-blue {
-  width: 8rem;
-  height: 8rem;
-  background-color: blue;
-  border-radius: 50%;
-  display: block; }
-
-.big-yellow {
-  width: 20rem;
-  height: 20rem;
-  background-color: yellow;
-  border-radius: 50%; }
-
-.small-yellow {
-  width: 8rem;
-  height: 8rem;
-  background-color: yellow;
-  border-radius: 50%; }
-
-.big-green {
-  width: 30rem;
-  height: 30rem;
-  background-color: lightgreen;
-  border-radius: 50%; }
-
-.small-green {
-  width: 8rem;
-  height: 8rem;
-  background-color: lightgreen;
-  border-radius: 50%; }
+  .composition__blue--big {
+    width: 50rem;
+    height: 50rem;
+    background-color: blue;
+    border-radius: 50%;
+    left: -14rem;
+    top: -4rem; }
+  .composition__blue--small {
+    width: 9rem;
+    height: 9rem;
+    background-color: blue;
+    border-radius: 50%;
+    left: 40rem;
+    top: 30rem; }
+  .composition__yellow--big {
+    width: 24rem;
+    height: 24rem;
+    background-color: yellow;
+    border-radius: 50%;
+    left: 61rem;
+    top: -5rem; }
+  .composition__yellow--small {
+    width: 9rem;
+    height: 9rem;
+    background-color: yellow;
+    border-radius: 50%;
+    left: 62rem;
+    top: 30rem; }
+  .composition__yellow--hexagon1 {
+    width: 3rem;
+    left: 54rem;
+    top: 2rem; }
+  .composition__yellow--hexagon2 {
+    width: 5rem;
+    left: 89rem;
+    top: 2rem; }
+  .composition__green--big {
+    width: 30rem;
+    height: 30rem;
+    background-color: lightgreen;
+    border-radius: 50%;
+    left: 121rem;
+    top: 8rem; }
+  .composition__green--small {
+    width: 9rem;
+    height: 9rem;
+    background-color: lightgreen;
+    border-radius: 50%;
+    left: 99rem;
+    top: 2rem; }
 
 .yellowdot {
   width: 2rem;
