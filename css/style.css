@@ -47,7 +47,7 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 3rem;
+  padding: 0rem 3rem;
   overflow-x: hidden; }
   @media only screen and (max-width: 56.25em) {
     body {
@@ -366,13 +366,14 @@ p {
     margin-top: 1rem; }
 
 .navbar {
-  width: calc(100vw - $body-padding);
+  width: calc(100vw - 6rem);
   height: 3rem;
   display: block;
   margin-top: 2rem;
   border-top: .1rem solid grey;
   border-bottom: .1rem solid grey; }
   .navbar__items {
-    text-align: center; }
+    text-align: center;
+    cursor: pointer; }
     .navbar__items--button {
       display: inline-block; }
