@@ -11,6 +11,9 @@
         &--skyline {
         width: 100%;
         margin-bottom: 1rem;
+        transform: rotate(180deg) scaleX(-1);
+        -ms-filter: FlipH;
+        filter: FlipH;
         }
 
         &--heading {

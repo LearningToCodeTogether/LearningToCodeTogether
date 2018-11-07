@@ -13,7 +13,7 @@
 
 
 .navbar {
-    width: 100vw;
+    width: calc(100vw - #{$body-padding});
     height: 3rem;
     display: block;
     margin-top: 2rem;
@@ -23,6 +23,7 @@
 
     &__items {                  //de container binnen de balk
         text-align: center;
+        cursor: pointer;
 
         &--button {             // de individuele dingen. Links. Klikbare gevallen.
             display: inline-block;

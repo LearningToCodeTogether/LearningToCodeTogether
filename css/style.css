@@ -47,14 +47,15 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 3rem; }
+  padding: 0rem 3rem;
+  overflow-x: hidden; }
   @media only screen and (max-width: 56.25em) {
     body {
       padding: 0; } }
 
 ::selection {
-  background-color: blue;
-  color: yellow; }
+  background-color: #4B90E2;
+  color: #FFDA60; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -88,7 +89,7 @@ p {
 .button {
   display: inline-block;
   height: 4rem;
-  background-color: red;
+  background-color: #F64061;
   border-radius: 2rem; }
   .button__text {
     margin-top: .3rem;
@@ -122,6 +123,7 @@ p {
   left: 13rem; }
 
 .imgcomp {
+  overflow-x: visible;
   position: relative;
   width: 35%;
   display: table-cell; }
@@ -130,6 +132,7 @@ p {
     height: 15rem;
     background-color: purple;
     border-radius: 50%;
+    border: 5px solid white;
     overflow: hidden;
     z-index: 3;
     position: absolute; }
@@ -146,6 +149,7 @@ p {
     height: 28rem;
     background-color: purple;
     border-radius: 50%;
+    border: 8px solid white;
     overflow: hidden;
     z-index: 2;
     position: absolute; }
@@ -160,7 +164,7 @@ p {
   .imgcomp__circle3 {
     width: 48rem;
     height: 48rem;
-    background-color: yellow;
+    background-color: #FFDA60;
     border-radius: 50%;
     position: absolute; }
     .imgcomp__circle3--left {
@@ -169,14 +173,15 @@ p {
       right: -18rem; }
 
 .composition {
-  width: 100vw;
+  overflow-x: visible;
+  width: calc(100vw - $body-padding);
   margin-top: 10rem;
   margin-bottom: 10rem;
   position: relative; }
   .composition__hexagon {
     width: 34rem; }
     .composition__hexagon--left {
-      margin-left: 20rem; }
+      margin-left: 17rem; }
     .composition__hexagon--middle {
       margin: 0 2rem 2rem 2rem; }
   .composition__backgroundelement {
@@ -185,28 +190,28 @@ p {
   .composition__blue--big {
     width: 50rem;
     height: 50rem;
-    background-color: blue;
+    background-color: #4B90E2;
     border-radius: 50%;
     left: -14rem;
     top: -4rem; }
   .composition__blue--small {
     width: 9rem;
     height: 9rem;
-    background-color: blue;
+    background-color: #4B90E2;
     border-radius: 50%;
     left: 40rem;
     top: 30rem; }
   .composition__yellow--big {
     width: 24rem;
     height: 24rem;
-    background-color: yellow;
+    background-color: #FFDA60;
     border-radius: 50%;
     left: 61rem;
     top: -5rem; }
   .composition__yellow--small {
     width: 9rem;
     height: 9rem;
-    background-color: yellow;
+    background-color: #FFDA60;
     border-radius: 50%;
     left: 62rem;
     top: 30rem; }
@@ -221,14 +226,14 @@ p {
   .composition__green--big {
     width: 30rem;
     height: 30rem;
-    background-color: lightgreen;
+    background-color: #B8E986;
     border-radius: 50%;
     left: 121rem;
     top: 8rem; }
   .composition__green--small {
     width: 9rem;
     height: 9rem;
-    background-color: lightgreen;
+    background-color: #B8E986;
     border-radius: 50%;
     left: 99rem;
     top: 2rem; }
@@ -236,7 +241,7 @@ p {
 .yellowdot {
   width: 2rem;
   height: 2rem;
-  background-color: yellow;
+  background-color: #FFDA60;
   border-radius: 50%;
   margin: 3.5rem 0;
   margin-left: 80rem; }
@@ -295,7 +300,10 @@ p {
     margin-top: 10rem; }
     .footer__container--skyline {
       width: 100%;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      transform: rotate(180deg) scaleX(-1);
+      -ms-filter: FlipH;
+      filter: FlipH; }
     .footer__container--heading {
       transform: translateX(45%);
       margin-top: 3rem;
@@ -360,13 +368,14 @@ p {
     margin-top: 1rem; }
 
 .navbar {
-  width: 100vw;
+  width: calc(100vw - 6rem);
   height: 3rem;
   display: block;
   margin-top: 2rem;
   border-top: .1rem solid grey;
   border-bottom: .1rem solid grey; }
   .navbar__items {
-    text-align: center; }
+    text-align: center;
+    cursor: pointer; }
     .navbar__items--button {
       display: inline-block; }
