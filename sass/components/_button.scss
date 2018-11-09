@@ -40,3 +40,34 @@
     position: relative;  
     left: 13rem;
 }
+
+
+// @include respond(phone) {      // nog veel mee kloten
+//     .fixed-join-us-button {
+//         z-index: 5;
+//         top: 0;
+//         right: 0;
+
+//         & button {
+//             display: block;
+//             width: $page-width;
+//             height: 4rem;
+//             background-color: $red;
+//             border-radius: none;
+        
+//             &__text {
+//                 margin-top: .3rem;
+//                 margin-right: 1.8rem;
+//                 color: white;
+//                 display: inline-block;
+//             }
+//         }
+//     }
+    
+// }
+
+@include respond(phone) {
+    .fixed-join-us-button {
+        display: none;
+    }
+}

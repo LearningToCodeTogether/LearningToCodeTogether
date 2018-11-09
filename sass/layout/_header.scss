@@ -1,54 +1,5 @@
-// <header class="header">            
-// <div class="header__images">
-//     <img src="images/skyline-up-side-down.png" alt="upside down skyline" class="header__images--skyline">
-//     <img src="images/header-logo.png" alt="header logo with smiling folks and the text learning to code, aw man you're really missing out on this one" class="header__images--logo">
-// </div>
-// <div class="header__meetup">
-//     <div class="row">
-//         <div class="col1of3">    
-//             <div class="details">
-//                 <img src="images/point-time.png" alt="Just a simple logo, you're not missing anything really" class="details__logo">
-//                 <h2 class="heading-secondary">When</h2> 
-//                 <h3 class="heading-tertiary">Every 2nd Tuesday of the month</h3>
-//             </div>
-//         </div> 
-//         <div class="col1of3">
-//             <div class="details">
-//                 <img src="images/point-place.png" alt="Again a simple logo, still not missing anything" class="details__logo">
-//                 <h2 class="heading-secondary">Where</h2> 
-//                 <h3 class="heading-tertiary">Codaisseur - Tripolis, building 200</h3>
-//             </div>
-//         </div>
-//         <div class="col1of3">
-//             <div class="details">
-//                 <img src="images/point-address.png" alt="Super interesting logo, nope just kidding" class="details__logo">
-//                 <h2 class="heading-secondary">Address</h2> 
-//                 <h3 class="heading-tertiary">Burgerweeshuispad 201 - Amsterdam</h3>
-//             </div>
-//         </div>   
-//     </div> 
-// </div> 
-
-// <div class="navbar">
-//     <div class="navbar__items row">
-//         <a href="#themeetup" class="navbar__items--button col1of4">
-//             <span class="fat">The</span> Meet-up</a>
-//         <a href="#threeflavors" class="navbar__items--button col1of4">
-//             <span class="fat">What</span> we do</a>
-//         <a href="#flavorflavorflavor" class="navbar__items--button col1of4">
-//             <span class="fat">Who</span> it's for</a>
-//         <a href="#" class="navbar__items--button col1of4">
-//             <span class="fat">The</span> location</a>
-//     </div>
-// </div>
-// </header>
-
-
-
-
-
 .header {
-    width: 100vw;
+    width: $page-width;
     margin: 0 auto;
 
     &__images {
@@ -61,14 +12,87 @@
             transform: translateX(50%);
         }
 
+        &--logo-phone {
+            display: none;
+        }
+
         &--skyline {
             width: 100%;
             margin-bottom: 1rem;
         }
+
+        &--skyline-phone {
+            display: none;
+        }
+
+        &--people {
+            display: none;
+        }
     }
 
     &__meetup {
-        width: 100vw;
+        width: $page-width;
         margin-top: 1rem;
     }
+}
+
+@include respond(phone) {
+    .header {
+    
+        &__images {
+            width: 100%;
+            display: block;
+            transform: translateX(0);
+    
+            &--logo {
+                display: none;
+            }
+
+            &--logo-phone {
+                display: block;
+                width: 50%;
+                transform: translateX(50%);
+            }
+    
+            &--skyline {
+                display: none;
+            }
+
+            &--skyline-phone {
+                display: block;
+                margin-top: 4rem;
+                width: 100%;
+                transform: rotate(180deg) scaleX(-1);
+                -ms-filter: FlipH;
+                filter: FlipH;        
+            }
+    
+            &--people {
+                display: block;
+                width: 50%;
+                transform: translateX(50%);
+                margin-top: 4rem;
+            }
+        }
+    
+        &__meetup {
+            margin-top: 4rem;
+        }
+    }
+
+    .header__meetup .row {
+        margin: 0 auto;  // hmmm... moet eigenlijk wat verder naar rechts
+        background-color: rgba($blue,.03);
+        border: 1px solid rgba($blue,.1);
+        padding: 2rem 0rem 2rem 7rem; 
+
+        & [class^="col"]:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    // .header__meetup .row [class^="col"]:not(:last-child) {
+    //     margin-bottom: 3rem;
+    // }
+    
 }

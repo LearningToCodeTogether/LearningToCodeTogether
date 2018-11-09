@@ -1,16 +1,23 @@
 .footer {
-    width: 100vw;
+    width: $page-width;
     margin: 0 auto;
 
     &__container {
         width: 60%;
         display: block;
-        transform: translateX(30%);
+        transform: translateX(32%);
         margin-top: 10rem;
 
         &--skyline {
         width: 100%;
         margin-bottom: 1rem;
+        transform: rotate(180deg) scaleX(-1);
+        -ms-filter: FlipH;
+        filter: FlipH;
+        }
+
+        &--skyline-phone {
+            display: none;
         }
 
         &--heading {
@@ -22,5 +29,36 @@
 
         &--teampic {}
     }
+}
 
+@include respond(phone) {
+    .footer {
+        width: $page-width;
+        margin: 0 auto;
+    
+        &__container {
+            width: 100%;
+            display: block;
+            transform: translateX(0);
+            margin-top: 10rem;
+    
+            &--skyline {
+                display: none;
+            }
+
+            &--skyline-phone {
+                display: block;
+                width: 100%;
+            }
+    
+            &--heading {
+                display: none;
+            }
+    
+            &--teampic {
+                display: none;
+            }
+        }
+    }
+    
 }

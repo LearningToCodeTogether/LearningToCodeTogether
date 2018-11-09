@@ -13,16 +13,21 @@
 
 
 .navbar {
-    width: 100vw;
+    width: $page-width;
     height: 3rem;
     display: block;
     margin-top: 2rem;
     border-top: .1rem solid grey;
     border-bottom: .1rem solid grey;
 
+    @include respond(phone) {
+        display: none;
+    }
+
 
     &__items {                  //de container binnen de balk
         text-align: center;
+        cursor: pointer;
 
         &--button {             // de individuele dingen. Links. Klikbare gevallen.
             display: inline-block;

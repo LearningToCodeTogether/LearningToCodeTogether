@@ -23,8 +23,21 @@
 
         <header class="header">            
             <div class="header__images">
-                <img src="images/skyline-up-side-down.png" alt="upside down skyline" class="header__images--skyline">
-                <img src="images/header-logo.png" alt="header logo with smiling folks and the text learning to code, aw man you're really missing out on this one" class="header__images--logo">
+                <img src="images/skyline-up-side-down.png" alt="upside down skyline" class="header__images--skyline ">
+                <img src="images/skyline.png" alt="upside down skyline" class="header__images--skyline-phone">
+                <img src="images/header-logo.png" alt="header logo with smiling folks and the text learning to code, aw man you're really missing out on this one"  class="header__images--logo">
+                
+                <img src="images/logo.png" alt="header logo with smiling folks and the text learning to code, aw man you're really missing out on this one"  class="header__images--logo-phone">
+                <img src="images/people-group.png" alt="group of smiling people" class="header__images--people">
+                
+                
+                <!-- <source srcset="images/logo.png"
+                    media="(max-width:37.5em)">
+                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo" src="img/logo-green-2x.png"> -->
+
+
+
+
             </div>
             <div class="header__meetup">
                 <div class="row">
@@ -54,11 +67,11 @@
     
             <div class="navbar">
                 <div class="navbar__items row">
-                    <a href="#themeetup" class="navbar__items--button col1of4">
+                    <a onclick='smoothScrolling("#themeetup")' class="navbar__items--button col1of4">
                         <span class="fat">The</span> Meet-up</a>
-                    <a href="#threeflavors" class="navbar__items--button col1of4">
+                    <a onclick='smoothScrolling("#threeflavors")' class="navbar__items--button col1of4">
                         <span class="fat">What</span> we do</a>
-                    <a href="#flavorflavorflavor" class="navbar__items--button col1of4">
+                    <a onclick='smoothScrolling("#flavorflavorflavor")' class="navbar__items--button col1of4">
                         <span class="fat">Who</span> it's for</a>
                     <a href="#" class="navbar__items--button col1of4">
                         <span class="fat">The</span> location</a>
@@ -68,7 +81,7 @@
 
         <main>
         
-            <section class="welcome hoofd">
+            <section class="hoofd" id="welcome">
                 <div class="imgcomp">
                     <div class="imgcomp__circle3 imgcomp__circle3--left">&nbsp;</div>
                     <div class="imgcomp__circle2 imgcomp__circle2--left">
@@ -104,7 +117,7 @@
                 </div> 
             </section>
 
-            <section class="themeetup hoofd">
+            <section id="themeetup" class="hoofd">
                 <div class="hoofd__container">
                     <div class="hoofd__content hoofd__content--right">
                         <h1 class="heading-primary">The murder plot</h1>
@@ -140,7 +153,7 @@
                 </div>
             </section>
 
-            <section class="threeflavors">
+            <section id="threeflavors" class="threeflavors">
                 <div class="threeflavors__container">
                     <h1 class="heading-primary">Three flavors of cannibalism</h1>
                     <p>
@@ -163,7 +176,7 @@
                     <img src="images/hexagon-masterclass.png" alt="masterclass, the mindset of a developer" class="composition__hexagon composition__hexagon--right">
             </section>
 
-            <section class="flavorflavorflavor">
+            <section id="flavorflavorflavor" class="flavorflavorflavor">
                 <div class="infosection__container">
                     <h1 class="heading-primary">First timers</h1>
                     <p>
@@ -236,10 +249,18 @@
 
         <footer class="footer">
             <div class="footer__container">
-                <img src="images/skyline.png" alt="grey skyline of a city" class="footer__container--skyline">
+                <img src="images/skyline-up-side-down.png" alt="skyline" class="footer__container--skyline">
                 <h2 class="heading-secondary footer__container--heading">Our team</h2>
                 <div class="footer__container--teampic">ONTBREKEND PLAATJE</div>
+                <img src="images/skyline.png" alt="skyline" class="footer__container--skyline-phone">
             </div>
         </footer>
     </body>
+    <script>
+        function smoothScrolling(target){
+            document.querySelector(target).scrollIntoView({ 
+              behavior: 'smooth' 
+            });
+        }
+    </script>
 </html>

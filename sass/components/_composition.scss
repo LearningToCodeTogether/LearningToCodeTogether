@@ -1,11 +1,13 @@
 // VIER KLEINE COMPOSITIES
 .imgcomp {
+    overflow-x: hidden;
     position: relative;
     width: 35%;
     display: table-cell;
 
     &__circle1 {
         @include circle($circle1,purple);
+        border: 5px solid white;
         overflow: hidden;
         z-index: 3;
         position: absolute;
@@ -15,18 +17,19 @@
         }
     
         &--left {
-            top: 31rem;
+            top: 33rem;
             left: 29rem;
         }
     
         &--right {
-            bottom: -1rem;
-            right: 25rem;
+            bottom: 0rem;
+            right: 24rem;
         }
     }
 
     &__circle2 {
         @include circle($circle2,purple);
+        border: 8px solid white;
         overflow: hidden;
         z-index: 2;
         position: absolute;
@@ -66,15 +69,27 @@
 
 //GROTE COMPOSITIE
 
+//idealiter:
+//linkermarge verkleinen vanaf (als je gaat krimpen) 1400px width
+//onder 1200 grote blauwe en groene bal verkleinen en eea op hun plaats zetten
+//onder 940 linkermarge verkleinen
+//onder 900 weer dingen verplaatsen
+
+//onder 600: alles groot en onder elkaar
+
+// (Iphone 8 is rond 400px breed)
+
 .composition {
-    width: 100vw;
-    //height: $big-circle;            //ff tijdelijk?
+    overflow-x: hidden;
+    width: $page-width;
+    height: $big-circle;  // deze moet je eigenlijk maximaal maken, dan heb je een grote box waarbinnen dingen te verplaatsen zijn
     margin-top: 10rem;
     margin-bottom: 10rem;
     position: relative;
 
     &__hexagon {
         width: 34rem;
+        margin-top: 6rem;
 
         &--left {
             margin-left: 20rem;
@@ -93,15 +108,15 @@
     &__blue {
 
         &--big {
-            @include circle(50rem,$blue);
-            left: -14rem;
-            top: -4rem;        
+            @include circle(42rem,$blue);
+            left: -11rem;
+            top: 3rem;        
         }
 
         &--small {
             @include circle($small-circle,$blue);
             left: 40rem;
-            top: 30rem;
+            top: 35rem;
         }
     }
 
@@ -110,50 +125,138 @@
         &--big {
             @include circle(24rem,$yellow);
             left: 61rem;
-            top: -5rem;        
+            top: 0rem;        
         }
 
         &--small {
             @include circle($small-circle,$yellow);
-            left: 62rem;
-            top: 30rem;        
+            left: 63rem;
+            top: 34rem;        
         }
 
         &--hexagon1 {
             width: 3rem;
             left: 54rem;
-            top: 2rem;        
+            top: 7rem;        
         }
 
         &--hexagon2 {
             width: 5rem;
             left: 89rem;
-            top: 2rem;        
+            top: 6rem;        
         }
     }
 
     &__green {
 
         &--big {
-            @include circle(30rem,$green);
-            left: 121rem;
-            top: 8rem;        
+            @include circle(35rem,$green);
+            left: 120rem;
+            top: 12rem;        
         }
     
         &--small {
             @include circle($small-circle,$green);
             left: 99rem;
-            top: 2rem;        
+            top: 8rem;        
         }
     }
 }
-
-
 
 //die stippen tussen de blokjes in flavorflavorflavor
 
 .yellowdot {
     @include circle($yellowdot,$yellow);
     margin: 3.5rem 0;
-    margin-left: 80rem;
+    margin-left: 75rem;
+
+    @include respond(phone) {
+        margin-left: 0;   // straks
+    }
+}
+
+
+//tablet-landscape-versie 
+
+@include respond(tab-land) {
+    .composition {
+        width: $page-width;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    
+        &__hexagon {
+            width: 30rem;
+    
+            &--left {
+                margin-left: 10rem;
+            }
+    
+            &--middle {
+                margin: 0 2rem 2rem 2rem;
+            }
+        }
+    
+        &__blue {
+    
+            &--big {
+                @include circle(50rem,$blue);
+                left: -14rem;
+                top: -4rem;        
+            }
+    
+            &--small {
+                @include circle($small-circle,$blue);
+                left: 40rem;
+                top: 30rem;
+            }
+        }
+    
+        &__yellow {
+    
+            &--big {
+                @include circle(24rem,$yellow);
+                left: 61rem;
+                top: -5rem;        
+            }
+    
+            &--small {
+                @include circle($small-circle,$yellow);
+                left: 62rem;
+                top: 30rem;        
+            }
+    
+            &--hexagon1 {
+                width: 3rem;
+                left: 54rem;
+                top: 2rem;        
+            }
+    
+            &--hexagon2 {
+                width: 5rem;
+                left: 89rem;
+                top: 2rem;        
+            }
+        }
+    
+        &__green {
+    
+            &--big {
+                @include circle(30rem,$green);
+                left: 121rem;
+                top: 8rem;        
+            }
+        
+            &--small {
+                @include circle($small-circle,$green);
+                left: 99rem;
+                top: 2rem;        
+            }
+        }
+    }
+}
+
+@include respond(phone) {
+    .composition {
+        display: none;
+    }
 }

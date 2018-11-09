@@ -1,3 +1,5 @@
+// INFOSECTIONS LEFT AND RIGHT met kleine fotocompositie ernaast
+
 .hoofd {                          //   + links/rechts
     height: $big-circle;
     display: table;
@@ -21,12 +23,10 @@
         width: 65%;
         margin-top: 18rem;
         margin-left: 8rem;
-
-        // &--left {}
-
-        // &--right {}
     }
 }
+
+// DIE TABLEAUTJES MET LOGO LINKS EN EEN VETTE 'WHEN'/'WHERE' ETC PLUS ERONDER HET ANTWOORD
 
 .details {
 
@@ -52,51 +52,9 @@
 
 
 
-
-// <section class="threeflavors infosection--center">
-// <div class="infosection__text">
-//     <div class="infosection__text--container">
-//         <h1 class="heading-primary">Welcome!</h1>
-//         <p>
-//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
-//         </p>
-//     </div>
-// </div>    
-// </section>
-
-
-
-// <section class="flavorflavorflavor">
-// <!-- <div class="infosection__text">     -->
-// <div class="infosection__text--container">
-//         <h1 class="heading-primary">First timers</h1>
-//         <p>
-//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
-//         </p>
-//     </div>
-//     <div class="yellowdot">&nbsp;</div>
-//     <div class="infosection__text">
-//     <div class="infosection__text--container">
-//         <h1 class="heading-primary">Mentorship</h1>
-//         <p>
-//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
-//         </p>
-//     </div>
-//     <div class="yellowdot">&nbsp;</div>
-//     <!-- <div class="infosection__text"> -->
-//     <div class="infosection__text--container">
-//         <h1 class="heading-primary">Masterclass</h1>
-//         <p>
-//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
-//         </p>
-//     </div>         
-// </section>
-
-
 .infosection__container {
-    width: 60%;
-    //left: 50%;
-    transform: translateX(45%);
+    width: 61%;
+    transform: translateX(37%);
     display: block;
 }
 
