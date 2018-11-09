@@ -13,16 +13,26 @@
     }
 
     &__container {
-        width: 65%;
+        width: 55%;
         height: 100%;
         display: table-cell;
         position: relative;    
     }
 
     &__content {            // pas hier is links/rechts weer belangrijk; dit gaat over het positioneren van het tekstblok in de bredere kolom van hoofd
-        width: 65%;
+        width: 75%;
         margin-top: 18rem;
-        margin-left: 8rem;
+
+        &--right {
+            margin-left: 8rem;
+        }
+
+        @media only screen and (max-width: 53em) {
+            &--left {
+                margin-left: 4rem;
+                background-color: transparent;
+            }
+        };
     }
 }
 

@@ -35,10 +35,10 @@
         @media only screen and (max-width: 37.5em) { @content }; // 600px/16    only screen als extra voorwaarde is best practice; dan past ie dit niet toe bij het uitprinten oid
     }
     @if $breakpoint == tab-port {
-        @media only screen and (max-width: 56.25em) { @content }; // 900px/16
+        @media only screen and (max-width: 59em) { @content }; // 900px/16  // > 942 past beter bij deze site ivm compositie
     }
     @if $breakpoint == tab-land {
-        @media only screen and (max-width: 75em) { @content }; // 1200px/16
+        @media only screen and (max-width: 79.2em) { @content }; // 1200px/16  // > 1267 past beter
     }
     @if $breakpoint == big-desktop {
         @media only screen and (min-width: 112.5em) { @content }; // 1800px/16

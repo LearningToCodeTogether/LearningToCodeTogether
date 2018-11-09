@@ -20,6 +20,13 @@
     border-top: .1rem solid grey;
     border-bottom: .1rem solid grey;
 
+    @include respond(tab-port) {
+        & .row {
+            max-width: none;
+        }
+    }
+
+
     @include respond(phone) {
         display: none;
     }

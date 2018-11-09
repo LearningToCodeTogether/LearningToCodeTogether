@@ -33,8 +33,25 @@
     &__meetup {
         width: $page-width;
         margin-top: 1rem;
+
+        // media query: kleiner lettertype h3 bij max-width = 1015px
+        @media only screen and (max-width: 61.5em) {
+            & h3 {
+                font-size: $default-font-size;
+            }
+        }
+
+        @media only screen and (max-width: 59em) {          // wat wil ik hier nou precies mee... Eigenlijk vind ik het niet mooi dat het nu onder elkaar staat... Anderzijds moeten die lettertjes niet superklein worden. Dus nu alles onder elkaar staat, kunnen ze dan net zo goed weer groter... 
+            & .row [class^="col"]:not(:last-child) {
+                margin-bottom: 2rem;                        // ik kan ook het blauwe kader van Danny's phone-ontwerp jatten
+            }
+        }
     }
 }
+
+
+
+// TELEFOON
 
 @include respond(phone) {
     .header {

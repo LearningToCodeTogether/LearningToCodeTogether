@@ -3,13 +3,13 @@
 
 .u-margin-bottom-big {
   margin-bottom: 8rem !important; }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 59em) {
     .u-margin-bottom-big {
       margin-bottom: 5rem !important; } }
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem !important; }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 59em) {
     .u-margin-bottom-medium {
       margin-bottom: 3rem !important; } }
 
@@ -35,10 +35,10 @@
 html {
   font-size: 62.5%;
   /* <-- dit ding hier in de html is de root font-size. Alle elementen uitgedrukt in rem zijn hierop gebaseerd. Om dat makkelijk te maken, zijn we uitgegaan van een root van 10px, want dan hoef je niet steeds te rekenen met die 16 (note to self: IT'ers zijn niet per se goed in rekenen)(note to self: serieus, wie wel? Als wiskundeleraren zichzelf al niet vertrouwen). Om vervolgens te zorgen dat de root dus die 10px is, maar nog wel afhangt van wat de user instelt (slechtzienden zoals ik willen grotere lettertjes) moet het dus 10/16 = 5/8 = 62.5% worden van de browser default */ }
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 79.2em) {
     html {
       font-size: 56.25%; } }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 59em) {
     html {
       font-size: 50%; } }
   @media only screen and (min-width: 112.5em) {
@@ -48,7 +48,7 @@ html {
 body {
   box-sizing: border-box;
   overflow-x: hidden; }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 59em) {
     body {
       padding: 0; } }
 
@@ -71,11 +71,12 @@ p {
   margin-bottom: 1rem; }
 
 .heading-secondary {
-  font-size: 1.6rem; }
+  font-size: 1.8rem; }
 
 .heading-tertiary {
   font-weight: 300;
-  color: black; }
+  color: black;
+  font-size: 1.8rem; }
 
 .fat {
   font-weight: 700; }
@@ -128,7 +129,7 @@ p {
 .imgcomp {
   overflow-x: hidden;
   position: relative;
-  width: 35%;
+  width: 45%;
   display: table-cell; }
   .imgcomp__circle1 {
     width: 15rem;
@@ -137,7 +138,7 @@ p {
     border-radius: 50%;
     border: 5px solid white;
     overflow: hidden;
-    z-index: 3;
+    z-index: -1;
     position: absolute; }
     .imgcomp__circle1--pic {
       height: 100%; }
@@ -154,7 +155,7 @@ p {
     border-radius: 50%;
     border: 8px solid white;
     overflow: hidden;
-    z-index: 2;
+    z-index: -2;
     position: absolute; }
     .imgcomp__circle2--pic {
       height: 100%; }
@@ -169,7 +170,8 @@ p {
     height: 48rem;
     background-color: #FFDA60;
     border-radius: 50%;
-    position: absolute; }
+    position: absolute;
+    z-index: -3; }
     .imgcomp__circle3--left {
       transform: translateX(-30%); }
     .imgcomp__circle3--right {
@@ -254,7 +256,7 @@ p {
     .yellowdot {
       margin-left: 0; } }
 
-@media only screen and (max-width: 75em) {
+@media only screen and (max-width: 79.2em) {
   .composition {
     width: 100%;
     margin-top: 10rem;
@@ -328,14 +330,19 @@ p {
   .hoofd:first-child {
     margin-top: 5rem; }
   .hoofd__container {
-    width: 65%;
+    width: 55%;
     height: 100%;
     display: table-cell;
     position: relative; }
   .hoofd__content {
-    width: 65%;
-    margin-top: 18rem;
-    margin-left: 8rem; }
+    width: 75%;
+    margin-top: 18rem; }
+    .hoofd__content--right {
+      margin-left: 8rem; }
+    @media only screen and (max-width: 53em) {
+      .hoofd__content--left {
+        margin-left: 4rem;
+        background-color: transparent; } }
 
 .details__left {
   width: 3.5rem; }
@@ -410,10 +417,10 @@ p {
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 1rem; }
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 59em) {
       .row:not(:last-child) {
         margin-bottom: 6rem; } }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 59em) {
     .row {
       max-width: 50rem;
       padding: 0 3rem; } }
@@ -425,11 +432,11 @@ p {
     float: left; }
     .row [class^="col"]:not(:last-child) {
       margin-right: 0; }
-      @media only screen and (max-width: 56.25em) {
+      @media only screen and (max-width: 59em) {
         .row [class^="col"]:not(:last-child) {
           margin-right: 0;
           margin-bottom: 6rem; } }
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 59em) {
       .row [class^="col"] {
         width: 100% !important; } }
   .row .col1of2 {
@@ -467,6 +474,12 @@ p {
   .header__meetup {
     width: 100%;
     margin-top: 1rem; }
+    @media only screen and (max-width: 61.5em) {
+      .header__meetup h3 {
+        font-size: 1.6rem; } }
+    @media only screen and (max-width: 59em) {
+      .header__meetup .row [class^="col"]:not(:last-child) {
+        margin-bottom: 2rem; } }
 
 @media only screen and (max-width: 37.5em) {
   .header__images {
@@ -510,6 +523,9 @@ p {
   margin-top: 2rem;
   border-top: .1rem solid grey;
   border-bottom: .1rem solid grey; }
+  @media only screen and (max-width: 59em) {
+    .navbar .row {
+      max-width: none; } }
   @media only screen and (max-width: 37.5em) {
     .navbar {
       display: none; } }
