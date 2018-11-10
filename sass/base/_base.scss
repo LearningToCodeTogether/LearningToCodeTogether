@@ -17,7 +17,7 @@ html {
     }
 
     @include respond(tab-port) {        // is dus inclusief phone want die is ook kleiner dan 900
-        font-size: 50%;                // 1rem => 8px, dus 8/16 = 50%
+        font-size: 62.5%;                // was 50%    1rem => 8px, dus 8/16 = 50%
     }
 
     @include respond(big-desktop) {

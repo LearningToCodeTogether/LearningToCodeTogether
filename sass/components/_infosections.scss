@@ -5,7 +5,7 @@
     display: table;
 
     &:not(:first-child) {
-        margin-top: 10rem;
+        margin-top: 10rem;      // kan deze op hoofd algemeen met alleen een specifiekere marge voor first child?
     }
 
     &:first-child {
@@ -13,19 +13,16 @@
     }
 
     &__container {
-        width: 55%;
+        width: 72%;
         height: 100%;
         display: table-cell;
-        position: relative;    
+        position: relative;  
     }
 
     &__content {            // pas hier is links/rechts weer belangrijk; dit gaat over het positioneren van het tekstblok in de bredere kolom van hoofd
-        width: 75%;
+        width: 70%;
         margin-top: 18rem;
-
-        &--right {
-            margin-left: 8rem;
-        }
+        margin-left: 15rem;
 
         @media only screen and (max-width: 53em) {
             &--left {
@@ -35,6 +32,41 @@
         };
     }
 }
+
+
+// TELEFOON
+@include respond(phone) {
+    .hoofd {                          //   + links/rechts
+        height: 89rem;
+        display: block;
+    
+        &:not(:first-child) {
+            margin-top: -9rem;
+        }
+    
+        &:first-child {
+            margin-top: -9rem;
+        }
+    
+        &__container {
+            width: 100%;
+            position: absolute;
+            display: block;
+            margin-top: 32rem;
+        }
+    
+        &__content {
+            width: 90%;
+            margin: 18rem auto 0 auto;
+
+            & .row {
+                padding: 0 0 0 1.5rem;
+            }
+        }
+    }
+}
+
+
 
 // DIE TABLEAUTJES MET LOGO LINKS EN EEN VETTE 'WHEN'/'WHERE' ETC PLUS ERONDER HET ANTWOORD
 
@@ -61,19 +93,44 @@
 }
 
 
-
-.infosection__container {
+.flavorflavorflavor__container {
     width: 61%;
-    transform: translateX(37%);
+    margin: 0 auto;
     display: block;
+
+    @include respond(phone) {
+        width: 90%;
+    }
 }
 
 .threeflavors__container {
     width: 50%;
-    transform: translateX(50%);
+    transform: translateX(50%); // margin 0 auto?
     margin-top: 10rem;
 
     & p, h1 {
         text-align: center;
+
+        @include respond(phone) {
+            text-align: left;
+        }
+    }
+
+    @include respond(phone) {
+        width: 90%;
+        transform: translateX(0);
+        margin: 8rem auto 0 auto;
+    }
+}
+
+//die stippen tussen de blokjes in flavorflavorflavor
+
+.yellowdot {
+    @include circle($yellowdot,$yellow);
+    margin: 3.5rem 0;
+    margin-left: 75rem;
+
+    @include respond(phone) {
+        margin: 3.5rem auto 3rem auto;
     }
 }

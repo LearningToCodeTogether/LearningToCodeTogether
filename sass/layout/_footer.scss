@@ -32,15 +32,10 @@
 }
 
 @include respond(phone) {
-    .footer {
-        width: $page-width;
-        margin: 0 auto;
-    
+    .footer {    
         &__container {
             width: 100%;
-            display: block;
             transform: translateX(0);
-            margin-top: 10rem;
     
             &--skyline {
                 display: none;

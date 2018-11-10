@@ -1,8 +1,8 @@
 // VIER KLEINE COMPOSITIES
 .imgcomp {
-    overflow-x: hidden;
+    overflow-x: visible;
     position: relative;
-    width: 45%;
+    width: 28%;
     display: table-cell;
 
     &__circle1 {
@@ -17,13 +17,15 @@
         }
     
         &--left {
-            top: 33rem;
-            left: 29rem;
+            // top: 33rem;
+            // left: 29rem;
+            transform: translate(184%, 212%);
         }
     
         &--right {
-            bottom: 0rem;
-            right: 24rem;
+            // bottom: 0rem;
+            // right: 24rem;
+            transform: translate(0%, 224%);
         }
     }
 
@@ -39,13 +41,13 @@
         }
     
         &--left {
-            top: 17rem;
-            left: 15rem;
+            transform: translate(47%, 54%);
         }
     
         &--right {
-            bottom: 3rem;
-            right: 10rem;
+            // bottom: 3rem;
+            // right: 10rem;
+            transform: translate(4%, 62%);
         }
     }
 
@@ -62,14 +64,27 @@
         }
     
         &--right {
-            right: -18rem;
+            transform: translate(17%, 0);
         }
     }
 }
 
-@include respond(tab-port) {
-    //kolom imgcomp en hoofd__container op volle breedte
-    //imgcomp margin-top: -20vh proberen
+@include respond(phone) {
+    .imgcomp {
+        width: 100%;
+        position: absolute;
+        display: block;
+        overflow-x: visible;
+        z-index: -3;
+
+        &--left {
+            transform: translateX(-13%);
+        }
+
+        &--right {
+            transform: translateX(22%);
+        }
+    }
 }
 
 
@@ -93,16 +108,14 @@
 // (Iphone 8 is rond 400px breed)
 
 .composition {
-    overflow-x: hidden;
+    overflow-x: visible;
     width: $page-width;
-    height: $big-circle;  // deze moet je eigenlijk maximaal maken, dan heb je een grote box waarbinnen dingen te verplaatsen zijn
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    height: 68rem;
     position: relative;
 
     &__hexagon {
         width: 34rem;
-        margin-top: 6rem;
+        margin-top: 16rem;
 
         &--left {
             margin-left: 20rem;
@@ -114,22 +127,25 @@
     }
 
     &__backgroundelement {
-        position: absolute;
+        position: absolute;   // overal soort center5050 toepassen? > inclusief de hexagons
         z-index: -1;
+        //transform: translate(-50%, -50%);
     }
 
     &__blue {
 
         &--big {
             @include circle(42rem,$blue);
-            left: -11rem;
-            top: 3rem;        
+            transform: translate(-23%, 32%); 
+            //left: 0%;
+            //top: 0%;    
         }
 
         &--small {
             @include circle($small-circle,$blue);
             left: 40rem;
-            top: 35rem;
+            top: 45rem;
+            transform: translate(0%, 0%);     
         }
     }
 
@@ -138,25 +154,29 @@
         &--big {
             @include circle(24rem,$yellow);
             left: 61rem;
-            top: 0rem;        
+            top: 10rem;
+            transform: translate(0%, 0%);          
         }
 
         &--small {
             @include circle($small-circle,$yellow);
             left: 63rem;
-            top: 34rem;        
+            top: 44rem;
+            transform: translate(0%, 0%);           
         }
 
         &--hexagon1 {
             width: 3rem;
             left: 54rem;
-            top: 7rem;        
+            top: 17rem;
+            transform: translate(0%, 0%);          
         }
 
         &--hexagon2 {
             width: 5rem;
             left: 89rem;
-            top: 6rem;        
+            top: 16rem;
+            transform: translate(0%, 0%);      
         }
     }
 
@@ -165,111 +185,85 @@
         &--big {
             @include circle(35rem,$green);
             left: 120rem;
-            top: 12rem;        
+            top: 22rem;
+            transform: translate(0%, 0%);          
         }
     
         &--small {
             @include circle($small-circle,$green);
             left: 99rem;
-            top: 8rem;        
-        }
-    }
-}
-
-//die stippen tussen de blokjes in flavorflavorflavor
-
-.yellowdot {
-    @include circle($yellowdot,$yellow);
-    margin: 3.5rem 0;
-    margin-left: 75rem;
-
-    @include respond(phone) {
-        margin-left: 0;   // straks
-    }
-}
-
-
-//tablet-landscape-versie 
-
-@include respond(tab-land) {
-    .composition {
-        width: $page-width;
-        margin-top: 10rem;
-        margin-bottom: 10rem;
-    
-        &__hexagon {
-            width: 30rem;
-    
-            &--left {
-                margin-left: 10rem;
-            }
-    
-            &--middle {
-                margin: 0 2rem 2rem 2rem;
-            }
-        }
-    
-        &__blue {
-    
-            &--big {
-                @include circle(50rem,$blue);
-                left: -14rem;
-                top: -4rem;        
-            }
-    
-            &--small {
-                @include circle($small-circle,$blue);
-                left: 40rem;
-                top: 30rem;
-            }
-        }
-    
-        &__yellow {
-    
-            &--big {
-                @include circle(24rem,$yellow);
-                left: 61rem;
-                top: -5rem;        
-            }
-    
-            &--small {
-                @include circle($small-circle,$yellow);
-                left: 62rem;
-                top: 30rem;        
-            }
-    
-            &--hexagon1 {
-                width: 3rem;
-                left: 54rem;
-                top: 2rem;        
-            }
-    
-            &--hexagon2 {
-                width: 5rem;
-                left: 89rem;
-                top: 2rem;        
-            }
-        }
-    
-        &__green {
-    
-            &--big {
-                @include circle(30rem,$green);
-                left: 121rem;
-                top: 8rem;        
-            }
-        
-            &--small {
-                @include circle($small-circle,$green);
-                left: 99rem;
-                top: 2rem;        
-            }
+            top: 18rem;
+            transform: translate(0%, 0%);           
         }
     }
 }
 
 @include respond(phone) {
     .composition {
-        display: none;
+        height: auto;
+    
+        &__hexagon {
+            width: 70%;
+            margin: 0 auto;      // waarom werkt dit niet?
+            margin-left: 6rem;
+    
+            &--left {
+                margin: 0 0 -2rem 6rem;
+                z-index: 3;      // waarom werkt dit niet?
+            }
+    
+            &--middle {
+                margin: 0rem 0 -3rem 6rem;
+                z-index: 2;      // waarom werkt dit niet?
+            }
+        }
+   
+        &__blue {
+            &--big {
+                transform: translate();
+            }
+    
+            &--small {
+                left: 0rem;
+                top: 0rem;
+                transform: translate();
+
+            }
+        }
+    
+        &__yellow {
+            &--big {
+                left: 0rem;
+                top: 0rem;
+                transform: translate();      
+            }
+    
+            &--small {
+                left: 0rem;
+                top: 0rem;        
+            }
+    
+            &--hexagon1 {
+                left: 0rem;
+                top: 0rem;        
+            }
+    
+            &--hexagon2 {
+                left: 0rem;
+                top: 0rem;        
+            }
+        }
+    
+        &__green {
+            &--big {
+                left: 0rem;
+                top: 0rem;        
+            }
+        
+            &--small {
+                left: 0rem;
+                top: 0rem;        
+            }
+        }
     }
 }
