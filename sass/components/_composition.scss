@@ -114,155 +114,250 @@
     position: relative;
 
     &__hexagon {
-        width: 34rem;
-        margin-top: 16rem;
+        width: 22.7%;               // 34rem (bij schermbreedte 1500px)
+        position: absolute;
+        transform: translate(-50%,-50%);
 
         &--left {
-            margin-left: 20rem;
+            left: 25%;
+            top: 53%;
         }
 
         &--middle {
-            margin: 0 2rem 2rem 2rem;
+            left: 49%;
+            top: 49%;    
+        }
+
+        &--right {
+            left: 73%;
+            top: 53%;    
         }
     }
 
     &__backgroundelement {
-        position: absolute;   // overal soort center5050 toepassen? > inclusief de hexagons
+        position: absolute;
         z-index: -1;
-        //transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
 
     &__blue {
 
         &--big {
-            @include circle(42rem,$blue);
-            transform: translate(-23%, 32%); 
-            //left: 0%;
-            //top: 0%;    
+            @include circle(34vw,$blue); //51rem
+            left: 4%;
+            top: 47%;    
         }
 
         &--small {
-            @include circle($small-circle,$blue);
-            left: 40rem;
-            top: 45rem;
-            transform: translate(0%, 0%);     
+            @include circle($small-circle,$blue); //9rem
+            left: 30%;
+            top: 73%;
         }
     }
 
     &__yellow {
 
         &--big {
-            @include circle(24rem,$yellow);
-            left: 61rem;
-            top: 10rem;
-            transform: translate(0%, 0%);          
+            @include circle(16vw,$yellow); //24rem
+            left: 49%;
+            top: 31%;          
         }
 
         &--small {
             @include circle($small-circle,$yellow);
-            left: 63rem;
-            top: 44rem;
-            transform: translate(0%, 0%);           
+            left: 45%;
+            top: 71%;           
         }
 
         &--hexagon1 {
-            width: 3rem;
-            left: 54rem;
-            top: 17rem;
-            transform: translate(0%, 0%);          
+            width: 2%;        //3rem
+            left: 37%;
+            top: 27%;          
         }
 
         &--hexagon2 {
-            width: 5rem;
-            left: 89rem;
-            top: 16rem;
-            transform: translate(0%, 0%);      
+            width: 3.33333333%;        //5rem
+            left: 62%;
+            top: 27%;      
         }
     }
 
     &__green {
 
         &--big {
-            @include circle(35rem,$green);
-            left: 120rem;
-            top: 22rem;
-            transform: translate(0%, 0%);          
+            @include circle(24.66666667vw,$green);  //37rem
+            left: 93%;
+            top: 58%;          
         }
     
         &--small {
             @include circle($small-circle,$green);
-            left: 99rem;
-            top: 18rem;
-            transform: translate(0%, 0%);           
+            left: 69%;
+            top: 31%;           
         }
     }
 }
 
-@include respond(phone) {
+@include respond(tab-port) {
     .composition {
-        height: auto;
+        height: 68rem;
     
         &__hexagon {
-            width: 70%;
-            margin: 0 auto;      // waarom werkt dit niet?
-            margin-left: 6rem;
+            width: 34rem;
     
             &--left {
-                margin: 0 0 -2rem 6rem;
-                z-index: 3;      // waarom werkt dit niet?
+                left: 25%;
+                top: 53%;
             }
     
             &--middle {
-                margin: 0rem 0 -3rem 6rem;
-                z-index: 2;      // waarom werkt dit niet?
+                left: 49%;
+                top: 49%;    
+            }
+    
+            &--right {
+                left: 73%;
+                top: 53%;    
             }
         }
-   
+    
         &__blue {
             &--big {
-                transform: translate();
+                //@include circle(51rem,$blue);
+                width: 51rem;
+                height: 51rem;
+                left: 4%;
+                top: 47%;    
             }
     
             &--small {
-                left: 0rem;
-                top: 0rem;
-                transform: translate();
+                //@include circle(9rem,$blue); //9rem
+                width: $small-circle-tp;
+                height: $small-circle-tp;
+                left: 30%;
+                top: 73%;
+            }
+        }
+    
+        &__yellow {
+    
+            &--big {
+                //@include circle(24rem,$yellow);
+                width: 24rem;
+                height: 24rem;
+                left: 49%;
+                top: 31%;          
+            }
+    
+            &--small {
+                //@include circle(9rem,$yellow);
+                width: $small-circle-tp;
+                height: $small-circle-tp;
+                left: 45%;
+                top: 71%;           
+            }
+    
+            &--hexagon1 {
+                width: 3rem;
+                left: 37%;
+                top: 27%;          
+            }
+    
+            &--hexagon2 {
+                width: 5rem;
+                left: 62%;
+                top: 27%;      
+            }
+        }
+    
+        &__green {
+    
+            &--big {
+                //@include circle(37rem,$green);  //37rem
+                width: 37rem;
+                height: 37rem;
+                left: 93%;
+                top: 58%;          
+            }
+        
+            &--small {
+                //@include circle(9rem,$green);
+                width: $small-circle-tp;
+                height: $small-circle-tp;;
+                left: 69%;
+                top: 31%;           
+            }
+        }
+    }
+}
 
+
+@include respond(phone) {
+    .composition {
+        height: 150rem;
+    
+        &__hexagon {
+            width: 30rem;
+
+            &--left {
+                left: 50%;
+                top: 13%;
+            }
+    
+            &--middle {
+                left: 49%;
+                top: 35%;    
+            }
+    
+            &--right {
+                left: 50%;
+                top: 56%;    
+            }
+        }
+    
+        &__blue {
+            &--big {
+                left: -27%;
+                top: 11%;    
+            }
+    
+            &--small {
+                left: 69%;
+                top: 21%;
             }
         }
     
         &__yellow {
             &--big {
-                left: 0rem;
-                top: 0rem;
-                transform: translate();      
+                left: 50%;
+                top: 29%;          
             }
     
             &--small {
-                left: 0rem;
-                top: 0rem;        
+                left: 91%;
+                top: 91%;
             }
     
             &--hexagon1 {
-                left: 0rem;
-                top: 0rem;        
+                left: 91%;
+                top: 91%;          
             }
     
             &--hexagon2 {
-                left: 0rem;
-                top: 0rem;        
+                left: 91%;
+                top: 91%;      
             }
         }
     
         &__green {
             &--big {
-                left: 0rem;
-                top: 0rem;        
+                left: 91%;
+                top: 91%;          
             }
         
             &--small {
-                left: 0rem;
-                top: 0rem;        
+                left: 91%;
+                top: 91%;           
             }
         }
     }
