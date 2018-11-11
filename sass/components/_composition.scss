@@ -107,121 +107,232 @@
 
 // (Iphone 8 is rond 400px breed)
 
-.composition {
+.composition {                                  // schaalt netjes omlaag, gaat goed voor big screen, computer, tablet-landscape
     overflow-x: visible;
     width: $page-width;
-    height: 68rem;
+    height: 37vw;
     position: relative;
 
-    &__hexagon {
-        width: 22.7%;               // 34rem (bij schermbreedte 1500px)
-        position: absolute;
-        transform: translate(-50%,-50%);
-
-        &--left {
-            left: 25%;
-            top: 53%;
-        }
-
-        &--middle {
-            left: 49%;
-            top: 49%;    
-        }
-
-        &--right {
-            left: 73%;
-            top: 53%;    
-        }
-    }
-
-    &__backgroundelement {
+    &__element {
         position: absolute;
         z-index: -1;
         transform: translate(-50%, -50%);
     }
 
+    &__hexagon {
+        // width: 22.666666667vw;               // 34rem (bij schermbreedte 1500px)
+        z-index: 0;
+    }
+
+    &__blue,
+    &__yellow,
+    &__green {
+        position: absolute;
+        display: inline-block;
+        transform: translateY(-50%);
+    }
+
     &__blue {
+        width: 37vw;    // 55.5rem
+        height: 37vw;
+        top: 47%;
+
+        &--hexagon {
+            width: 61.2612613%;     // was dus 34rem/55.5rem
+            left: 68%;
+            top: 52%;
+        }
 
         &--big {
             @include circle(34vw,$blue); //51rem
-            left: 4%;
-            top: 47%;    
+            left: 13%;
+            top: 47%;
         }
 
         &--small {
             @include circle($small-circle,$blue); //9rem
-            left: 30%;
-            top: 73%;
+            left: 83%;
+            top: 72%;
         }
     }
 
     &__yellow {
+        width: 25vw;
+        height: 25vw;
+        left: 37%;
+        top: 35%;
+
+        &--hexagon {
+            width: 90.666666667%;   // = % van breedte yellow
+            left: 50.5%;
+            top: 67%;
+        }
 
         &--big {
             @include circle(16vw,$yellow); //24rem
-            left: 49%;
-            top: 31%;          
+            left: 48%;
+            top: 30%;          
         }
 
         &--small {
             @include circle($small-circle,$yellow);
-            left: 45%;
-            top: 71%;           
+            left: 33%;
+            top: 106%;
         }
 
         &--hexagon1 {
-            width: 2%;        //3rem
-            left: 37%;
-            top: 27%;          
+            width: 10%;        //3rem
+            left: 0%;
+            top: 26%;          
         }
 
         &--hexagon2 {
-            width: 3.33333333%;        //5rem
-            left: 62%;
-            top: 27%;      
+            width: 15%;        //5rem
+            left: 101%;
+            top: 26%;      
         }
     }
 
     &__green {
+        width: 37vw;
+        height: 37vw;
+        right: 0%;
+        top: 47%;
+
+        &--hexagon {
+            width: 61.2612613%;
+            left: 31%;
+            top: 52%;
+        }
 
         &--big {
             @include circle(24.66666667vw,$green);  //37rem
-            left: 93%;
-            top: 58%;          
+            left: 85%;
+            top: 57%;          
         }
     
         &--small {
             @include circle($small-circle,$green);
-            left: 69%;
-            top: 31%;           
+            left: 20%;
+            top: 25%;           
         }
     }
 }
 
-@include respond(tab-port) {
+
+
+
+//kleinere schermen dan tab-land
+
+@include respond(tab-port) {        // werkt nu mn goed rond 750px
     .composition {
-        height: 68rem;
+        height: 85rem;
+        margin-top: -6rem;
     
-        &__hexagon {
-            width: 34rem;
-    
-            &--left {
-                left: 25%;
-                top: 53%;
-            }
-    
-            &--middle {
-                left: 49%;
-                top: 49%;    
-            }
-    
-            &--right {
-                left: 73%;
-                top: 53%;    
-            }
+        &__blue,
+        &__yellow,
+        &__green {
+            transform: translateY(0);
+            z-index: -1;
         }
     
         &__blue {
+            width: $width-blue-green;
+            height: $width-blue-green;
+            left: -26%;
+            top: 7%;
+
+            &--big {
+                width: 51rem;
+                height: 51rem;
+            }
+    
+            &--small {
+                width: $small-circle-tp;
+                height: $small-circle-tp;
+            }
+        }
+    
+        &__yellow {
+            width: $width-yellow;
+            height: $width-yellow;
+            left: 48%;
+            top: 0%;
+
+            &--big {
+                width: 24rem;
+                height: 24rem;
+            }
+    
+            &--small {
+                width: $small-circle-tp;
+                height: $small-circle-tp;
+            }
+    
+            &--hexagon1 {
+                width: 3rem;
+            }
+    
+            &--hexagon2 {
+                width: 5rem;
+            }
+        }
+    
+        &__green {
+            width: $width-blue-green;
+            height: $width-blue-green;
+            left: 34%;
+            top: 43%;
+
+            &--big {
+                width: 37rem;
+                height: 37rem;
+            }
+        
+            &--small {
+                width: $small-circle-tp;
+                height: $small-circle-tp;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// de oude tab-port en phone met nog de maten in rem en specifieke posities tov compositie, geloof ik
+
+// @include respond(tab-port) {
+@include respond(phone) {
+    .composition {
+        height: 100rem;
+    
+        &__hexagon {
+            width: 34rem;
+        
+        }
+    
+        &__blue {
+
+            &--hexagon {
+                left: 25%;
+                top: 53%;
+            }
+
             &--big {
                 //@include circle(51rem,$blue);
                 width: 51rem;
@@ -240,6 +351,11 @@
         }
     
         &__yellow {
+
+            &--hexagon {
+                left: 49%;
+                top: 49%;    
+            }
     
             &--big {
                 //@include circle(24rem,$yellow);
@@ -271,6 +387,10 @@
         }
     
         &__green {
+            &--hexagon {
+                left: 73%;
+                top: 53%;
+            }
     
             &--big {
                 //@include circle(37rem,$green);  //37rem
@@ -283,18 +403,11 @@
             &--small {
                 //@include circle(9rem,$green);
                 width: $small-circle-tp;
-                height: $small-circle-tp;;
+                height: $small-circle-tp; //9rem
                 left: 69%;
                 top: 31%;           
             }
         }
-    }
-}
-
-
-@include respond(phone) {
-    .composition {
-        height: 150rem;
     
         &__hexagon {
             width: 30rem;
