@@ -47,9 +47,14 @@
         &:first-child {
             margin-top: -9rem;
         }
+
+        &:last-child {
+            height: 98rem;
+        }
     
         &__container {
             width: 100%;
+            height: auto;
             position: absolute;
             display: block;
             margin-top: 32rem;

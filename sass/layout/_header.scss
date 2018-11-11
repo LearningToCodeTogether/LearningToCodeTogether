@@ -1,15 +1,14 @@
 .header {
     width: $page-width;
-    margin: 0 auto;     // ehm is dit nodig?
 
     &__images {
         width: 60%;
         display: block;
-        transform: translateX(30%);    // margin 0 auto?
+        margin: 0 auto;
 
         &--logo {
             width: 50%;
-            transform: translateX(50%);  // margin 0 auto?
+            transform: translateX(50%);
         }
 
         &--logo-phone {
@@ -33,19 +32,6 @@
     &__meetup {
         width: $page-width;
         margin-top: 1rem;
-
-        // // media query: kleiner lettertype h3 bij max-width = 1015px
-        // @media only screen and (max-width: 61.5em) {
-        //     & h3 {
-        //         font-size: $default-font-size;
-        //     }
-        // }
-
-        // @media only screen and (max-width: 59em) {          // wat wil ik hier nou precies mee... Eigenlijk vind ik het niet mooi dat het nu onder elkaar staat... Anderzijds moeten die lettertjes niet superklein worden. Dus nu alles onder elkaar staat, kunnen ze dan net zo goed weer groter... 
-        //     & .row [class^="col"]:not(:last-child) {
-        //         margin-bottom: 2rem;                        // ik kan ook het blauwe kader van Danny's phone-ontwerp jatten
-        //     }
-        // }
     }
 }
 
@@ -79,7 +65,7 @@
                 display: block;
                 margin-top: 4rem;
                 width: 100%;
-                transform: rotate(180deg) scaleX(-1);
+                transform: scaleY(-1);
                 -ms-filter: FlipH;
                 filter: FlipH;        
             }
@@ -99,19 +85,13 @@
 
     .header__meetup .row {
         width: 90%;
-        margin: 0 auto;  // hmmm... moet eigenlijk wat verder naar rechts
+        margin: 0 auto;
         background-color: rgba($blue,.03);
         border: 1px solid rgba($blue,.1);
         padding: 2rem 0rem 2rem 2rem; 
-
 
         & [class^="col"]:not(:last-child) {
             margin-bottom: 2rem;
         }
     }
-
-    // .header__meetup .row [class^="col"]:not(:last-child) {
-    //     margin-bottom: 3rem;
-    // }
-    
 }

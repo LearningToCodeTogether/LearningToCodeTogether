@@ -10,15 +10,16 @@
         color: white;
         display: inline-block;
     }
+
+    & .meetup-icon {
+        width: 2.3rem;
+        float: left;
+        margin-top: .9rem;
+        margin-left: .9rem;
+        margin-right: 1.3rem;
+    }    
 }
 
-.meetup-icon {
-    width: 2.3rem;
-    float: left;
-    margin-top: .9rem;
-    margin-left: .9rem;
-    margin-right: 1.3rem;
-}
 
 .itsfree {
     display: block;
@@ -45,33 +46,35 @@
     }
 }
 
-
-// @include respond(phone) {      // nog veel mee kloten
-//     .fixed-join-us-button {
-//         z-index: 5;
-//         top: 0;
-//         right: 0;
-
-//         & button {
-//             display: block;
-//             width: $page-width;
-//             height: 4rem;
-//             background-color: $red;
-//             border-radius: none;
-        
-//             &__text {
-//                 margin-top: .3rem;
-//                 margin-right: 1.8rem;
-//                 color: white;
-//                 display: inline-block;
-//             }
-//         }
-//     }
-    
-// }
-
+// TELEFOON
 @include respond(phone) {
+    
     .fixed-join-us-button {
-        display: none;
+        position: fixed;
+        display: block;
+        width: 100%;
+        top: 0;
+        right: 0;
+
+        & .button {
+            height: 5rem;
+            display: block;
+            border-radius: 0;
+        
+            &__text {
+                margin-top: .5rem;
+                font-size: 2.3rem;
+            }
+        
+            & .meetup-icon {
+                width: 2.7rem;
+                margin-left: 35%;
+                margin-top: 1.2rem;
+            }    
+        }
+
+        & .itsfree {
+            left: 54%;
+        }
     }
 }
