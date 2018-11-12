@@ -1,0 +1,65 @@
+.footer {
+    width: $page-width;
+    margin: 10rem auto 0px auto;
+
+    &__container {
+        width: 60%;
+        display: block;
+        transform: translateX(32%);
+
+        &--skyline {
+        width: 100%;
+        transform: scaleY(-1);
+        -ms-filter: FlipH;
+        filter: FlipH;
+        }
+
+        &--heading {
+        transform: translateX(45%);
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        }
+
+        &--teampic {}
+    }
+}
+
+@include respond(tab-port) {
+    .footer {
+        margin-top: 14rem;
+
+        &__container {
+            width: 100%;
+            transform: none;
+    
+            &--skyline {
+                display: block;
+                width: 80%;
+                transform: translate(13%) scaleY(-1);
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@include respond(phone) {
+    .footer {
+        margin-top: 5rem;
+
+        &__container {
+            &--skyline {
+                width: 100%;
+                transform: none;
+            }
+    
+            &--heading {
+                display: none;
+            }
+    
+            &--teampic {
+                display: none;
+            }
+        }
+    }
+}

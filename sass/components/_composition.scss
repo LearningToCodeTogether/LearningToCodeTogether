@@ -1,0 +1,324 @@
+// VIER KLEINE COMPOSITIES
+.imgcomp {
+    overflow-x: visible;
+    position: relative;
+    width: 28%;
+    display: table-cell;
+
+    &__circle1 {
+        @include circle($circle1,purple);
+        border: 5px solid white;
+        overflow: hidden;
+        z-index: -1;
+        position: absolute;
+    
+        &--pic {
+            height: 100%;
+        }
+    
+        &--left {
+            transform: translate(184%, 212%);
+        }
+    
+        &--right {
+            transform: translate(0%, 224%);
+        }
+    }
+
+    &__circle2 {
+        @include circle($circle2,purple);
+        border: 8px solid white;
+        overflow: hidden;
+        z-index: -2;
+        position: absolute;
+    
+        &--pic {
+            height: 100%;
+        }
+    
+        &--left {
+            transform: translate(47%, 54%);
+        }
+    
+        &--right {
+            transform: translate(4%, 62%);
+        }
+    }
+
+    &__circle3 {
+        width: $big-circle;
+        height: $big-circle;
+        background-color: $yellow;
+        border-radius: 50%;
+        position: absolute;
+        z-index: -3;
+    
+        &--left {
+            transform: translateX(-30%);
+        }
+    
+        &--right {
+            transform: translate(17%, 0);
+        }
+    }
+}
+
+@include respond(tab-port) {
+    .imgcomp {
+        width: 20%;
+        position: absolute;
+        display: inline-block;
+        z-index: -3;
+
+        &--right {
+            left: 47%;
+        }
+    }
+}
+
+
+@include respond(phone) {
+    .imgcomp {
+        width: 100%;
+        display: block;
+
+        &--left {
+            left: -4%;
+        }
+
+        &--right {
+            left: 37%;
+            top: -3%;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+//GROTE COMPOSITIE
+
+// (Iphone 8 is rond 400px breed)
+
+.composition {                                  // schaalt netjes omlaag, gaat goed voor big screen, computer, tablet-landscape
+    overflow-x: visible;
+    width: $page-width;
+    height: $comp-width;
+    position: relative;
+
+    &__blue,
+    &__yellow,
+    &__green {
+        width: $comp-width;
+        height: 100%;
+        position: relative;
+        float: right;
+    }
+
+    &__element {
+        position: absolute;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+    }
+
+    &__hexagon {
+        width: 68%;               // 34rem (bij schermbreedte 150rem)
+        z-index: 0;
+    }
+
+    &__blue {
+        &--hexagon {
+            left: 76%;
+            top: 52%;
+        }
+
+        &--big {
+            @include circle( calc(#{$comp-width} * 1.02) ,$blue); //51rem
+            left: 13%;
+            top: 45%;
+        }
+
+        &--small {
+            @include circle($small-circle,$blue); //9rem
+            left: 92%;
+            top: 78%;
+        }
+    }
+
+    &__yellow {
+        &--hexagon {
+            left: 50%;
+            top: 48%;
+        }
+
+        &--big {
+            @include circle( calc(#{$comp-width} * .48) ,$yellow); //24rem
+            left: 48%;
+            top: 23%;          
+        }
+
+        &--small {
+            @include circle($small-circle,$yellow);
+            left: 37%;
+            top: 78%;
+        }
+
+        &--hexagon1 {
+            width: calc(#{$comp-width} * .06);        //3rem
+            left: 12%;
+            top: 20%;          
+        }
+
+        &--hexagon2 {
+            width: calc(#{$comp-width} * .1);        //5rem
+            left: 90%;
+            top: 19%;      
+        }
+    }
+
+    &__green {
+        &--hexagon {
+            left: 24%;
+            top: 52%;
+        }
+
+        &--big {
+            @include circle( calc(#{$comp-width} * .74) ,$green);  //37rem
+            left: 85%;
+            top: 57%;          
+        }
+    
+        &--small {
+            @include circle($small-circle,$green);
+            left: 12%;
+            top: 22%;           
+        }
+    }
+}
+
+@include respond(tab-port) {
+    .composition {
+        height: 80vw;
+    
+        &__blue,
+        &__yellow,
+        &__green {
+            width: $comp-width-port;
+            height: $comp-width-port;
+            position: absolute;
+            display: block;
+        }
+       
+        &__blue {
+            left: -2%;
+            top: 2%;
+
+            &--big {
+                @include circle( calc(#{$comp-width-port} * 1.02) ,$blue);
+            }
+    
+            &--small {
+                @include circle($small-circle-port,$blue);
+            }
+        }
+    
+        &__yellow {
+            left: 50%;
+            top: -2%;
+
+            &--big {
+                @include circle( calc(#{$comp-width-port} * .48) ,$yellow);
+            }
+    
+            &--small {
+                @include circle($small-circle-port,$yellow);
+            }
+    
+            &--hexagon1 {
+                width: calc(#{$comp-width-port} * .06);
+            }
+    
+            &--hexagon2 {
+                width: calc(#{$comp-width-port} * .1);
+            }
+        }
+    
+        &__green {
+            left: 47%;
+            top: 42%;
+
+            &--big {
+                @include circle( calc(#{$comp-width-port} * .74) ,$green);
+            }
+        
+            &--small {
+                @include circle($small-circle-port,$green);
+            }
+        }
+    }
+}
+
+@include respond(phone) {
+    .composition {
+        height: $comp-width-phone * 2.4;
+    
+        &__blue,
+        &__yellow,
+        &__green {
+            width: $comp-width-phone;
+            height: $comp-width-phone;
+        }
+       
+        &__blue {
+            left: -27%;
+            top: -4%;
+
+            &--big {
+                @include circle( calc(#{$comp-width-phone} * 1.02) ,$blue);
+            }
+    
+            &--small {
+                @include circle($small-circle-phone,$blue);
+            }
+        }
+    
+        &__yellow {
+            left: -2%;
+            top: 29%;
+
+            &--big {
+                @include circle( calc(#{$comp-width-phone} * .48) ,$yellow);
+            }
+    
+            &--small {
+                @include circle($small-circle-phone,$yellow);
+            }
+    
+            &--hexagon1 {
+                width: calc(#{$comp-width-phone} * .06);
+            }
+    
+            &--hexagon2 {
+                width: calc(#{$comp-width-phone} * .1);
+            }
+        }
+    
+        &__green {
+            left: 26%;
+            top: 58%;
+
+            &--big {
+                @include circle( calc(#{$comp-width-phone} * .74) ,$green);
+            }
+        
+            &--small {
+                @include circle($small-circle-phone,$green);
+            }
+        }
+    }
+}
