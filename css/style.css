@@ -542,14 +542,13 @@ p {
 
 .footer {
   width: 100%;
-  margin: 10rem auto 0 auto; }
+  margin: 10rem auto 0px auto; }
   .footer__container {
     width: 60%;
     display: block;
     transform: translateX(32%); }
     .footer__container--skyline {
       width: 100%;
-      margin-bottom: 1rem;
       transform: scaleY(-1);
       -ms-filter: FlipH;
       filter: FlipH; }

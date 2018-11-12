@@ -1,6 +1,6 @@
 .footer {
     width: $page-width;
-    margin: 10rem auto 0 auto;
+    margin: 10rem auto 0px auto;
 
     &__container {
         width: 60%;
@@ -9,7 +9,6 @@
 
         &--skyline {
         width: 100%;
-        margin-bottom: 1rem;
         transform: scaleY(-1);
         -ms-filter: FlipH;
         filter: FlipH;
