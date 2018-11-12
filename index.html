@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Absoluut essentieel onderdeel van responsive design!! -->
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        <!-- <link rel="stylesheet" href="css/icon-font.css">  -->
+        <link rel="stylesheet" href="css/style.css">
+        
+        <title>Learn to code (yup, that's an imperative)</title>
+    </head>
+
+    <body>
+        <div class="fixed-join-us-button">
+            <a href="https://www.meetup.com/Learning-to-Code-Amsterdam/" class="button">
+                <img src="images/meetup-icon.png" alt="just a logo, looks like an M" class="meetup-icon">
+                <h3 class="tertiary-heading button__text">Join us!</h3>
+            </a>
+            <img src="images/itsfree.png" alt="it's free!" class="itsfree">
+        </div>
+
+        <header class="header">            
+            <div class="header__images">
+                <picture>
+                    <source media="(max-width: 37.5em)" srcset="images/skyline.png">
+                    <source media="(min-width: 37.5001em)" srcset="images/skyline-up-side-down.png">
+                    <img src="images/skyline-up-side-down.png" alt="upside down skyline" class="header__images--skyline" >
+                </picture>
+                <picture>
+                    <source media="(max-width: 37.5em)" srcset="images/logo.png">
+                    <source media="(min-width: 37.5001em)" srcset="images/header-logo.png">
+                    <img src="images/header-logo.png" alt="header logo with the text learning to code, aw man you're really missing out on this one" class="header__images--logo" >
+                </picture>
+                <img src="images/people-group.png" alt="people smiling. They can't help it. They were drawn that way" class="header__images--people">
+            </div>
+            <div class="header__meetup">
+                <div class="row">
+                    <div class="col1of3">    
+                        <div class="details">
+                            <img src="images/point-time.png" alt="Just a simple logo, you're not missing anything really" class="details__logo">
+                            <h2 class="heading-secondary">When</h2> 
+                            <h3 class="heading-tertiary">Every 2nd Tuesday of the month</h3>
+                        </div>
+                    </div> 
+                    <div class="col1of3">
+                        <div class="details">
+                            <img src="images/point-place.png" alt="Again a simple logo, still not missing anything" class="details__logo">
+                            <h2 class="heading-secondary">Where</h2> 
+                            <h3 class="heading-tertiary">Codaisseur - Tripolis, building 200</h3>
+                        </div>
+                    </div>
+                    <div class="col1of3">
+                        <div class="details">
+                            <img src="images/point-address.png" alt="Super interesting logo, nope just kidding" class="details__logo">
+                            <h2 class="heading-secondary">Address</h2> 
+                            <h3 class="heading-tertiary">Burgerweeshuispad 201 - Amsterdam</h3>
+                        </div>
+                    </div>   
+                </div> 
+            </div> 
+    
+            <div class="navbar">
+                <div class="navbar__items row">
+                    <a onclick='smoothScrolling("#themeetup")' class="navbar__items--button col1of4">
+                        <span class="fat">The</span> Meet-up</a>
+                    <a onclick='smoothScrolling("#threeflavors")' class="navbar__items--button col1of4">
+                        <span class="fat">What</span> we do</a>
+                    <a onclick='smoothScrolling("#flavorflavorflavor")' class="navbar__items--button col1of4">
+                        <span class="fat">Who</span> it's for</a>
+                    <a href="#" class="navbar__items--button col1of4">
+                        <span class="fat">The</span> location</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+        
+            <section class="hoofd" id="welcome">
+                <div class="imgcomp imgcomp--left">
+                    <div class="imgcomp__circle3 imgcomp__circle3--left">&nbsp;</div>
+                    <div class="imgcomp__circle2 imgcomp__circle2--left">
+                        <img src="https://secure.meetupstatic.com/photos/event/1/e/a/a/highres_466207850.jpeg" alt="photo of people at the meet-up" class="imgcomp__circle2--pic">
+                    </div>
+                    <div class="imgcomp__circle1 imgcomp__circle1--left">
+                        <img src="https://secure.meetupstatic.com/photos/event/a/5/5/highres_472802645.jpeg" alt="smaller photo. Turns out people actually go there" class="imgcomp__circle1--pic">
+                    </div>
+                </div>
+                <div class="hoofd__container">
+                    <div class="hoofd__content hoofd__content--left">
+                        <h1 class="heading-primary">Welcome!</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+                        </p>
+                        <div class="detailbar row">
+                            <div class="details col1of2">
+                                <div class="details__left"><img src="images/point-place.png" alt="Again a simple logo, still not missing anything" class="details__logo"></div>
+                                <div class="details__right">
+                                    <div class="heading-secondary">Question</div> 
+                                    <div class="heading-tertiary">Answer</div>
+                                </div>
+                            </div>
+                            <div class="details col1of2">
+                                <div class="details__left"><img src="images/point-place.png" alt="Another simple logo. Yawn." class="details__logo"></div>
+                                <div class="details__right">
+                                    <div class="heading-secondary">Question</div> 
+                                    <div class="heading-tertiary">Answer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </section>
+
+            <section id="themeetup" class="hoofd">
+                <div class="hoofd__container">
+                    <div class="hoofd__content hoofd__content--right">
+                        <h1 class="heading-primary">The murder plot</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+                        </p>
+                        <div class="detailbar row">
+                            <div class="details col1of2">
+                                <div class="details__left"><img src="images/point-place.png" alt="Again a simple logo, still not missing anything" class="details__logo"></div>
+                                <div class="details__right">
+                                    <div class="heading-secondary">Question</div> 
+                                    <div class="heading-tertiary">Answer</div>
+                                </div>
+                            </div>
+                            <div class="details col1of2">
+                                <div class="details__left"><img src="images/point-place.png" alt="Another simple logo. Yawn." class="details__logo"></div>
+                                <div class="details__right">
+                                    <div class="heading-secondary">Question</div> 
+                                    <div class="heading-tertiary">Answer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                <div class="imgcomp imgcomp--right">
+                    <div class="imgcomp__circle3 imgcomp__circle3--right">&nbsp;</div>
+                    <div class="imgcomp__circle2 imgcomp__circle2--right">
+                        <img src="https://secure.meetupstatic.com/photos/event/3/b/a/6/highres_466335270.jpeg" alt="photo of people. I think." class="imgcomp__circle2--pic">
+                    </div>
+                    <div class="imgcomp__circle1 imgcomp__circle1--right">
+                        <img src="https://secure.meetupstatic.com/photos/event/a/4/7/highres_472802631.jpeg" alt="smaller photo. They do look human." class="imgcomp__circle1--pic">
+                    </div>
+                </div>
+            </section>
+
+            <section id="threeflavors" class="threeflavors">
+                <div class="threeflavors__container">
+                    <h1 class="heading-primary">Three flavors of cannibalism</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+                    </p>
+                </div>    
+            </section>
+
+            <section class="composition">
+                <div class="composition__green">
+                        <img src="images/hexagon-masterclass.png" alt="masterclass, the mindset of a developer" class="composition__hexagon composition__element composition__green--hexagon">
+                        <div class="composition__green--small composition__element">&nbsp;</div>
+                        <div class="composition__green--big composition__element">&nbsp;</div>    
+                </div>
+                <div class="composition__yellow">
+                        <img src="images/hexagon-yellow-small.png" alt="small yellow hexagon, like an empty simple logo" class="composition__yellow--hexagon1 composition__element">
+                        <div class="composition__yellow--big composition__element">&nbsp;</div>
+                        <img src="images/hexagon-yellow-medium.png" alt="slightly bigger yellow hexagon. woohoo" class="composition__yellow--hexagon2 composition__element">
+                        <div class="composition__yellow--small composition__element">&nbsp;</div>
+                        <img src="images/hexagon-mentorship.png" alt="mentorship, go above and beyond" class="composition__hexagon composition__element composition__yellow--hexagon">    
+                </div>
+                <div class="composition__blue">
+                    <div class="composition__blue--big composition__element">&nbsp;</div>
+                    <div class="composition__blue--small composition__element">&nbsp;</div>
+                    <img src="images/hexagon-first-time.png" alt="first time, explore and get started" class="composition__hexagon composition__element composition__blue--hexagon">
+                </div>
+            </section>
+
+            <section id="flavorflavorflavor" class="flavorflavorflavor">
+                <div class="flavorflavorflavor__container">
+                    <h1 class="heading-primary">First timers</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+                    </p>
+                </div>
+                <div class="yellowdot">&nbsp;</div>
+                <div class="flavorflavorflavor__container">
+                    <h1 class="heading-primary">Mentorship</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+                    </p>
+                </div>
+                <div class="yellowdot">&nbsp;</div>
+                <div class="flavorflavorflavor__container">
+                    <h1 class="heading-primary">Masterclass</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+                    </p>
+                </div>         
+            </section>
+
+            <section class="whoweare hoofd .u-margin-top-big">
+                <div class="imgcomp imgcomp--left">
+                    <div class="imgcomp__circle3 imgcomp__circle3--left">&nbsp;</div>
+                    <div class="imgcomp__circle2 imgcomp__circle2--left">
+                        <img src="https://secure.meetupstatic.com/photos/event/7/2/a/8/highres_467549352.jpeg" alt="photo of even more humanoid creatures" class="imgcomp__circle2--pic">
+                    </div>
+                    <div class="imgcomp__circle1 imgcomp__circle1--left">
+                        <img src="https://secure.meetupstatic.com/photos/event/a/5/0/highres_472802640.jpeg" alt="smaller photo. Could it be our mastermind criminal Rein Op 't L?'" class="imgcomp__circle1--pic">
+                    </div>
+                </div>
+                <div class="hoofd__container">
+                    <div class="hoofd__content hoofd__content--left">
+                        <h1 class="heading-primary">About us psychopaths</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lovetomeet hoofd .u-margin-top-big">
+                <div class="hoofd__container">
+                    <div class="hoofd__content hoofd__content--right">
+                        <h1 class="heading-primary">We would love to kill you!</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat similique sed dicta officia quod. Doloribus deleniti blanditiis, adipisci dolores consectetur magni voluptatem possimus placeat reiciendis exercitationem cumque quos cupiditate aut.
+                        </p>
+                        <div class="join-meetup-button">
+                            <a href="https://www.meetup.com/Learning-to-Code-Amsterdam/" class="button join-meetup">
+                                <img src="images/meetup-icon.png" alt="just another boring logo. Be glad you can't see them" class="meetup-icon">
+                                <h3 class="tertiary-heading button__text">Join our meet-up now!</h3>
+                            </a>
+                            <img src="images/itsfree.png" alt="it's free!" class="itsfree">
+                        </div>
+                    </div>
+                </div>  
+                <div class="imgcomp imgcomp--right">
+                    <div class="imgcomp__circle3 imgcomp__circle3--right">&nbsp;</div>
+                    <div class="imgcomp__circle2 imgcomp__circle2--right">
+                        <img src="https://secure.meetupstatic.com/photos/event/8/b/2/6/highres_444755622.jpeg" alt="photo of people. I think." class="imgcomp__circle2--pic">
+                    </div>
+                    <div class="imgcomp__circle1 imgcomp__circle1--right">
+                        <img src="images/MENS.jpg" alt="smaller photo. They do look human." class="imgcomp__circle1--pic">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__container">
+                <picture>
+                    <source media="(max-width: 37.5em)" srcset="images/skyline.png">
+                    <source media="(min-width: 37.5001em)" srcset="images/skyline-up-side-down.png">
+                    <img src="images/skyline-up-side-down.png" alt="skyline" class="footer__container--skyline">
+                </picture>
+                <!-- 
+                    Todo: Add team section here
+                    <h2 class="heading-secondary footer__container--heading">Our team</h2>
+                    <div class="footer__container--teampic"></div>
+                 -->
+            </div>
+        </footer>
+    </body>
+    <script>
+        function smoothScrolling(target){
+            document.querySelector(target).scrollIntoView({ 
+              behavior: 'smooth' 
+            });
+        }
+    </script>
+</html>

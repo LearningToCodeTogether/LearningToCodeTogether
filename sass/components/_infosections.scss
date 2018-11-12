@@ -1,0 +1,207 @@
+// INFOSECTIONS LEFT AND RIGHT met kleine fotocompositie ernaast
+
+.hoofd {                          //   + links/rechts
+    height: $big-circle;
+    display: table;
+    margin-top: 10rem;
+
+    &:first-child {
+        margin-top: 5rem;
+    }
+
+    &__container {
+        width: 72%;
+        height: 100%;
+        display: table-cell;
+        position: relative;  
+    }
+
+    &__content {            // pas hier is links/rechts weer belangrijk; dit gaat over het positioneren van het tekstblok in de bredere kolom van hoofd
+        width: 70%;
+        margin-top: 18rem;
+        margin-left: 15rem;
+        position: relative;
+    }
+}
+
+// TAB PORT  hoofd
+@include respond(tab-port) {
+    .hoofd {
+        height: 80rem;
+        display: block;
+        margin-top: -6rem;
+        position: relative;
+
+        &:first-child {
+            margin-top: -14rem;
+        }
+       
+        &:last-child {
+            margin-top: -14rem;
+        }
+    
+        &__container {
+            width: 80%;
+            height: auto;
+            position: relative;
+            display: inline-block;
+            margin-top: 32rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    
+        &__content {
+            width: 100%;
+            margin: 18rem auto 0 auto;
+
+            & .row {
+                padding: 0 0 0 1.5rem;
+            }
+        }
+    }
+}
+
+// TELEFOON  hoofd
+@include respond(phone) {
+    .hoofd {                          //   + links/rechts
+        height: 89rem;
+        display: block;
+        margin-top: 10rem;
+    
+        &:not(:first-child) {
+            margin-top: -9rem;
+        }
+    
+        &:first-child {
+            margin-top: -9rem;
+        }
+
+        &:last-child {
+            height: 93rem;
+            margin-top: -14rem;
+        }
+    
+        &__container {
+            width: 100%;
+            position: absolute;
+            display: block;
+            left: 0;
+            transform: none;
+        }
+    
+        &__content {
+            width: 90%;
+            margin: 18rem auto 0 auto;
+
+            & .row {
+                padding: 0 0 0 1.5rem;
+            }
+        }
+    }
+}
+
+
+
+
+// DIE TABLEAUTJES MET LOGO LINKS EN EEN VETTE 'WHEN'/'WHERE' ETC PLUS ERONDER HET ANTWOORD
+
+.details {
+    @include respond(tab-port) {
+        position: relative;
+        left: 16%;
+    }
+
+    @include respond(phone) {
+        left: 0;
+    }
+
+    &__left {
+        width: 3.5rem;
+    }
+
+    &__right {
+        display: inline-block;
+    }
+
+    &__logo {
+        width: 3.5rem;
+        float: left;
+        margin-top: 1.3rem;
+        margin-right: 1.3rem;
+    }
+}
+
+.detailbar .details {
+    display: inline-block;
+
+}
+
+
+// FLAVORS
+// gecentreerde infosections boven en onder de grote compositie
+
+.threeflavors {
+    margin-top: 10rem;
+
+    @include respond(phone) {
+        margin-top: 3rem;
+    }
+
+    &__container {
+        width: 50%;
+        margin: 0 auto;
+    
+        & p, h1 {
+            text-align: center;
+    
+            @include respond(tab-port) {
+                text-align: left;
+            }
+        }
+    
+        @include respond(tab-port) {
+            width: 80%;
+        }
+    
+        @include respond(phone) {
+            width: 90%;
+            margin: 4rem auto 0 auto;
+        }
+    }
+}
+
+
+.flavorflavorflavor {
+    position: relative;
+
+    @include respond(tab-port) {
+        margin-bottom: -9rem;
+    }
+
+    @include respond(phone) {
+        margin-top: -2rem;
+        margin-bottom: 0;
+    }
+
+    &__container {
+        width: 61%;
+        margin: 0 auto;
+        display: block;
+
+        @include respond(phone) {
+            width: 90%;
+        }
+    }
+}
+
+
+//die stippen tussen de blokjes in flavorflavorflavor
+
+.yellowdot {
+    @include circle($yellowdot,$yellow);
+    margin: 3.5rem auto;
+
+    @include respond(phone) {
+        margin: 3.5rem auto 3rem auto;
+    }
+}
