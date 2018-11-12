@@ -22,6 +22,8 @@ $circle1: 15rem;
 $comp-width: calc(98vw/3);
 $small-circle: calc(#{$comp-width} * .18);
 
+$comp-width-port: calc(98vw/2);
+$small-circle-port: calc(#{$comp-width-port} * .18);
 
 $comp-width-phone: 98vw;
 $small-circle-phone: calc(#{$comp-width-phone} * .18);
@@ -48,7 +50,7 @@ $yellowdot: 2rem;
 
 // Smartphoneversie...
 // -waarom is er een lege ruimte onder de footer??
-// -de art direction regelen op de manier waarop het hoort.......... met <figure> en <source>
+// -art direction header: hoe vervang je 1 plaatje door 2 plaatjes?
 
 
 // tablet landscape: breedte van linkerimgcompkolom en margin-left van de tekstcontainer zo aanpassen dat pas onder de breedte van 944 de imgcomp afgesneden wordt - dan is in principe de boel geregeld voor bigscreen, computer en tablet-landscape

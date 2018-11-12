@@ -32,18 +32,15 @@
 .fixed-join-us-button {
     position: fixed;
     z-index: 5;
-    top: 6rem;
+    top: 3rem;
     right: 3rem;
 }
 
 .join-meetup-button {
     display: inline-block;
     position: relative;  
-    left: 13rem;
-    
-    @include respond(phone) {
-        left: 6rem;
-    }
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 // TELEFOON

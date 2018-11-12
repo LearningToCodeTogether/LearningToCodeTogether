@@ -17,14 +17,10 @@
         }
     
         &--left {
-            // top: 33rem;
-            // left: 29rem;
             transform: translate(184%, 212%);
         }
     
         &--right {
-            // bottom: 0rem;
-            // right: 24rem;
             transform: translate(0%, 224%);
         }
     }
@@ -45,8 +41,6 @@
         }
     
         &--right {
-            // bottom: 3rem;
-            // right: 10rem;
             transform: translate(4%, 62%);
         }
     }
@@ -69,20 +63,32 @@
     }
 }
 
+@include respond(tab-port) {
+    .imgcomp {
+        width: 20%;
+        position: absolute;
+        display: inline-block;
+        z-index: -3;
+
+        &--right {
+            left: 47%;
+        }
+    }
+}
+
+
 @include respond(phone) {
     .imgcomp {
         width: 100%;
-        position: absolute;
         display: block;
-        overflow-x: visible;
-        z-index: -3;
 
         &--left {
-            transform: translateX(-13%);
+            left: -4%;
         }
 
         &--right {
-            transform: translateX(22%);
+            left: 37%;
+            top: -3%;
         }
     }
 }
@@ -195,6 +201,68 @@
     }
 }
 
+@include respond(tab-port) {
+    .composition {
+        height: 80vw;
+    
+        &__blue,
+        &__yellow,
+        &__green {
+            width: $comp-width-port;
+            height: $comp-width-port;
+            position: absolute;
+            display: block;
+        }
+       
+        &__blue {
+            left: -2%;
+            top: 2%;
+
+            &--big {
+                @include circle( calc(#{$comp-width-port} * 1.02) ,$blue);
+            }
+    
+            &--small {
+                @include circle($small-circle-port,$blue);
+            }
+        }
+    
+        &__yellow {
+            left: 50%;
+            top: -2%;
+
+            &--big {
+                @include circle( calc(#{$comp-width-port} * .48) ,$yellow);
+            }
+    
+            &--small {
+                @include circle($small-circle-port,$yellow);
+            }
+    
+            &--hexagon1 {
+                width: calc(#{$comp-width-port} * .06);
+            }
+    
+            &--hexagon2 {
+                width: calc(#{$comp-width-port} * .1);
+            }
+        }
+    
+        &__green {
+            left: 47%;
+            top: 42%;
+
+            &--big {
+                @include circle( calc(#{$comp-width-port} * .74) ,$green);
+            }
+        
+            &--small {
+                @include circle($small-circle-port,$green);
+            }
+        }
+    }
+}
+
 @include respond(phone) {
     .composition {
         height: $comp-width-phone * 2.4;
@@ -204,8 +272,6 @@
         &__green {
             width: $comp-width-phone;
             height: $comp-width-phone;
-            position: absolute;
-            display: block;
         }
        
         &__blue {
@@ -247,7 +313,7 @@
             top: 58%;
 
             &--big {
-                @include circle( calc(#{$comp-width-phone} * .74) ,$green);  //37rem
+                @include circle( calc(#{$comp-width-phone} * .74) ,$green);
             }
         
             &--small {

@@ -23,23 +23,17 @@
 
         <header class="header">            
             <div class="header__images">
-                <img src="images/skyline-up-side-down.png" alt="upside down skyline" class="header__images--skyline ">
-                <img src="images/skyline.png" alt="upside down skyline" class="header__images--skyline-phone">
-                <img src="images/header-logo.png" alt="header logo with smiling folks and the text learning to code, aw man you're really missing out on this one"  class="header__images--logo">
-                
-                <img src="images/logo.png" alt="header logo with smiling folks and the text learning to code, aw man you're really missing out on this one"  class="header__images--logo-phone">
-                <img src="images/people-group.png" alt="group of smiling people" class="header__images--people">
-                
-                
-                <!-- <figure>
-                    <source srcset="images/logo.png"
-                    media="(max-width:37.5em)">
-                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo" src="img/logo-green-2x.png"> 
-                </figure> -->
-
-
-
-
+                <picture>
+                    <source media="(max-width: 37.5em)" srcset="images/skyline.png">
+                    <source media="(min-width: 37.5001em)" srcset="images/skyline-up-side-down.png">
+                    <img src="images/skyline-up-side-down.png" alt="upside down skyline" class="header__images--skyline" >
+                </picture>
+                <picture>
+                    <source media="(max-width: 37.5em)" srcset="images/logo.png">
+                    <source media="(min-width: 37.5001em)" srcset="images/header-logo.png">
+                    <img src="images/header-logo.png" alt="header logo with the text learning to code, aw man you're really missing out on this one" class="header__images--logo" >
+                </picture>
+                <img src="images/people-group.png" alt="people smiling. They can't help it. They were drawn that way" class="header__images--people">
             </div>
             <div class="header__meetup">
                 <div class="row">
@@ -257,10 +251,13 @@
 
         <footer class="footer">
             <div class="footer__container">
-                <img src="images/skyline-up-side-down.png" alt="skyline" class="footer__container--skyline">
+                <picture>
+                    <source media="(max-width: 37.5em)" srcset="images/skyline.png">
+                    <source media="(min-width: 37.5001em)" srcset="images/skyline-up-side-down.png">
+                    <img src="images/skyline-up-side-down.png" alt="skyline" class="footer__container--skyline">
+                </picture>
                 <h2 class="heading-secondary footer__container--heading">Our team</h2>
-                <div class="footer__container--teampic">ONTBREKEND PLAATJE</div>
-                <img src="images/skyline.png" alt="skyline" class="footer__container--skyline-phone">
+                <div class="footer__container--teampic"></div>
             </div>
         </footer>
     </body>
