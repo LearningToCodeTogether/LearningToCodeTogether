@@ -448,7 +448,8 @@ p {
   .hoofd {
     height: 89rem;
     display: block;
-    margin-top: 10rem; }
+    margin-top: 10rem;
+    overflow: hidden; }
     .hoofd:not(:first-child) {
       margin-top: -9rem; }
     .hoofd:first-child {

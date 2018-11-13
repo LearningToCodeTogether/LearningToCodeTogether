@@ -67,6 +67,7 @@
         height: 89rem;
         display: block;
         margin-top: 10rem;
+        overflow: hidden;
     
         &:not(:first-child) {
             margin-top: -9rem;
