@@ -355,7 +355,8 @@ p {
 
 @media only screen and (max-width: 37.5em) {
   .composition {
-    height: 235.2vw; }
+    height: 235.2vw;
+    overflow-x: hidden; }
     .composition__blue, .composition__yellow, .composition__green {
       width: 98vw;
       height: 98vw; }
@@ -449,7 +450,7 @@ p {
     height: 89rem;
     display: block;
     margin-top: 10rem;
-    overflow: hidden; }
+    overflow-x: hidden; }
     .hoofd:not(:first-child) {
       margin-top: -9rem; }
     .hoofd:first-child {
