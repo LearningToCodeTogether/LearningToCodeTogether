@@ -266,6 +266,7 @@
 @include respond(phone) {
     .composition {
         height: $comp-width-phone * 2.4;
+        overflow-x: hidden;
     
         &__blue,
         &__yellow,
