@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .u-center-text {
   text-align: center !important; }
 
@@ -105,12 +106,30 @@ p {
   display: inline-block;
   height: 4rem;
   background-color: #F64061;
-  border-radius: 2rem; }
+  border-radius: 2rem;
+  position: relative;
+  transition: 0.5s; }
   .button__text {
     margin-top: .3rem;
     margin-right: 1.8rem;
     color: white;
-    display: inline-block; }
+    display: inline-block;
+    transition: 0.5s; }
+    .button__text--signup {
+      margin-left: 1.8rem; }
+    .button__text:after {
+      color: white;
+      content: '➯';
+      position: absolute;
+      opacity: 0;
+      right: -20px;
+      transition: 0.5s; }
+    .button__text:hover {
+      padding-right: 16px;
+      padding-left: 4px; }
+    .button__text:hover:after {
+      opacity: 1;
+      right: 10px; }
   .button .meetup-icon {
     width: 2.3rem;
     float: left;

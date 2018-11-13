@@ -3,12 +3,38 @@
     height: 4rem;
     background-color: $red;
     border-radius: 2rem;
+    position: relative;
+    transition: 0.5s;
 
     &__text {
         margin-top: .3rem;
         margin-right: 1.8rem;
         color: white;
         display: inline-block;
+        transition: 0.5s;
+
+        &--signup {
+            margin-left: 1.8rem;
+        }
+
+        &:after {
+            color: white;
+            content: '➯';
+            position: absolute;
+            opacity: 0;  
+            right: -20px;
+            transition: 0.5s;
+        }
+    
+        &:hover{
+            padding-right: 16px;
+            padding-left: 4px;
+        }
+    
+        &:hover:after {
+            opacity: 1;
+            right: 10px;
+        }
     }
 
     & .meetup-icon {
@@ -17,7 +43,10 @@
         margin-top: .9rem;
         margin-left: .9rem;
         margin-right: 1.3rem;
-    }    
+    }
+    
+
+
 }
 
 
