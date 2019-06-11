@@ -1,0 +1,12 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+.header {
+  height: 50px;
+  width: 100%;
+  background-color: pink; }
+  .header .item {
+    background: green; }
+  .header .nav {
+    border: 1px solid black; }
