@@ -1,0 +1,17 @@
+.section-page-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 40px;
+
+  h1{
+    text-align: center;
+    margin: 15px 0px;
+  }
+
+  .text{
+    text-align: center;
+    max-width: 600px;
+  }
+}

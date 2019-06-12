@@ -5,10 +5,11 @@ import chokidar from 'chokidar'
 import path from 'path'
 import fs from 'fs-extra'
 import sass from 'node-sass'
-import decache from 'decache'
 import browserSync from 'browser-sync'
 
-import Template from './src/Template'
+function decache(path){
+  delete require.cache[require.resolve(path)]
+}
 
 class Builder {
   browserSync = browserSync.create()
@@ -33,6 +34,8 @@ class Builder {
   }
 
   async initialBuild(){
+    fs.copy('./src/assets', './dist/assets');
+
     const cssFiles = await glob(this.globs.css)
     this.log('Build', `Building ${cssFiles.length} css file(s)...`);
     await Promise.all(cssFiles.map(this.convertCssToJS))
@@ -43,7 +46,9 @@ class Builder {
 
     const pages = await glob(this.globs.pages)
     this.log('Build', `Building ${pages.length} page(s)...`);
-    await Promise.all(pages.map(this.convertToStatic))
+    for (let val of pages) {
+       const res = await this.convertToStatic(val)
+   }
   }
 
   log(tag, msg){
@@ -53,7 +58,8 @@ class Builder {
   async startBrowserSync(){
     this.browserSync.init({
        server: "./dist",
-       logLevel: "silent"
+       logLevel: "silent",
+       notify: false,
     })
   }
 
@@ -69,6 +75,11 @@ class Builder {
 
   async watch(){
     this.log('Watch', 'Watching all files in /src...')
+
+    const assetWatcher = chokidar.watch('./src/assets/**/*.*', { ignoreInitial: true })
+    assetWatcher
+      .on('add', p => this.copyToDir(p, 'dist'))
+      .on('change', p => this.copyToDir(p, 'dist'))
 
     const cssWatcher = chokidar.watch('./src/**/*.scss', { ignoreInitial: true })
     cssWatcher
@@ -88,15 +99,15 @@ class Builder {
 
   pageFileDidChange = async(path) => {
     this.startTime = Date.now()
-    await this.copyToTmp(path)
-    path = this.pathToTmp(path)
+    await this.copyToDir(path, 'tmp')
+    path = this.pathToDir(path, 'tmp')
     await this.convertToStatic(path)
   }
 
   styleFileDidChange = async(path) => {
     this.startTime = Date.now()
-    await this.copyToTmp(path)
-    path = this.pathToTmp(path)
+    await this.copyToDir(path, 'tmp')
+    path = this.pathToDir(path, 'tmp')
     await this.convertCssToJS(path)
 
     const pages = await this.findRequireInPage('css', path)
@@ -105,16 +116,16 @@ class Builder {
 
   jsFileDidChange = async(path) => {
     this.startTime = Date.now()
-    await this.copyToTmp(path)
-    path = this.pathToTmp(path)
+    await this.copyToDir(path, 'tmp')
+    path = this.pathToDir(path, 'tmp')
     await this.attachRequireNotice(path)
 
     const pages = await this.findRequireInPage('js', path)
     pages.map(this.convertToStatic)
   }
 
-  pathToTmp = (path) => {
-    return path.replace(/^[\.\/]*[a-zA-Z]+\//, './tmp/')
+  pathToDir = (path, dir) => {
+    return path.replace(/^[\.\/]*[a-zA-Z]+\//, `./${dir}/`)
   }
 
   async attachRequireNotice(path){
@@ -138,13 +149,13 @@ ${content}`
     return found
   }
 
-  async copyToTmp(path){
+  async copyToDir(path, dir){
     const exits = await fs.pathExists(path)
-    await fs.copy(path, this.pathToTmp(path))
+    await fs.copy(path, this.pathToDir(path, dir))
   }
 
   convertCssToJS = async(path) => {
-    path = this.pathToTmp(path)
+    path = this.pathToDir(path, 'tmp')
 
     const content = await fs.readFile(path, 'utf-8')
     if(content.substr(0,6) === 'global'){
@@ -157,21 +168,28 @@ ${content}`
   }
 
   convertToStatic = async(path) => {
-    let Page, html;
+    let Page, Template, html;
     global.cssRequire = []
     global.jsRequire = []
-
+    console.log('[Page]', path)
     if(!this.startTime){
       this.startTime = Date.now()
     }
 
-    path = this.pathToTmp(path)
+    path = this.pathToDir(path, 'tmp')
+
+    try {
+        decache(`./tmp/Template.js`)
+        Template = require(`./tmp/Template.js`)?.default
+    } catch (e) {
+      console.error(e);
+      return
+    }
 
     try {
         decache(`${path}`)
         Page = require(`${path}`)?.default
     } catch (e) {
-      console.log(e)
       console.error(e);
       return
     }
@@ -197,7 +215,6 @@ ${content}`
     // Process all the css.
     await Promise.all(cssRequire.map(this.convertCssToJS))
     let css = cssRequire.map(p => `@import "${p.replace('tmp/', 'src/')}";`).join('\n')
-
     css = await this.preprocessCss(css);
     css = css.css.toString()
 
@@ -217,6 +234,9 @@ ${content}`
     await fs.writeFile(`./dist/${name}.html`, html)
     await fs.writeFile(`./dist/${name}.css`, css)
 
+    this.requireMap[path].css.forEach(decache)
+    this.requireMap[path].js.forEach(decache)
+    //
     this.log('Build', `Completed building page ${name} in ${Date.now() - this.startTime}ms!`)
     this.log('Browser', `Updating browser(s)`)
     this.browserSync.reload(['*.html', '*.css'])

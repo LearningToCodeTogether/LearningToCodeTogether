@@ -1,0 +1,35 @@
+@import './reset.scss';
+
+// Colors are prepended by c-[name]
+$c-sunglow  : #FFD240;
+$c-jet      : #303030;
+$fushia     : #FA405D;
+$boro       : #DDDDDD;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-weight-medium{
+  font-weight: 500;
+}
+.font-weight-bold{
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h1 {
+  font-size: 45px;
+  line-height: 41px;
+}
+
+.text {
+  font-size: 17px;
+  line-height: 22px;
+}

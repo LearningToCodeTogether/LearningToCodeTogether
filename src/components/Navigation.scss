@@ -1,0 +1,68 @@
+.section-header-spacer {
+  height: 110px;
+  width: 100%;
+}
+.section-header {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  border-top: 3px solid $c-sunglow;
+  z-index: 99;
+
+  display: flex;
+  justify-content: center;
+  background: url('./assets/skyline-upside-down.svg') top center no-repeat;
+
+  .skyline{
+    position: absolute;
+    height: 100px;
+  }
+
+  &.scroll{
+    height: 60px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,.1);
+    background-color: white;
+  }
+
+  .icon {
+    position: absolute;
+    height: 30px;
+    left: 20px;
+    top: 15px;
+  }
+
+  .meetup-icon {
+    position: absolute;
+    height: 25px;
+    right: 20px;
+    top: 17.5px;
+  }
+
+  nav {
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    a{
+      @extend .font-weight-medium;
+      margin-right: 20px;
+      padding-bottom: 3px;
+      border-bottom: 2px solid rgba(0,0,0,0);
+
+      &:hover{
+        border-bottom: 2px solid $c-sunglow;
+      }
+
+      &:last-child{
+        margin-right: 0px;
+      }
+    }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .icon, nav {
+      display: none;
+    }
+  }
+}

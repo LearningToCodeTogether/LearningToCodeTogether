@@ -1,0 +1,10 @@
+<html><head><title>Learning to code - together</title><meta name="viewport" content="width=device-width, initial-scale=1"/><link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&amp;display=swap" rel="stylesheet"/><link rel="stylesheet" type="text/css" href="./courses.css"/></head><body><header id="header" class="section-header"><a href="./"><img class="icon" src="./assets/icon.svg"/></a><a href="https://www.meetup.com/Learning-to-Code-Amsterdam/"><img class="meetup-icon" src="./assets/meetup-icon.svg"/></a><nav><a href="/about.html">About us</a><a href="/meetup.html">The Meetup</a><a href="/courses.html">Our Courses</a><a href="/resouces.html">Resources</a></nav><script>
+          var header = document.getElementById('header');
+          window.addEventListener('scroll', function(event){
+            if(this.scrollY > 50 && header.className.indexOf('scroll') === -1){
+              header.className = header.className + ' scroll'
+            }else if(this.scrollY <= 50 && header.className.indexOf('scroll') !== -1){
+              header.className = header.className.replace('scroll', '')
+            }
+          })
+      </script></header><div class="section-header-spacer"></div><div id="page-courses"><div class="section-page-header"><img class="header-image" src="./assets/header-image-our-courses.svg"/><h1><span class="font-weight-bold">Welcome </span><span>to </span><span class="font-weight-bold">our </span><span class="font-weight-bold">courses </span></h1><span class="text">Here you can find all our courses we have created to help you learn, with easy to follow steps and some sparks of fun! Let’s get coding!</span></div><div class="section-line"><div class="line"></div></div></div></body></html>
