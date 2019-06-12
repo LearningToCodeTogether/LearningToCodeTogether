@@ -3,12 +3,13 @@ body {
   margin: 0;
 }
 .header {
+  position: fixed;
   height: 50px;
   width: 100%;
-  background-color: pink;
+  border-top: 3px solid #FFD240;
 
   .item {
-    background: green;
+    background: gray;
   }
 
   .nav{

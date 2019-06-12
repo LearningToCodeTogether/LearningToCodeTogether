@@ -8,40 +8,67 @@ import sass from 'node-sass'
 import decache from 'decache'
 import browserSync from 'browser-sync'
 
+import Template from './src/Template'
+
 class Builder {
   browserSync = browserSync.create()
 
+  globs = {
+    css: './tmp/**/*.scss',
+    js: './tmp/**/*.js',
+    pages: './tmp/pages/**/*.js',
+  }
+
   constructor(){
-    this.browserSync.init({
-       server: "./dist"
-    })
     this.run()
   }
 
   requireMap = {}
 
   async run(){
+    await this.cleanup()
+    await this.initialBuild()
+    await this.startBrowserSync()
+    await this.watch()
+  }
+
+  async initialBuild(){
+    const cssFiles = await glob(this.globs.css)
+    this.log('Build', `Building ${cssFiles.length} css file(s)...`);
+    await Promise.all(cssFiles.map(this.convertCssToJS))
+
+    const jsFiles = await glob(this.globs.js, { ignore: [this.globs.pages] })
+    this.log('Build', `Building ${jsFiles.length} js file(s)...`);
+    await Promise.all(jsFiles.map(this.attachRequireNotice))
+
+    const pages = await glob(this.globs.pages)
+    this.log('Build', `Building ${pages.length} page(s)...`);
+    await Promise.all(pages.map(this.convertToStatic))
+  }
+
+  log(tag, msg){
+    console.log(`[${tag}]`, msg)
+  }
+
+  async startBrowserSync(){
+    this.browserSync.init({
+       server: "./dist",
+       logLevel: "silent"
+    })
+  }
+
+  async cleanup(){
+    this.log('Preprocess', 'Cleaning up...')
     await fs.ensureDir('./tmp')
     await fs.emptyDir('./tmp')
     await fs.copy('./src', './tmp')
 
     await fs.ensureDir('./dist')
     await fs.emptyDir('./dist')
+  }
 
-    const cssFiles = await glob('./tmp/**/*.scss')
-    await Promise.all(cssFiles.map(this.convertCssToJS))
-
-    const jsFiles = await glob('./tmp/**/*.js', {
-      ignore: ['./tmp/pages/**/*.js']
-    })
-    await Promise.all(jsFiles.map(this.attachRequireNotice))
-
-    const pages = await glob('./tmp/pages/**/*.js')
-    await Promise.all(pages.map(this.convertToStatic))
-
-    // const srcWatcher = chokidar.watch('./src/**/*.*', { ignoreInitial: true })
-    //   .on('add', this.copyToTmp)
-    //   .on('change', this.copyToTmp)
+  async watch(){
+    this.log('Watch', 'Watching all files in /src...')
 
     const cssWatcher = chokidar.watch('./src/**/*.scss', { ignoreInitial: true })
     cssWatcher
@@ -60,29 +87,34 @@ class Builder {
   }
 
   pageFileDidChange = async(path) => {
-    console.log('[pages js]', path);
+    this.startTime = Date.now()
     await this.copyToTmp(path)
-    path = path.replace('src/', 'tmp/')
+    path = this.pathToTmp(path)
     await this.convertToStatic(path)
   }
 
   styleFileDidChange = async(path) => {
-    console.log('css', path)
+    this.startTime = Date.now()
     await this.copyToTmp(path)
-    path = path.replace('src/', 'tmp/')
+    path = this.pathToTmp(path)
     await this.convertCssToJS(path)
+
     const pages = await this.findRequireInPage('css', path)
-    console.log('CONVERT', pages)
     pages.map(this.convertToStatic)
   }
 
   jsFileDidChange = async(path) => {
-    console.log('js', path)
+    this.startTime = Date.now()
     await this.copyToTmp(path)
-    path = path.replace('src/', 'tmp/')
+    path = this.pathToTmp(path)
     await this.attachRequireNotice(path)
+
     const pages = await this.findRequireInPage('js', path)
     pages.map(this.convertToStatic)
+  }
+
+  pathToTmp = (path) => {
+    return path.replace(/^[\.\/]*[a-zA-Z]+\//, './tmp/')
   }
 
   async attachRequireNotice(path){
@@ -99,7 +131,7 @@ ${content}`
     let page, found = []
     for(let i = 0; i < pagePaths.length; i++){
       page = pagePaths[i]
-      if(this.requireMap[page][type].indexOf(`./${path}`) !== -1){
+      if(this.requireMap[page][type].indexOf(path) !== -1){
         found.push(page)
       }
     }
@@ -107,17 +139,13 @@ ${content}`
   }
 
   async copyToTmp(path){
-    console.log('copy', path)
     const exits = await fs.pathExists(path)
-    console.log('[copy] - ', path, ' exits?',exits);
-    await fs.copy(path, path.replace('src/', 'tmp/'))
-    console.log('copy done to', path.replace('src/', 'tmp/'))
+    await fs.copy(path, this.pathToTmp(path))
   }
 
   convertCssToJS = async(path) => {
-    path = path.replace('src/', 'tmp/')
+    path = this.pathToTmp(path)
 
-    console.log('[css] - ', path);
     const content = await fs.readFile(path, 'utf-8')
     if(content.substr(0,6) === 'global'){
       return
@@ -132,17 +160,18 @@ ${content}`
     let Page, html;
     global.cssRequire = []
     global.jsRequire = []
-    console.log('[PAGE]', path)
+
+    if(!this.startTime){
+      this.startTime = Date.now()
+    }
+
+    path = this.pathToTmp(path)
 
     try {
-      if(path.substr(0,2) === './'){
         decache(`${path}`)
         Page = require(`${path}`)?.default
-      }else{
-        decache(`./${path}`)
-        Page = require(`./${path}`)?.default
-      }
     } catch (e) {
+      console.log(e)
       console.error(e);
       return
     }
@@ -172,30 +201,25 @@ ${content}`
     css = await this.preprocessCss(css);
     css = css.css.toString()
 
+    const name = path.replace('./tmp/pages/', '').replace('.js', '')
+
     try {
-      html = ReactDOMServer.renderToStaticMarkup(<Page/>)
+      html = ReactDOMServer.renderToStaticMarkup(<Template {...{
+        stylesheets: [`./${name}.css`],
+        ...(Page.config || {})
+      }}><Page/></Template>)
     } catch (e) {
       console.error(e)
       return
     }
 
-
-    let name;
-    if(path.substr(0, 2) === './'){
-      name = path.replace('./tmp/pages/', '').replace('.js', '')
-    } else {
-      name = path.replace('tmp/pages/', '').replace('.js', '')
-    }
-    html = `<html><head><link rel='stylesheet' type='text/css' href='./${name}.css'/></head><body>${html}</body></html>`;
-
     await fs.ensureDir('./dist')
     await fs.writeFile(`./dist/${name}.html`, html)
     await fs.writeFile(`./dist/${name}.css`, css)
 
-    // setTimeout(() => {
-      this.browserSync.reload(['*.html', '*.css'])
-    // }, 500)
-    console.log('done',`./dist/${name}.html`)
+    this.log('Build', `Completed building page ${name} in ${Date.now() - this.startTime}ms!`)
+    this.log('Browser', `Updating browser(s)`)
+    this.browserSync.reload(['*.html', '*.css'])
   }
 
   async preprocessCss(css){

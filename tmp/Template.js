@@ -5,7 +5,8 @@ export default function(props){
   return (
     <html>
       <head>
-        {props.style && <style>{props.css}</style>}
+        <title>{props.title}</title>
+        {(props.stylesheets || []).map(i => <link key={i} rel='stylesheet' type='text/css' href={i}/>)}
       </head>
       <body>
         {props.children || ''}
