@@ -1,0 +1,98 @@
+.section-courses{
+  background: $c-snow;
+  padding: 60px 40px;
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item-container{
+    $itemWidth: 362px;
+
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: $itemWidth * 3;
+    width: 100%;
+
+    @media only screen and (max-width: $itemWidth * 3 + 80 - 1) {
+      max-width: $itemWidth * 2;
+    }
+    @media only screen and (max-width: $itemWidth * 2 + 80 - 1) {
+      justify-content: center;
+    }
+
+    .item{
+      display: flex;
+      flex-direction: column;
+      width: 340px;
+      height: 200px;
+      border: 1px solid rgba(0,0,0,.2);
+      border-radius: 4px;
+      background: white;
+      cursor: pointer;
+      margin: 10px;
+      overflow: hidden;
+
+      .content{
+        padding: 20px;
+
+        .title{
+          @extend .font-weight-bold;
+          font-size: 25px;
+          margin-bottom: 7px;
+        }
+        .subTitle{
+          font-size: 18px;
+        }
+        .description{
+          display: flex;
+          flex: 1;
+          font-size: 14px;
+          line-height: 18px;
+          margin-top: 15px;
+        }
+      }
+      .bar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 15px;
+        background: $c-snow;
+        display: flex;
+        height: 45px;
+
+        & .time-icon{
+          height: 20px;
+          margin-right: 10px;
+        }
+
+        & .time-text, & .type-text {
+          font-size: 14px;
+          padding-right: 5px;
+        }
+
+        & .line {
+          height: 20px;
+          width: 1px;
+          border-right: 1px solid rgba(0,0,0,.2);
+          margin: 0 10px;
+        }
+
+        & .button {
+          height: 26px;
+          width: 26px;
+          background-color: $c-sunglow;
+          border-radius: 4px;
+          margin-top: -2px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

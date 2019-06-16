@@ -1,11 +1,37 @@
 .section-line{
+  position: absolute;
   width: 100%;
-  height: 5px;
-  margin: 60px 0px;
 
   .line{
     width: 100%;
     border-bottom: 1px solid rgba(0,0,0,.1);
     transform: rotate(-0.7deg);
+
+    &.mask-top{
+      height: 50px;
+      background-color: white;
+      margin-top: -40px;
+    }
   }
+}
+
+.title-badge{
+  @extend .font-weight-bold;
+  background: $c-sunglow;
+  padding: 8px 25px;
+  color: white;
+  display: inline-block;
+  transform: rotate(-.7deg);
+
+  .title-badge-title{
+    transform: rotate(.7deg);
+    font-size: 20px;
+  }
+}
+
+.title-badge-subtitle{
+  @extend .font-weight-medium;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 20px;
 }

@@ -11,6 +11,15 @@ export function Title(props){
   })
 }
 
-export function Line(){
-  return <div className='section-line'><div className='line'/></div>
+export function Line(props){
+  return <div className='section-line'><div className={['line', props.maskTop && ' mask-top'].join(' ')}/></div>
+}
+
+export function TitleBadge(props){
+  return <React.Fragment>
+    <div className='title-badge'>
+      <div className='title-badge-title'>{props.title}</div>
+    </div>
+    {props.subTitle && <div className='title-badge-subtitle'>{props.subTitle}</div>}
+  </React.Fragment>
 }
