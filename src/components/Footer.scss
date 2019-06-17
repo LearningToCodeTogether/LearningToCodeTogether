@@ -1,0 +1,37 @@
+.section-footer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 40px 0px 40px;
+  height: 390px;
+  background: url('./assets/skyline.svg') no-repeat bottom center;
+  overflow: hidden;
+
+  .logo{
+    margin-left: -14px;
+  }
+  .team-container{
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    text-align: center;
+    margin-left: -40px;
+
+    .team{
+      display: inline-block;
+    }
+  }
+
+  .title {
+    @extend .font-weight-bold;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+    text-align: center;
+    margin-top: 5px;
+  }
+}

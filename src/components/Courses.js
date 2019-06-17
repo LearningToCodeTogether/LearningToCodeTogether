@@ -9,8 +9,8 @@ export default (props) => (
       <div className='category'>
         <TitleBadge title={category.title} subTitle={category.subTitle}/>
         <div className='item-container'>
-          {category.items.map(i => (
-            <a href={i.link}>
+          {category.items.map((i, index) => (
+            <a href={i.link} key={index}>
               <div className='item'>
                 <div className='content'>
                   <div className='title'>{i.title}</div>

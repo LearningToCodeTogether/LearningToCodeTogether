@@ -37,12 +37,13 @@ table {
 body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; }
 
 .font-weight-medium, .section-header nav a, .title-badge-subtitle {
   font-weight: 500; }
 
-.font-weight-bold, .section-courses .item-container .item .content .title, .title-badge {
+.font-weight-bold, h1, h2, .section-courses .item-container .item .content .title, .section-featured-resources > a > .button, .section-featured-resources .item-container .item .title, .section-footer .title, .title-badge {
   font-weight: 700; }
 
 a {
@@ -51,7 +52,11 @@ a {
 
 h1 {
   font-size: 45px;
-  line-height: 41px; }
+  line-height: 47px; }
+
+h2 {
+  font-size: 40px;
+  line-height: 42px; }
 
 .text {
   font-size: 17px;
@@ -188,6 +193,102 @@ h1 {
           align-items: center;
           justify-content: center; }
 
+.section-featured-resources {
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .section-featured-resources > a > .button {
+    background: #FFD240;
+    font-size: 16px;
+    padding: 15px 20px;
+    border-radius: 30px;
+    margin-top: 40px; }
+  .section-featured-resources .illustration {
+    margin-bottom: -110px;
+    height: 200px;
+    width: 200px;
+    margin-top: 20px; }
+  .section-featured-resources .item-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px; }
+    .section-featured-resources .item-container .item {
+      display: flex;
+      flex-direction: column;
+      width: 280px;
+      height: 100px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      margin: 0 10px;
+      background: white;
+      margin-top: 10px;
+      padding: 20px; }
+      .section-featured-resources .item-container .item .illustration {
+        position: absolute;
+        margin-top: -140px;
+        margin-left: 55px;
+        z-index: -10; }
+      .section-featured-resources .item-container .item .title {
+        font-size: 25px; }
+      .section-featured-resources .item-container .item .description {
+        margin-top: 5px;
+        font-size: 17px;
+        line-height: 21px; }
+      .section-featured-resources .item-container .item .bar {
+        display: flex;
+        flex: 1;
+        align-items: flex-end;
+        justify-content: flex-end; }
+  @media only screen and (max-width: 1129px) {
+    .section-featured-resources .item-container {
+      flex-direction: column; }
+      .section-featured-resources .item-container .item {
+        max-width: 400px; } }
+
+.section-section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .section-section-header h2 {
+    margin-top: 15px;
+    text-align: center; }
+  .section-section-header .description {
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 15px;
+    max-width: 500px; }
+
+.section-footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 40px 0px 40px;
+  height: 390px;
+  background: url("./assets/skyline.svg") no-repeat bottom center;
+  overflow: hidden; }
+  .section-footer .logo {
+    margin-left: -14px; }
+  .section-footer .team-container {
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    text-align: center;
+    margin-left: -40px; }
+    .section-footer .team-container .team {
+      display: inline-block; }
+  .section-footer .title {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 50px; }
+  .section-footer .subtitle {
+    font-size: 17px;
+    text-align: center;
+    margin-top: 5px; }
+
 .section-line {
   position: absolute;
   width: 100%; }
@@ -212,5 +313,5 @@ h1 {
 
 .title-badge-subtitle {
   margin-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 20px; }

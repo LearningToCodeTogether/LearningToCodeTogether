@@ -11,6 +11,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 .font-weight-medium{
@@ -26,8 +27,15 @@ a {
 }
 
 h1 {
+  @extend .font-weight-bold;
   font-size: 45px;
-  line-height: 41px;
+  line-height: 47px;
+}
+
+h2 {
+  @extend .font-weight-bold;
+  font-size: 40px;
+  line-height: 42px;
 }
 
 .text {
