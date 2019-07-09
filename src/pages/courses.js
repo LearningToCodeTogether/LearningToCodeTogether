@@ -14,7 +14,7 @@ class Page extends React.Component {
           description="Here you can find all our courses we have created to help you learn, with easy to follow steps and some sparks of fun! Let’s get coding!"
           image='./assets/header-image-our-courses.svg'/>
         <Courses/>
-        <FeaturedResources/>
+        {/*<FeaturedResources/>*/}
       </div>
     )
   }
