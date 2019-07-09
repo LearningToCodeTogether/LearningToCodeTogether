@@ -38,12 +38,14 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-size: 17px;
+  line-height: 21px; }
 
-.font-weight-medium, .section-header nav a, .title-badge-subtitle {
+.font-weight-medium, .title-badge-subtitle, .section-header nav a {
   font-weight: 500; }
 
-.font-weight-bold, h1, h2, .section-courses .item-container .item .content .title, .section-featured-resources > a > .button, .section-featured-resources .item-container .item .title, .section-footer .title, .title-badge {
+.font-weight-bold, h1, h2, .title-badge, .section-courses .item-container .item .content .title, .section-featured-resources > a > .button, .section-featured-resources .item-container .item .title, .section-footer .title {
   font-weight: 700; }
 
 a {
@@ -58,67 +60,94 @@ h2 {
   font-size: 40px;
   line-height: 42px; }
 
-.text {
-  font-size: 17px;
-  line-height: 22px; }
+.section {
+  padding: 100px 40px; }
+  @media (max-width: 660px) {
+    .section {
+      padding: 40px 20px; } }
 
-.section-header-spacer {
-  height: 110px;
+.section-line {
+  position: absolute;
   width: 100%; }
+  .section-line .line {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transform: rotate(-0.7deg); }
+    .section-line .line.mask-top {
+      height: 50px;
+      background-color: white;
+      margin-top: -40px; }
 
-.section-header {
-  position: fixed;
-  height: 100px;
-  width: 100%;
-  border-top: 3px solid #FFD240;
-  z-index: 99;
-  display: flex;
-  justify-content: center;
-  background: url("./assets/skyline-upside-down.svg") top center no-repeat; }
-  .section-header .skyline {
-    position: absolute;
-    height: 100px; }
-  .section-header.scroll {
-    height: 60px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: white; }
-  .section-header .icon {
-    position: absolute;
-    height: 30px;
-    left: 20px;
-    top: 15px; }
-  .section-header .meetup-icon {
-    position: absolute;
-    height: 25px;
-    right: 20px;
-    top: 17.5px; }
-  .section-header nav {
-    height: 60px;
-    display: flex;
-    align-items: center; }
-    .section-header nav a {
-      margin-right: 20px;
-      padding-bottom: 3px;
-      border-bottom: 2px solid rgba(0, 0, 0, 0); }
-      .section-header nav a:hover {
-        border-bottom: 2px solid #FFD240; }
-      .section-header nav a:last-child {
-        margin-right: 0px; }
-  @media only screen and (max-width: 600px) {
-    .section-header .icon, .section-header nav {
-      display: none; } }
+.component-title {
+  font-weight: normal; }
 
-.section-page-header {
+.title-badge {
+  background: #FFD240;
+  padding: 8px 25px;
+  color: white;
+  display: inline-block;
+  transform: rotate(-0.7deg); }
+  .title-badge .title-badge-title {
+    transform: rotate(0.7deg);
+    font-size: 20px; }
+
+.title-badge-subtitle {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 20px; }
+
+.component-page-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 40px 60px 40px; }
-  .section-page-header h1 {
+  .component-page-header h1 {
     text-align: center;
     margin: 15px 0px; }
-  .section-page-header .text {
+  .component-page-header .text {
     text-align: center;
     max-width: 600px; }
+
+.component-section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .component-section-header h2 {
+    margin-top: 15px;
+    text-align: center; }
+  .component-section-header .description {
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 15px;
+    max-width: 500px; }
+
+.component-usp-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px; }
+  .component-usp-row .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 250px;
+    min-width: 250px;
+    padding: 0px 20px; }
+    .component-usp-row .item img {
+      height: 130px; }
+    .component-usp-row .item .title {
+      text-align: center;
+      max-width: 250px;
+      margin-top: 20px; }
+    .component-usp-row .item .description {
+      text-align: center;
+      margin-top: 5px;
+      max-width: 400px; }
+  @media (max-width: 880px) {
+    .component-usp-row {
+      flex-direction: column; }
+      .component-usp-row .item {
+        margin-bottom: 20px; } }
 
 .section-courses {
   background: #FAFAFA;
@@ -248,20 +277,6 @@ h2 {
       .section-featured-resources .item-container .item {
         max-width: 400px; } }
 
-.section-section-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-  .section-section-header h2 {
-    margin-top: 15px;
-    text-align: center; }
-  .section-section-header .description {
-    font-size: 17px;
-    line-height: 20px;
-    text-align: center;
-    margin-top: 15px;
-    max-width: 500px; }
-
 .section-footer {
   position: relative;
   display: flex;
@@ -289,29 +304,75 @@ h2 {
     text-align: center;
     margin-top: 5px; }
 
-.section-line {
-  position: absolute;
+.section-header-spacer {
+  height: 110px;
   width: 100%; }
-  .section-line .line {
+
+.section-header {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  border-top: 3px solid #FFD240;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  background: url("./assets/skyline-upside-down.svg") top center no-repeat; }
+  .section-header .skyline {
+    position: absolute;
+    height: 100px; }
+  .section-header.scroll {
+    height: 60px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white; }
+  .section-header .icon {
+    position: absolute;
+    height: 30px;
+    left: 20px;
+    top: 15px; }
+  .section-header .meetup-icon {
+    position: absolute;
+    height: 25px;
+    right: 20px;
+    top: 17.5px; }
+  .section-header nav {
+    height: 60px;
+    display: flex;
+    align-items: center; }
+    .section-header nav a {
+      margin-right: 20px;
+      padding-bottom: 3px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0); }
+      .section-header nav a:hover {
+        border-bottom: 2px solid #FFD240; }
+      .section-header nav a:last-child {
+        margin-right: 0px; }
+
+@media only screen and (max-width: 600px) {
+  .section-header-spacer {
+    height: 200px; }
+  .section-header nav {
+    flex-direction: column;
+    margin-top: 10px;
+    height: 1000px; } }
+
+.section-home-header {
+  display: flex;
+  justify-content: center; }
+  .section-home-header .header-desktop {
     width: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    transform: rotate(-0.7deg); }
-    .section-line .line.mask-top {
-      height: 50px;
-      background-color: white;
-      margin-top: -40px; }
+    min-width: 1250px; }
+  .section-home-header .header-mobile {
+    display: none;
+    margin-bottom: 100px; }
+  @media only screen and (max-width: 600px) {
+    .section-home-header .header-mobile {
+      display: inline-block; }
+    .section-home-header .header-desktop {
+      display: none; } }
 
-.title-badge {
-  background: #FFD240;
-  padding: 8px 25px;
-  color: white;
-  display: inline-block;
-  transform: rotate(-0.7deg); }
-  .title-badge .title-badge-title {
-    transform: rotate(0.7deg);
-    font-size: 20px; }
+.section-why-usp .image {
+  height: 100px; }
 
-.title-badge-subtitle {
-  margin-top: 15px;
-  margin-bottom: 10px;
-  font-size: 20px; }
+.section-why-usp .title {
+  font-size: 30px;
+  margin-bottom: 10px; }

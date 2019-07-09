@@ -12,6 +12,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+
+  font-size: 17px;
+  line-height: 21px;
 }
 
 .font-weight-medium{
@@ -38,7 +41,10 @@ h2 {
   line-height: 42px;
 }
 
-.text {
-  font-size: 17px;
-  line-height: 22px;
+.section{
+  padding: 100px 40px;
+
+  @media (max-width: 660px){
+    padding: 40px 20px;
+  }
 }

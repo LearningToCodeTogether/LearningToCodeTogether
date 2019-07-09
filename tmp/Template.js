@@ -1,7 +1,7 @@
 global.jsRequire ? global.jsRequire.push('./tmp/Template.js') : global.jsRequire = ['./tmp/Template.js'];
 import React from 'react'
 import './styles/main.scss'
-import { Navigation, Footer } from './components'
+import { Navigation, Footer } from './sections'
 
 export default function(props){
   return (

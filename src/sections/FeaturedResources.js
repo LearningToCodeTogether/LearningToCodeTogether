@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionHeader, FeatureRow } from './index'
+import { SectionHeader } from '../components'
 import './FeaturedResources.scss'
 import data from '../data'
 
@@ -12,7 +12,7 @@ export default () => (
       <img className='illustration' src='./assets/illustration-resources.svg'/>
       <div className='item-container'>
         {data.featuredResources.map((item, index) => (
-          <a href={item.link}>
+          <a href={item.link} key={index}>
             <div className='item'>
               <div className='title'>{item.title}</div>
               <div className='description'>{item.description}</div>

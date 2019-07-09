@@ -1,7 +1,8 @@
 import React from 'react'
-import { PageHeader, Line, Courses, FeaturedResources } from '../components'
+import { PageHeader, Line } from '../components'
+import { Courses, FeaturedResources } from '../sections'
 
-class Home extends React.Component {
+class Page extends React.Component {
   static config = {
     title: 'Learning to code - together',
   }
@@ -19,4 +20,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Page;

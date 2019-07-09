@@ -1,5 +1,5 @@
 import React from 'react'
-import { Line } from './index'
+import { Line } from '../components'
 import './Footer.scss'
 
 export default () => (

@@ -1,4 +1,6 @@
 import React from 'react'
+import { Line } from '../components'
+import { HomeHeader, WhatUsps, WhyUsps, CoursesUsps } from '../sections'
 
 class Home extends React.Component {
   static config = {
@@ -7,8 +9,12 @@ class Home extends React.Component {
   render(){
     return (
       <div className='content'>
-        <h1>{this.props.title || `I'm working, yeah!`}</h1>
-        <div style={{height: 10000, width: 100}}/>
+        {/* <HomeHeader/> */ }
+        <WhatUsps/>
+        <Line/>
+        <CoursesUsps/>
+        <Line/>
+        <WhyUsps/>
       </div>
     )
   }

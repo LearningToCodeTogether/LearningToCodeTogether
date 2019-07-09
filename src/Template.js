@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles/main.scss'
-import { Navigation, Footer } from './components'
+import { Navigation, Footer } from './sections'
 
 export default function(props){
   return (

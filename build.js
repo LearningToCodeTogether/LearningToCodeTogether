@@ -226,7 +226,7 @@ ${content}`
         ...(Page.config || {})
       }}><Page/></Template>)
     } catch (e) {
-      console.error(e)
+      console.error('Render', e)
       return
     }
 

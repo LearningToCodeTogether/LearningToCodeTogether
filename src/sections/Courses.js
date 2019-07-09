@@ -1,5 +1,5 @@
 import React from 'react'
-import { TitleBadge } from './index'
+import { TitleBadge } from '../components'
 import './Courses.scss'
 import data from '../data'
 

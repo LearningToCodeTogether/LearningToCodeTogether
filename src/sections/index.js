@@ -1,0 +1,8 @@
+export { default as Courses } from './Courses.js'
+export { default as FeaturedResources } from './FeaturedResources.js'
+export { default as Footer } from './Footer.js'
+export { default as Navigation } from './Navigation.js'
+export { default as HomeHeader } from './HomeHeader.js'
+export { default as WhyUsps } from './WhyUsps.js'
+export { default as WhatUsps } from './WhatUsps.js'
+export { default as CoursesUsps } from './CoursesUsps.js'

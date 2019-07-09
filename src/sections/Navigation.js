@@ -1,4 +1,3 @@
-global.jsRequire ? global.jsRequire.push('./tmp/components/Navigation.js') : global.jsRequire = ['./tmp/components/Navigation.js'];
 import React from 'react'
 import './Navigation.scss'
 import config from '../config'
@@ -13,10 +12,10 @@ export default (props) => (
         <img className='meetup-icon' src='./assets/meetup-icon.svg'/>
       </a>
       <nav>
-        <a href='/about.html'>About us</a>
-        <a href='/meetup.html'>The Meetup</a>
+        {/*<a href='/about.html'>About us</a>*/}
+        {/*<a href='/meetup.html'>The Meetup</a>*/}
         <a href='/courses.html'>Our Courses</a>
-        <a href='/resouces.html'>Resources</a>
+        {/*<a href='/resouces.html'>Resources</a>*/}
       </nav>
       <script dangerouslySetInnerHTML={{__html: `
           var header = document.getElementById('header');
