@@ -1,0 +1,24 @@
+.section-home-header {
+  display: flex;
+
+  justify-content: center;
+
+  .header-desktop{
+    width: 100%;
+    min-width: 1250px;
+  }
+
+  .header-mobile{
+    display: none;
+    margin-bottom: 100px;
+  }
+
+  @media only screen and (max-width: 600px){
+    .header-mobile{
+      display: inline-block;
+    }
+    .header-desktop{
+      display: none;
+    }
+  }
+}

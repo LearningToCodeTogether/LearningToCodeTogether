@@ -1,0 +1,50 @@
+@import './reset.scss';
+
+// Colors are prepended by c-[name]
+$c-sunglow  : #FFD240;
+$c-jet      : #303030;
+$c-fushia   : #FA405D;
+$c-boro     : #DDDDDD;
+$c-snow     : #FAFAFA;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
+  font-size: 17px;
+  line-height: 21px;
+}
+
+.font-weight-medium{
+  font-weight: 500;
+}
+.font-weight-bold{
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h1 {
+  @extend .font-weight-bold;
+  font-size: 45px;
+  line-height: 47px;
+}
+
+h2 {
+  @extend .font-weight-bold;
+  font-size: 40px;
+  line-height: 42px;
+}
+
+.section{
+  padding: 100px 40px;
+
+  @media (max-width: 660px){
+    padding: 40px 20px;
+  }
+}
